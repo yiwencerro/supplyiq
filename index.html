@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///C:/Users/yliu/Downloads/index_1.html -->
+<!-- saved from url=(0044)file:///C:/Users/yliu/Downloads/index_2.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -229,7 +229,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 <div class="topbar">
   <div class="tlogo">SupplyIQ</div>
   <div class="tsep"></div>
-  <div class="tmod" id="tbar-mod">Setup</div>
+  <div class="tmod" id="tbar-mod">Sales Gap</div>
   <div class="tright" id="tbar-right">
     <span id="tbar-period" style="font-size:11px;color:rgba(255,255,255,.35);"></span>
     <button class="tbtn" id="btn-goto-admin" onclick="gotoAdmin()">⚙ Admin</button>
@@ -237,7 +237,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 </div>
 
 <!-- ═══ SETUP ═══ -->
-<div class="view active" id="view-setup">
+<div class="view" id="view-setup">
 <div class="centered-card fade-in">
   <div style="font-family:var(--ff-d);font-size:22px;font-weight:500;margin-bottom:4px;">SupplyIQ Setup</div>
   <div style="font-size:12px;color:var(--ink3);margin-bottom:22px;">One-time configuration — takes about 5 minutes</div>
@@ -350,20 +350,47 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
     </div>
   </div>
 
-  <!-- STEP 3: Analyze -->
+  <!-- STEP 3: Analyze via Claude.ai -->
   <div class="card" style="margin-bottom:14px;">
-    <div class="card-title">Step 3 — Analyze with Claude AI</div>
-    <div style="font-size:12px;color:var(--ink3);margin-bottom:12px;">Claude reads your joined sales + item data and generates channel insights, product analysis, and recommended actions.</div>
-    <div class="form-group">
-      <div class="form-label">Anthropic API Key</div>
-      <input class="form-input" id="cfg-apikey" type="password" placeholder="sk-ant-api03-..." autocomplete="off">
-      <div class="form-hint">Used only to call Claude from your browser. Stored in localStorage. Get yours at <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></div>
+    <div class="card-title">Step 3 — Analyze with Claude</div>
+    <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;">No API key needed. The app prepares a prompt from your data — you paste it into Claude.ai, then paste the response back here.</div>
+
+    <!-- Sub-step A: Generate prompt -->
+    <div style="background:var(--paper2);border-radius:var(--r);padding:14px 16px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;">A</div>
+        <div style="font-size:13px;font-weight:500;color:var(--ink);">Generate &amp; copy the analysis prompt</div>
+      </div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:10px;">Click below to build the prompt from your uploaded data, then open Claude.ai and paste it in.</div>
+      <div id="analyze-err" class="banner banner-rose" style="display:none;margin-bottom:10px;"><span>⚠</span><span id="analyze-err-msg"></span></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <button class="btn btn-sage btn-icon" id="btn-gen-prompt" onclick="generatePrompt()">📋 Generate &amp; Copy Prompt</button>
+        <a href="https://claude.ai/" target="_blank" class="btn btn-icon" id="btn-open-claude" style="display:none;">↗ Open Claude.ai</a>
+        <span id="copy-confirm" style="font-size:12px;color:var(--sage);display:none;">✓ Prompt copied to clipboard!</span>
+      </div>
+      <!-- Prompt preview (collapsed) -->
+      <div id="prompt-preview-wrap" style="display:none;margin-top:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+          <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);">Prompt preview</span>
+          <button class="btn btn-sm" onclick="copyPromptAgain()">Copy again</button>
+        </div>
+        <textarea id="prompt-preview" readonly="" style="width:100%;height:120px;font-family:var(--ff-m);font-size:10px;padding:8px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink2);resize:vertical;line-height:1.4;"></textarea>
+      </div>
     </div>
-    <div id="prog-section" style="display:none;margin-bottom:12px;">
-      <div id="prog-steps"></div>
+
+    <!-- Sub-step B: Paste response -->
+    <div style="background:var(--paper2);border-radius:var(--r);padding:14px 16px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;">B</div>
+        <div style="font-size:13px;font-weight:500;color:var(--ink);">Paste Claude's response here</div>
+      </div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:10px;">After Claude.ai gives you the analysis, copy the entire response and paste it below.</div>
+      <textarea id="claude-response" placeholder="Paste Claude&#39;s full response here…" style="width:100%;height:130px;font-family:var(--ff-m);font-size:11px;padding:10px;border:1px solid var(--rule2);border-radius:var(--r);background:var(--paper);color:var(--ink);resize:vertical;line-height:1.5;outline:none;transition:border-color .12s;" onfocus="this.style.borderColor=&#39;var(--sage)&#39;" onblur="this.style.borderColor=&#39;var(--rule2)&#39;"></textarea>
+      <div id="parse-err" class="banner banner-rose" style="display:none;margin-top:8px;"><span>⚠</span><span id="parse-err-msg"></span></div>
+      <div style="margin-top:10px;">
+        <button class="btn btn-primary btn-icon" id="btn-parse" onclick="parseResponse()">✓ Process Response</button>
+      </div>
     </div>
-    <div id="analyze-err" class="banner banner-rose" style="display:none;margin-bottom:12px;"><span>⚠</span><span id="analyze-err-msg"></span></div>
-    <button class="btn btn-sage btn-icon" id="btn-analyze" onclick="runAnalysis()">✦ Analyze with Claude</button>
   </div>
 
   <!-- STEP 4: Publish -->
@@ -387,7 +414,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 </div>
 
 <!-- ═══ USER REPORT ═══ -->
-<div class="view" id="view-user">
+<div class="view active" id="view-user">
 <div class="shell">
 
   <div id="u-loading" class="loading fade-in"><div class="spinner"></div><span>Loading latest report…</span></div>
@@ -573,7 +600,7 @@ function doLogin(){
     adminLoggedIn=true;
     document.getElementById('login-err').style.display='none';
     document.getElementById('login-pass').value='';
-    if(CFG.apiKey)document.getElementById('cfg-apikey').value=CFG.apiKey;
+
     if(CFG.company)document.getElementById('s-company').value=CFG.company;
     const now=new Date();
     document.getElementById('cfg-month').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
@@ -761,50 +788,38 @@ function delta(p,inl=false){
 }
 
 // ── RUN ANALYSIS ─────────────────────────────────────────
-async function runAnalysis(){
-  const apiKey=document.getElementById('cfg-apikey').value.trim();
+// ── SHARED DATA BUILD ────────────────────────────────────
+let BUILT_DATA = null;
+
+function buildReportData(){
   const monthVal=document.getElementById('cfg-month').value;
   const compare=document.getElementById('cfg-compare').value;
   const chFilter=document.getElementById('cfg-channel').value;
   const bFilter=document.getElementById('cfg-brand').value;
   const company=(CFG.company||'the company');
-  const errEl=document.getElementById('analyze-err');
 
-  if(!RAW_TCC.length){showErr('Please upload the TCC sales CSV first.');return;}
-  if(!apiKey){showErr('Please enter your Anthropic API key.');return;}
-  if(!monthVal){showErr('Please select a report month.');return;}
+  if(!RAW_TCC.length){showErr('Please upload the TCC sales CSV first.');return null;}
+  if(!monthVal){showErr('Please select a report month.');return null;}
+  document.getElementById('analyze-err').style.display='none';
 
-  errEl.style.display='none';
-  CFG.apiKey=apiKey;
-  localStorage.setItem(CFG_KEY,JSON.stringify(CFG));
-
-  // Filter TCC by brand if selected
   let tccRows=RAW_TCC;
   if(bFilter&&bFilter!=='all')tccRows=tccRows.filter(r=>(r['Brand']||'').trim()===bFilter);
 
-  // Build item lookup
   const itemLookup=buildItemLookup(RAW_ITEMS.length?RAW_ITEMS:[]);
-
-  // Build aggregated data
   const{data,allMonths,allChannels}=buildData(tccRows,itemLookup);
-
-  // Parse selected month key
   const[selYr,selMo]=monthVal.split('-').map(Number);
   const selKey=selYr*100+selMo;
   const selLabel=MONTH_NAMES[selMo]+' '+selYr;
-
-  // Filter channels
   const channels=chFilter&&chFilter!=='all'?[chFilter]:allChannels.filter(c=>c&&c!=='-None-');
   const curIdx=allMonths.indexOf(selKey);
 
-  if(curIdx<0){showErr(`No data found for ${selLabel}. Check that your CSV contains this month.`);return;}
+  if(curIdx<0){showErr(`No data found for ${selLabel}. Check that your CSV contains this month.`);return null;}
 
-  // Baseline months
   const l12Mos=allMonths.slice(Math.max(0,curIdx-12),curIdx);
   const yoyKey=(selYr-1)*100+selMo;
   const lastMoKey=curIdx>0?allMonths[curIdx-1]:null;
   const baseMos=compare==='l12m'?l12Mos:compare==='yoy'?(allMonths.includes(yoyKey)?[yoyKey]:l12Mos):(lastMoKey?[lastMoKey]:l12Mos);
-  const baseLabel=compare==='l12m'?`last ${l12Mos.length} months average`:compare==='yoy'?`same month last year (${MONTH_NAMES[selMo]} ${selYr-1})`:`last month (${lastMoKey?allMonths.find(m=>m===lastMoKey):'N/A'})`;
+  const baseLabel=compare==='l12m'?`last ${l12Mos.length} months average`:compare==='yoy'?`same month last year (${MONTH_NAMES[selMo]} ${selYr-1})`:`last month`;
 
   // Channel summary
   const chSummary=channels.map(ch=>{
@@ -815,7 +830,7 @@ async function runAnalysis(){
     return{channel:ch,current:Math.round(cur),baseline:Math.round(base),gap_pct:parseFloat(gapPct.toFixed(1))};
   }).filter(c=>c.current>0||c.baseline>0);
 
-  // SKU summary (top winners/laggards across all channels)
+  // SKU aggregation
   const skuMap={};
   for(const ch of channels){
     const curSkus=(data[ch]?.[selKey]?.skus)||{};
@@ -838,10 +853,7 @@ async function runAnalysis(){
       gap:Math.round(r.cur-base_avg),gap_pct:base_avg>0?parseFloat(((r.cur-base_avg)/base_avg*100).toFixed(1)):0};
   }).filter(r=>r.current>0||r.base_avg>0).sort((a,b)=>b.gap-a.gap);
 
-  const winners=skuRows.slice(0,8);
-  const laggards=skuRows.slice(-8).reverse();
-
-  // Product family summary
+  // Product family
   const famMap={};
   for(const ch of channels){
     for(const[base,info]of Object.entries((data[ch]?.[selKey]?.skus)||{})){
@@ -864,7 +876,7 @@ async function runAnalysis(){
   const yoyTotal=channels.reduce((s,ch)=>s+((data[ch]?.[yoyKey]?.amt)||0),0);
   const yoyGap=yoyTotal>0?(totalCur-yoyTotal)/yoyTotal*100:null;
 
-  // Monthly totals for trend
+  // Monthly totals
   const last14=allMonths.slice(-14);
   const monthlyTotals=last14.map(mk=>{
     const total=channels.reduce((s,ch)=>s+((data[ch]?.[mk]?.amt)||0),0);
@@ -872,15 +884,14 @@ async function runAnalysis(){
     return{key:mk,label:MONTH_NAMES[mo]+' '+yr,total:Math.round(total),isCurrent:mk===selKey};
   });
 
-  // Heatmap data
+  // Heatmap
   const hm12=allMonths.slice(-12);
   const hmData={
     months:hm12.map(mk=>{const[yr,mo]=[Math.floor(mk/100),mk%100];return MONTH_NAMES[mo].substring(0,3)+' '+String(yr).slice(-2);}),
-    channels,
-    values:channels.map(ch=>hm12.map(mk=>Math.round((data[ch]?.[mk]?.amt)||0)))
+    channels,values:channels.map(ch=>hm12.map(mk=>Math.round((data[ch]?.[mk]?.amt)||0)))
   };
 
-  // Customer detail
+  // Customers
   const custMap={};
   for(const ch of channels){
     for(const[cust,cv]of Object.entries((data[ch]?.[selKey]?.customers)||{})){
@@ -899,14 +910,22 @@ async function runAnalysis(){
     return{...r,base_avg:Math.round(base_avg),gap_pct:base_avg>0?(r.cur-base_avg)/base_avg*100:0};
   }).filter(r=>r.cur>0||r.base_avg>0).sort((a,b)=>b.cur-a.cur);
 
-  // ── CALL CLAUDE ──
-  setProgress(0);
-  document.getElementById('btn-analyze').disabled=true;
-  document.getElementById('btn-analyze').textContent='Analyzing…';
-  document.getElementById('prog-section').style.display='block';
+  return{
+    monthVal,selLabel,selYr,selMo,compare,baseLabel,company,
+    chSummary,skuRows,famMap,custRows,monthlyTotals,hmData,
+    totalCur,totalBase,totalGap,yoyGap,yoyKey,channels
+  };
+}
 
-  const steps=['Joining sales + items data','Calling Claude API','Analyzing channels','Analyzing products','Writing recommendations'];
-  setStep(1,steps);await sleep(300);setStep(2,steps);
+// ── GENERATE PROMPT ──────────────────────────────────────
+function generatePrompt(){
+  const d=buildReportData();
+  if(!d)return;
+  BUILT_DATA=d;
+
+  const{selLabel,baseLabel,company,chSummary,skuRows,totalCur,totalBase,totalGap,yoyGap}=d;
+  const winners=skuRows.slice(0,8);
+  const laggards=skuRows.slice(-8).reverse();
 
   const prompt=`You are a supply chain analyst for ${company}. Analyze this ${selLabel} Sales Gap Report and provide actionable insights.
 
@@ -922,77 +941,106 @@ ${JSON.stringify(winners.map(w=>({display:w.display,brand:w.brand,family:w.famil
 UNDERPERFORMING SKUs:
 ${JSON.stringify(laggards.map(l=>({display:l.display,brand:l.brand,family:l.family,current:l.current,vs_avg:l.base_avg,gap_pct:l.gap_pct})),null,1)}
 
-Respond ONLY with valid JSON (no markdown, no backticks):
+Respond ONLY with valid JSON (no markdown, no backticks, no explanation outside the JSON):
 {
   "summary": "2-3 sentence executive summary using actual dollar figures and percentages",
   "insights": [
     {
-      "type": "channel|product|trend|risk|opportunity",
-      "priority": "high|medium|low",
-      "title": "max 8 words",
-      "body": "2-3 sentences with specific numbers",
-      "action": "concrete recommended action"
+      "type": "channel or product or trend or risk or opportunity",
+      "priority": "high or medium or low",
+      "title": "short title max 8 words",
+      "body": "2-3 sentences with specific numbers from the data",
+      "action": "concrete recommended action the team should take"
     }
   ],
   "product_notes": {
-    "winners_summary": "1-2 sentences about what is working",
-    "laggards_summary": "1-2 sentences about what needs attention"
+    "winners_summary": "1-2 sentences about what product families or SKUs are working",
+    "laggards_summary": "1-2 sentences about products needing attention"
   }
 }
-Generate 5-6 insights. Be specific, reference actual channel names and product names, make actions concrete.`;
+Generate 5-6 insights. Be specific — use actual channel names, product names, and dollar figures from the data above. Make actions concrete and actionable.`;
 
+  // Copy to clipboard
+  navigator.clipboard.writeText(prompt).then(()=>{
+    document.getElementById('copy-confirm').style.display='inline';
+    setTimeout(()=>{document.getElementById('copy-confirm').style.display='none';},3000);
+  }).catch(()=>{
+    // Fallback: select the textarea
+    document.getElementById('prompt-preview').select();
+  });
+
+  // Show preview and open button
+  document.getElementById('prompt-preview').value=prompt;
+  document.getElementById('prompt-preview-wrap').style.display='block';
+  document.getElementById('btn-open-claude').style.display='inline-flex';
+}
+
+function copyPromptAgain(){
+  const ta=document.getElementById('prompt-preview');
+  navigator.clipboard.writeText(ta.value).then(()=>{
+    document.getElementById('copy-confirm').style.display='inline';
+    setTimeout(()=>{document.getElementById('copy-confirm').style.display='none';},2000);
+  }).catch(()=>{ta.select();});
+}
+
+// ── PARSE CLAUDE RESPONSE ────────────────────────────────
+function parseResponse(){
+  const raw=document.getElementById('claude-response').value.trim();
+  const errEl=document.getElementById('parse-err');
+  const errMsg=document.getElementById('parse-err-msg');
+  errEl.style.display='none';
+
+  if(!raw){errEl.style.display='flex';errMsg.textContent='Please paste Claude's response first.';return;}
+  if(!BUILT_DATA){errEl.style.display='flex';errMsg.textContent='Please generate the prompt first (Step A), then paste the response.';return;}
+
+  // Extract JSON — Claude may wrap in backticks or add text before/after
+  let jsonStr=raw;
+  const jsonMatch=raw.match(/```json\s*([\s\S]*?)```/)||raw.match(/```\s*([\s\S]*?)```/)||raw.match(/(\{[\s\S]*\})/);
+  if(jsonMatch)jsonStr=jsonMatch[1]||jsonMatch[0];
+  jsonStr=jsonStr.replace(/^```json|^```|```$/g,'').trim();
+
+  let parsed;
   try{
-    setStep(2,steps);
-    const resp=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1800,messages:[{role:'user',content:prompt}]})
-    });
-    if(!resp.ok){const e=await resp.json();throw new Error(e.error?.message||'API error '+resp.status);}
-    setStep(3,steps);await sleep(200);
-    const result=await resp.json();
-    const parsed=JSON.parse(result.content[0].text.replace(/```json|```/g,'').trim());
-    setStep(4,steps);await sleep(200);
-
-    ANALYSIS={
-      period:selLabel,month:monthVal,compare_mode:compare,compare_label:baseLabel,
-      generated:new Date().toISOString(),company,
-      summary:parsed.summary,insights:parsed.insights,product_notes:parsed.product_notes||{},
-      kpis:{total_current:totalCur,total_baseline:totalBase,total_gap_pct:parseFloat(totalGap.toFixed(1)),
-            yoy_pct:yoyGap!==null?parseFloat(yoyGap.toFixed(1)):null,
-            yoy_month:MONTH_NAMES[selMo]+' '+(selYr-1)},
-      channels:chSummary,
-      skus:skuRows.slice(0,80),// top 80 SKUs
-      families:Object.values(famMap).map(f=>{
-        const ba=f.baseVals.length?f.baseVals.reduce((a,b)=>a+b,0)/f.baseVals.length:0;
-        return{family:f.fam,current:Math.round(f.cur),base_avg:Math.round(ba),gap_pct:ba>0?parseFloat(((f.cur-ba)/ba*100).toFixed(1)):0};
-      }).sort((a,b)=>b.current-a.current),
-      customers:custRows.slice(0,60),
-      monthly_totals:monthlyTotals,
-      heatmap:hmData,
-    };
-    setStep(5,steps);
-    showAnalysisPreview();
-    document.getElementById('pub-section').style.display='block';
-    document.getElementById('pub-section').scrollIntoView({behavior:'smooth',block:'start'});
+    parsed=JSON.parse(jsonStr);
   }catch(e){
-    showErr('Claude API error: '+e.message);
-    document.getElementById('prog-section').style.display='none';
-  }finally{
-    document.getElementById('btn-analyze').disabled=false;
-    document.getElementById('btn-analyze').textContent='✦ Re-analyze';
+    errEl.style.display='flex';
+    errMsg.textContent='Could not parse JSON from the response. Make sure you copied the full response. Error: '+e.message;
+    return;
   }
+
+  if(!parsed.summary||!parsed.insights){
+    errEl.style.display='flex';
+    errMsg.textContent='Response is missing required fields (summary or insights). Try asking Claude again with the same prompt.';
+    return;
+  }
+
+  const{monthVal,selLabel,selYr,selMo,compare,baseLabel,company,chSummary,skuRows,famMap,custRows,monthlyTotals,hmData,totalCur,totalBase,totalGap,yoyGap}=BUILT_DATA;
+
+  ANALYSIS={
+    period:selLabel,month:monthVal,compare_mode:compare,compare_label:baseLabel,
+    generated:new Date().toISOString(),company,
+    summary:parsed.summary,insights:parsed.insights,product_notes:parsed.product_notes||{},
+    kpis:{total_current:totalCur,total_baseline:totalBase,total_gap_pct:parseFloat(totalGap.toFixed(1)),
+          yoy_pct:yoyGap!==null?parseFloat(yoyGap.toFixed(1)):null,
+          yoy_month:MONTH_NAMES[selMo]+' '+(selYr-1)},
+    channels:chSummary,
+    skus:skuRows.slice(0,80),
+    families:Object.values(famMap).map(f=>{
+      const ba=f.baseVals.length?f.baseVals.reduce((a,b)=>a+b,0)/f.baseVals.length:0;
+      return{family:f.fam,current:Math.round(f.cur),base_avg:Math.round(ba),gap_pct:ba>0?parseFloat(((f.cur-ba)/ba*100).toFixed(1)):0};
+    }).sort((a,b)=>b.current-a.current),
+    customers:custRows.slice(0,60),
+    monthly_totals:monthlyTotals,
+    heatmap:hmData,
+  };
+
+  showAnalysisPreview();
+  document.getElementById('pub-section').style.display='block';
+  document.getElementById('pub-section').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function showErr(msg){const e=document.getElementById('analyze-err');e.style.display='flex';document.getElementById('analyze-err-msg').textContent=msg;}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
-const STEP_NAMES=['Joining sales + items data','Calling Claude API','Analyzing channels','Analyzing products','Writing recommendations'];
-function setProgress(n){document.getElementById('prog-section').style.display='block';}
-function setStep(n,steps){
-  document.getElementById('prog-steps').innerHTML=steps.map((s,i)=>
-    `<div class="ps-item ${i<n?'done':i===n?'active':''}">
-      <div class="ps-dot ${i<n?'done':i===n?'active':'idle'}">${i<n?'✓':i===n?'…':'○'}</div>${s}</div>`).join('');
-}
 
 function showAnalysisPreview(){
   if(!ANALYSIS)return;
@@ -1004,13 +1052,17 @@ function showAnalysisPreview(){
         {l:'Period',v:A.period},
         {l:'Total Sales',v:'$'+fmtK(A.kpis.total_current)},
         {l:'Gap vs Baseline',v:(A.kpis.total_gap_pct>=0?'+':'')+fmt(A.kpis.total_gap_pct,1)+'%'},
-        {l:'Channels',v:A.channels.length},
+        {l:'Insights',v:A.insights.length},
       ].map(k=>`<div style="background:var(--paper2);border-radius:var(--r);padding:10px 12px;">
         <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:3px;">${k.l}</div>
         <div style="font-family:var(--ff-d);font-size:18px;font-weight:500;">${k.v}</div>
       </div>`).join('')}
     </div>`;
 }
+
+
+
+// ── GITHUB PUBLISH
 
 // ── GITHUB PUBLISH ───────────────────────────────────────
 async function publishReport(){
