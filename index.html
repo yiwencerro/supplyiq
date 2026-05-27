@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0044)file:///C:/Users/yliu/Downloads/index_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SupplyIQ — Sales Gap Report</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./SupplyIQ — Sales Gap Report_files/css2" rel="stylesheet">
 <style>
-:root {
-  --ink:#181714;--ink2:#4a4540;--ink3:#8c8680;--ink4:#b8b3ac;
+:root{
+  --ink:#181714;--ink2:#4a4540;--ink3:#8c8680;--ink4:#c4bfb8;
   --paper:#faf8f4;--paper2:#f2ede6;--paper3:#e8e2d8;
   --rule:#ddd7cc;--rule2:#ccc6b9;
   --sage:#2d6b50;--sage-l:#e3f0ea;--sage-m:#8cc4a8;
-  --rose:#b03a3a;--rose-l:#f8eaea;
-  --amber:#9a5c0a;--amber-l:#f6ead8;
+  --rose:#b03a3a;--rose-l:#f8eaea;--rose-m:#e8a0a0;
+  --amber:#9a5c0a;--amber-l:#f6ead8;--amber-m:#e8c98a;
   --cobalt:#1e4f8c;--cobalt-l:#e3ecf8;
-  --gold:#c9a227;--gold-l:#fdf4d8;
+  --gold:#b8901c;--gold-l:#fdf4d8;
   --ff-d:'Fraunces',Georgia,serif;
   --ff-b:'DM Sans',system-ui,sans-serif;
-  --ff-m:'DM Mono',monospace;
+  --ff-m:'DM Mono','Courier New',monospace;
   --r:8px;--rl:14px;--rxl:20px;
   --sh:0 1px 4px rgba(24,23,20,.07),0 4px 16px rgba(24,23,20,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--ff-b);background:var(--paper);color:var(--ink);font-size:13px;line-height:1.5;min-height:100vh;}
-a{color:var(--sage);text-decoration:none;}
+a{color:var(--sage);}
 button{cursor:pointer;font-family:var(--ff-b);}
+code{font-family:var(--ff-m);font-size:11px;background:var(--paper3);padding:1px 6px;border-radius:4px;color:var(--ink2);}
 
-/* ── TOPBAR ── */
-.topbar{background:var(--ink);color:var(--paper);height:48px;display:flex;align-items:center;padding:0 20px;gap:14px;position:sticky;top:0;z-index:100;}
+/* TOPBAR */
+.topbar{background:var(--ink);color:var(--paper);height:48px;display:flex;align-items:center;padding:0 20px;gap:14px;position:sticky;top:0;z-index:200;}
 .tlogo{font-family:var(--ff-d);font-size:16px;font-weight:500;color:var(--paper);letter-spacing:-.01em;}
 .tsep{width:1px;height:14px;background:rgba(255,255,255,.15);}
 .tmod{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;}
@@ -39,417 +40,345 @@ button{cursor:pointer;font-family:var(--ff-b);}
 .tbtn.accent:hover{background:#236040;}
 .tbtn.danger{background:rgba(176,58,58,.25);border-color:rgba(176,58,58,.4);color:#f5a0a0;}
 
-/* ── VIEWS ── */
+/* VIEWS */
 .view{display:none;}.view.active{display:block;}
-.shell{max-width:1180px;margin:0 auto;padding:28px 20px 60px;}
+.shell{max-width:1200px;margin:0 auto;padding:26px 20px 60px;}
 
-/* ── BUTTONS ── */
-.btn{font-family:var(--ff-b);font-size:12px;padding:7px 16px;border-radius:var(--r);border:1px solid var(--rule2);background:var(--paper);color:var(--ink2);transition:background .12s,border-color .12s;}
+/* BUTTONS */
+.btn{font-family:var(--ff-b);font-size:12px;padding:7px 16px;border-radius:var(--r);border:1px solid var(--rule2);background:var(--paper);color:var(--ink2);transition:background .12s;}
 .btn:hover{background:var(--paper2);}
+.btn:disabled{opacity:.45;cursor:not-allowed;}
 .btn-primary{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-.btn-primary:hover{background:var(--ink2);}
+.btn-primary:hover:not(:disabled){background:var(--ink2);}
 .btn-sage{background:var(--sage);color:white;border-color:var(--sage);}
-.btn-sage:hover{background:#236040;}
+.btn-sage:hover:not(:disabled){background:#236040;}
 .btn-sm{font-size:11px;padding:4px 10px;}
 .btn-icon{display:inline-flex;align-items:center;gap:6px;}
 
-/* ── PAGE HEADER ── */
-.ph{border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;}
-.ph-left{}
+/* PAGE HEADER */
+.ph{border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:22px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 .ph-eye{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:4px;}
 .ph-title{font-family:var(--ff-d);font-size:28px;font-weight:500;letter-spacing:-.02em;color:var(--ink);line-height:1.1;}
 .ph-title em{font-style:italic;color:var(--sage);}
-.ph-meta{font-size:12px;color:var(--ink3);margin-top:5px;display:flex;align-items:center;gap:7px;}
+.ph-meta{font-size:12px;color:var(--ink3);margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
 .ph-dot{width:3px;height:3px;border-radius:50%;background:var(--rule2);}
-.ph-actions{display:flex;gap:8px;flex-shrink:0;}
+.ph-actions{display:flex;gap:8px;flex-shrink:0;align-items:center;}
 
-/* ── CARDS ── */
-.card{background:var(--paper);border:1px solid var(--rule);border-radius:var(--rl);padding:20px;}
-.card-title{font-family:var(--ff-d);font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px;}
+/* CARDS */
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:var(--rl);padding:18px 20px;}
+.card-title{font-family:var(--ff-d);font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:12px;}
 .card-sub{font-size:11px;color:var(--ink3);margin-top:2px;}
 
-/* ── KPI STRIP ── */
-.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px;}
-.kpi{background:var(--paper);border:1px solid var(--rule);border-radius:var(--rl);padding:14px 16px;position:relative;overflow:hidden;}
+/* KPI STRIP */
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px;}
+.kpi{background:var(--paper);border:1px solid var(--rule);border-radius:var(--rl);padding:13px 15px;position:relative;overflow:hidden;}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--rl) var(--rl) 0 0;}
 .kpi.k-total::before{background:var(--ink);}
 .kpi.k-up::before{background:var(--sage);}
 .kpi.k-down::before{background:var(--rose);}
 .kpi.k-yoy::before{background:var(--gold);}
 .kpi.k-flat::before{background:var(--ink3);}
-.kpi-eye{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:6px;}
-.kpi-val{font-family:var(--ff-d);font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1.05;}
-.kpi-sub{font-size:11px;color:var(--ink3);margin-top:4px;display:flex;align-items:center;gap:5px;}
-.delta{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:1px 7px;border-radius:99px;white-space:nowrap;}
+.kpi-eye{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:5px;}
+.kpi-val{font-family:var(--ff-d);font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1.05;}
+.kpi-sub{font-size:11px;color:var(--ink3);margin-top:3px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+
+/* DELTA */
+.delta{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:1px 6px;border-radius:99px;white-space:nowrap;}
 .d-up{background:var(--sage-l);color:var(--sage);}
 .d-down{background:var(--rose-l);color:var(--rose);}
 .d-flat{background:var(--paper3);color:var(--ink3);}
 
-/* ── TABS ── */
-.tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:18px;gap:0;}
-.tab{padding:8px 18px;font-size:12px;font-weight:500;color:var(--ink3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .12s,border-color .12s;}
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:16px;gap:0;overflow-x:auto;}
+.tab{padding:8px 16px;font-size:12px;font-weight:500;color:var(--ink3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .12s;white-space:nowrap;}
 .tab:hover{color:var(--ink);}
 .tab.active{color:var(--ink);border-bottom-color:var(--ink);}
 .tabpanel{display:none;}.tabpanel.active{display:block;}
 
-/* ── LAYOUT ── */
-.two-col{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 
-/* ── INSIGHT PANEL ── */
-.insight-panel{background:var(--ink);border-radius:var(--rl);padding:20px;display:flex;flex-direction:column;gap:0;}
-.ip-header{font-family:var(--ff-d);font-size:15px;font-weight:500;font-style:italic;color:rgba(255,255,255,.9);margin-bottom:14px;}
-.ip-item{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.6);line-height:1.55;}
+/* INSIGHT PANEL */
+.insight-panel{background:var(--ink);border-radius:var(--rl);padding:18px 20px;}
+.ip-header{font-family:var(--ff-d);font-size:15px;font-weight:500;font-style:italic;color:rgba(255,255,255,.9);margin-bottom:12px;}
+.ip-item{display:flex;align-items:flex-start;gap:9px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;}
 .ip-item:last-child{border-bottom:none;padding-bottom:0;}
-.ip-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
 .ip-body strong{color:rgba(255,255,255,.9);}
-.ip-action{display:inline-block;margin-top:5px;font-size:11px;background:rgba(255,255,255,.08);border-radius:4px;padding:2px 8px;color:rgba(255,255,255,.5);}
-.ip-pri{display:inline-block;font-size:10px;padding:1px 6px;border-radius:99px;margin-left:6px;}
+.ip-action{display:block;margin-top:5px;font-size:11px;background:rgba(255,255,255,.08);border-radius:4px;padding:3px 8px;color:rgba(255,255,255,.5);}
+.ip-pri{display:inline-block;font-size:10px;padding:1px 6px;border-radius:99px;margin-left:5px;}
 .pri-high{background:rgba(176,58,58,.3);color:#f5a0a0;}
 .pri-med{background:rgba(154,92,10,.3);color:#f5c98a;}
 .pri-low{background:rgba(45,107,80,.3);color:#88c4a8;}
 
-/* ── CHANNEL BARS ── */
-.ch-table{display:flex;flex-direction:column;gap:0;}
-.ch-head{display:grid;grid-template-columns:150px 1fr 80px 80px 70px;gap:10px;padding:6px 0 8px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);border-bottom:1px solid var(--rule);}
-.ch-row{display:grid;grid-template-columns:150px 1fr 80px 80px 70px;gap:10px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:center;}
+/* CHANNEL BARS */
+.ch-table{display:flex;flex-direction:column;}
+.ch-head{display:grid;grid-template-columns:150px 1fr 78px 78px 64px;gap:8px;padding:5px 0 7px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);border-bottom:1px solid var(--rule);}
+.ch-row{display:grid;grid-template-columns:150px 1fr 78px 78px 64px;gap:8px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:center;}
 .ch-row:last-child{border-bottom:none;}
 .ch-name{font-size:12px;font-weight:500;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.bar-wrap{position:relative;height:6px;background:var(--paper2);border-radius:3px;overflow:visible;}
+.bar-wrap{position:relative;height:6px;background:var(--paper2);border-radius:3px;}
 .bar-fill{height:100%;border-radius:3px;transition:width .4s ease;}
 .bar-target{position:absolute;top:-3px;height:12px;width:2px;border-radius:1px;background:var(--ink3);opacity:.35;}
 .ch-amt{font-family:var(--ff-m);font-size:11px;color:var(--ink);text-align:right;}
 .ch-avg{font-family:var(--ff-m);font-size:11px;color:var(--ink3);text-align:right;}
-.ch-gap{text-align:right;}
+.ch-gap-cell{text-align:right;}
 
-/* ── TABLE ── */
+/* TABLE */
 .tbl-wrap{border:1px solid var(--rule);border-radius:var(--rl);overflow:hidden;overflow-x:auto;}
 table{width:100%;border-collapse:collapse;}
-th{background:var(--paper2);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);padding:8px 11px;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap;}
-td{padding:8px 11px;font-size:12px;color:var(--ink);border-bottom:1px solid var(--rule);vertical-align:middle;}
+th{background:var(--paper2);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);padding:8px 10px;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap;cursor:pointer;user-select:none;}
+th:hover{color:var(--ink);}
+td{padding:8px 10px;font-size:12px;color:var(--ink);border-bottom:1px solid var(--rule);vertical-align:middle;}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:var(--paper2);}
 .mono{font-family:var(--ff-m);font-size:11px;}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 
-/* ── UPLOAD ZONE ── */
-.upload-zone{border:2px dashed var(--rule2);border-radius:var(--rl);padding:32px 20px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;}
+/* UPLOAD ZONE */
+.upload-zone{border:2px dashed var(--rule2);border-radius:var(--rl);padding:22px 16px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;}
 .upload-zone:hover,.upload-zone.drag{border-color:var(--sage);background:var(--sage-l);}
 .upload-zone input{display:none;}
-.uz-icon{font-size:28px;margin-bottom:10px;opacity:.5;}
-.uz-title{font-family:var(--ff-d);font-size:16px;font-weight:500;color:var(--ink);margin-bottom:4px;}
-.uz-sub{font-size:12px;color:var(--ink3);}
+.uz-icon{font-size:22px;margin-bottom:6px;opacity:.5;}
+.uz-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.uz-sub{font-size:11px;color:var(--ink3);}
 
-/* ── BANNERS ── */
+/* BANNERS */
 .banner{border-radius:var(--r);padding:10px 14px;display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.5;}
 .banner-sage{background:var(--sage-l);border:1px solid var(--sage-m);color:var(--sage);}
-.banner-rose{background:var(--rose-l);border:1px solid #e8b4b4;color:var(--rose);}
-.banner-amber{background:var(--amber-l);border:1px solid #e8c98a;color:var(--amber);}
+.banner-rose{background:var(--rose-l);border:1px solid var(--rose-m);color:var(--rose);}
+.banner-amber{background:var(--amber-l);border:1px solid var(--amber-m);color:var(--amber);}
 .banner-cobalt{background:var(--cobalt-l);border:1px solid #aec3e8;color:var(--cobalt);}
-.banner-ink{background:var(--ink);border:1px solid var(--ink);color:rgba(255,255,255,.8);}
-.banner-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+.banner-ink{background:var(--ink);border:none;color:rgba(255,255,255,.75);}
 
-/* ── FORM ── */
+/* FORM */
 .form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
 .form-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);}
-.form-input{font-family:var(--ff-b);font-size:13px;padding:8px 11px;border-radius:var(--r);border:1px solid var(--rule2);background:var(--paper);color:var(--ink);outline:none;transition:border-color .12s;}
+.form-input{font-family:var(--ff-b);font-size:13px;padding:7px 10px;border-radius:var(--r);border:1px solid var(--rule2);background:var(--paper);color:var(--ink);outline:none;transition:border-color .12s;}
 .form-input:focus{border-color:var(--sage);}
 .form-hint{font-size:11px;color:var(--ink3);line-height:1.4;}
 
-/* ── SETUP CARD ── */
-.setup-card{max-width:540px;margin:60px auto;background:var(--paper);border:1px solid var(--rule);border-radius:var(--rxl);padding:32px 36px;box-shadow:var(--sh);}
-.setup-logo{font-family:var(--ff-d);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:4px;}
-.setup-sub{font-size:13px;color:var(--ink3);margin-bottom:24px;}
-.setup-step{display:flex;gap:12px;margin-bottom:16px;}
-.step-num{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.step-body{flex:1;}
-.step-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px;}
+/* SETUP / LOGIN */
+.centered-card{max-width:520px;margin:50px auto;background:var(--paper);border:1px solid var(--rule);border-radius:var(--rxl);padding:30px 34px;box-shadow:var(--sh);}
+.setup-step{display:flex;gap:11px;margin-bottom:14px;}
+.step-num{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;}
 .step-desc{font-size:12px;color:var(--ink3);line-height:1.5;}
-code{font-family:var(--ff-m);font-size:11px;background:var(--paper3);padding:1px 6px;border-radius:4px;color:var(--ink2);}
 
-/* ── ADMIN LOGIN ── */
-.login-card{max-width:360px;margin:80px auto;background:var(--paper);border:1px solid var(--rule);border-radius:var(--rxl);padding:28px 32px;box-shadow:var(--sh);}
-
-/* ── LOADING ── */
-.loading{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink3);padding:20px 0;}
+/* LOADING */
+.loading{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink3);padding:24px 0;}
 .spinner{width:16px;height:16px;border:2px solid var(--rule2);border-top-color:var(--sage);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* ── PROGRESS ── */
-.progress-steps{display:flex;flex-direction:column;gap:8px;margin:16px 0;}
-.ps-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink3);}
+/* PROGRESS */
+.ps-item{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink3);padding:4px 0;}
 .ps-item.done{color:var(--sage);}
 .ps-item.active{color:var(--ink);font-weight:500;}
-.ps-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
-.ps-icon.done{background:var(--sage-l);color:var(--sage);}
-.ps-icon.active{background:var(--amber-l);color:var(--amber);}
-.ps-icon.idle{background:var(--paper3);color:var(--ink3);}
+.ps-dot{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
+.ps-dot.done{background:var(--sage-l);color:var(--sage);}
+.ps-dot.active{background:var(--amber-l);color:var(--amber);}
+.ps-dot.idle{background:var(--paper3);color:var(--ink3);}
 
-/* ── EMPTY STATE ── */
-.empty{text-align:center;padding:80px 20px;}
-.empty-icon{font-size:36px;margin-bottom:14px;opacity:.35;}
-.empty-title{font-family:var(--ff-d);font-size:20px;font-weight:500;color:var(--ink2);margin-bottom:6px;}
-.empty-sub{font-size:13px;color:var(--ink3);max-width:380px;margin:0 auto 20px;}
+/* EMPTY */
+.empty{text-align:center;padding:70px 20px;}
+.empty-icon{font-size:34px;margin-bottom:12px;opacity:.3;}
+.empty-title{font-family:var(--ff-d);font-size:20px;font-weight:500;color:var(--ink2);margin-bottom:5px;}
+.empty-sub{font-size:13px;color:var(--ink3);max-width:360px;margin:0 auto 18px;}
 
-/* ── SUMMARY BOX ── */
-.summary-box{background:var(--paper2);border-left:3px solid var(--sage);border-radius:0 var(--r) var(--r) 0;padding:14px 16px;font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:20px;}
+/* SUMMARY */
+.summary-box{background:var(--paper2);border-left:3px solid var(--sage);border-radius:0 var(--r) var(--r) 0;padding:12px 16px;font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:18px;}
 
-/* ── HEATMAP ── */
-.hm-grid{display:grid;gap:3px;overflow-x:auto;}
-.hm-cell{height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-m);font-size:10px;cursor:default;}
-.hm-label{font-size:11px;color:var(--ink3);padding:3px 4px;display:flex;align-items:center;}
-.hm-header{font-size:10px;font-weight:600;color:var(--ink3);padding:3px 4px;}
+/* HEATMAP */
+.hm-grid{display:grid;gap:3px;}
+.hm-cell{height:25px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-m);font-size:10px;}
+.hm-lbl{font-size:11px;color:var(--ink3);padding:2px 4px;display:flex;align-items:center;}
+.hm-hdr{font-size:10px;font-weight:600;color:var(--ink3);padding:2px 4px;text-align:center;}
 
-/* ── CHART ── */
-.chart-wrap{position:relative;}
+/* CHANNEL FILTER PILLS */
+.ch-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.ch-pill{font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid var(--rule2);background:var(--paper);color:var(--ink2);cursor:pointer;transition:background .12s;}
+.ch-pill.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.ch-pill:hover:not(.active){background:var(--paper2);}
 
-/* ── PUBLISH STATUS ── */
-.pub-status{display:flex;align-items:center;gap:8px;font-size:12px;padding:10px 14px;border-radius:var(--r);border:1px solid var(--rule);}
-.pub-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.dot-green{background:#22c97a;}
-.dot-gray{background:var(--rule2);}
-.dot-amber{background:#e8a020;}
+/* DATA STATUS */
+.data-status{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.ds-item{display:flex;align-items:center;gap:6px;font-size:11px;padding:4px 10px;border-radius:99px;border:1px solid var(--rule);background:var(--paper2);color:var(--ink3);}
+.ds-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.ds-green{background:#22c97a;}
+.ds-gray{background:var(--rule2);}
+.ds-amber{background:#e8a020;}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .kpi-strip{grid-template-columns:repeat(3,1fr);}
-  .two-col{grid-template-columns:1fr;}
-  .ch-head,.ch-row{grid-template-columns:120px 1fr 70px 60px;}
-  .ch-avg{display:none;}
-}
-@media(max-width:600px){
-  .kpi-strip{grid-template-columns:1fr 1fr;}
-  .three-col,.four-col{grid-template-columns:1fr 1fr;}
-}
+/* PUB STATUS */
+.pub-row{display:flex;align-items:center;gap:8px;font-size:12px;padding:9px 12px;border-radius:var(--r);border:1px solid var(--rule);background:var(--paper2);}
 
-/* ── ANIMATIONS ── */
-.fade-in{animation:fadeIn .3s ease forwards;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
-.stagger>*{opacity:0;animation:fadeIn .3s ease forwards;}
-.stagger>*:nth-child(1){animation-delay:.04s;}
-.stagger>*:nth-child(2){animation-delay:.08s;}
-.stagger>*:nth-child(3){animation-delay:.12s;}
-.stagger>*:nth-child(4){animation-delay:.16s;}
+/* RESPONSIVE */
+@media(max-width:1000px){.kpi-strip{grid-template-columns:repeat(3,1fr);}.two-col{grid-template-columns:1fr;}.ch-head,.ch-row{grid-template-columns:120px 1fr 68px 60px;}.ch-avg{display:none;}}
+@media(max-width:620px){.kpi-strip{grid-template-columns:1fr 1fr;}.three-col{grid-template-columns:1fr 1fr;}}
+
+/* ANIM */
+.fade-in{animation:fi .3s ease forwards;}
+@keyframes fi{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
+.stagger>*{opacity:0;animation:fi .3s ease forwards;}
+.stagger>*:nth-child(1){animation-delay:.04s;}.stagger>*:nth-child(2){animation-delay:.08s;}
+.stagger>*:nth-child(3){animation-delay:.12s;}.stagger>*:nth-child(4){animation-delay:.16s;}
 .stagger>*:nth-child(5){animation-delay:.20s;}
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="tlogo">SupplyIQ</div>
   <div class="tsep"></div>
-  <div class="tmod" id="tbar-mod">Sales Gap</div>
+  <div class="tmod" id="tbar-mod">Setup</div>
   <div class="tright" id="tbar-right">
-    <span id="tbar-pub-time" style="font-size:11px;color:rgba(255,255,255,.35);"></span>
-    <button class="tbtn" id="btn-switch-admin" onclick="gotoAdmin()" title="Admin login">⚙ Admin</button>
+    <span id="tbar-period" style="font-size:11px;color:rgba(255,255,255,.35);"></span>
+    <button class="tbtn" id="btn-goto-admin" onclick="gotoAdmin()">⚙ Admin</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════
-     VIEW: SETUP (first time)
-════════════════════════════════════════════════════ -->
-<div class="view" id="view-setup">
-  <div class="setup-card fade-in">
-    <div class="setup-logo">SupplyIQ</div>
-    <div class="setup-sub">One-time setup — takes about 5 minutes</div>
+<!-- ═══ SETUP ═══ -->
+<div class="view active" id="view-setup">
+<div class="centered-card fade-in">
+  <div style="font-family:var(--ff-d);font-size:22px;font-weight:500;margin-bottom:4px;">SupplyIQ Setup</div>
+  <div style="font-size:12px;color:var(--ink3);margin-bottom:22px;">One-time configuration — takes about 5 minutes</div>
 
-    <div class="setup-step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">Create a free GitHub account</div>
-        <div class="step-desc">Go to <a href="https://github.com" target="_blank">github.com</a> and sign up if you don't have one yet.</div>
-      </div>
-    </div>
+  <div class="setup-step"><div class="step-num">1</div><div><div class="step-title">Create a free GitHub account</div><div class="step-desc">Go to <a href="https://github.com/" target="_blank">github.com</a> and sign up if you don't have one.</div></div></div>
+  <div class="setup-step"><div class="step-num">2</div><div><div class="step-title">Create a public repo named <code>supplyiq</code></div><div class="step-desc">Make it Public, check "Add README", then go to <strong>Settings → Pages → Deploy from main → / (root)</strong>.</div></div></div>
+  <div class="setup-step"><div class="step-num">3</div><div><div class="step-title">Upload this file as <code>index.html</code></div><div class="step-desc">In your repo click <strong>Add file → Upload files</strong>, upload this HTML file, commit.</div></div></div>
+  <div class="setup-step"><div class="step-num">4</div><div><div class="step-title">Create a Personal Access Token</div><div class="step-desc"><strong>Settings → Developer settings → Fine-grained tokens</strong>. Select <strong>Only select repositories → supplyiq</strong>. Permission: <strong>Contents: Read &amp; Write</strong>. Set 90-day expiry.</div></div></div>
 
-    <div class="setup-step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">Create a new public repository</div>
-        <div class="step-desc">Name it anything — e.g. <code>supplyiq</code>. Make it <strong>Public</strong> so GitHub Pages works for free. Initialize with a README.</div>
-      </div>
-    </div>
-
-    <div class="setup-step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">Upload this file to your repo</div>
-        <div class="step-desc">In your new repo, click <strong>Add file → Upload files</strong> and upload <code>index.html</code> (this file). Commit it.</div>
-      </div>
-    </div>
-
-    <div class="setup-step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <div class="step-title">Enable GitHub Pages</div>
-        <div class="step-desc">Go to your repo <strong>Settings → Pages</strong>. Under Source, select <strong>Deploy from branch → main → / (root)</strong>. Save. Your URL will be: <code>https://yourusername.github.io/supplyiq</code></div>
-      </div>
-    </div>
-
-    <div class="setup-step">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <div class="step-title">Create a Personal Access Token</div>
-        <div class="step-desc">Go to GitHub <strong>Settings → Developer settings → Personal access tokens → Fine-grained tokens</strong>. Create one with <strong>Contents: Read and Write</strong> permission on your repo only. Copy the token.</div>
-      </div>
-    </div>
-
-    <div style="border-top:1px solid var(--rule);padding-top:20px;margin-top:8px;">
-      <div class="form-group">
-        <div class="form-label">GitHub Username</div>
-        <input class="form-input" id="setup-owner" placeholder="e.g. yiwen-zhang" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <div class="form-label">Repository Name</div>
-        <input class="form-input" id="setup-repo" placeholder="e.g. supplyiq" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <div class="form-label">Personal Access Token</div>
-        <input class="form-input" id="setup-token" type="password" placeholder="github_pat_..." autocomplete="off">
-        <div class="form-hint">Stored only in your browser's localStorage. Never sent anywhere except GitHub's own API.</div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Admin Password</div>
-        <input class="form-input" id="setup-pass" type="password" placeholder="Choose a password for the admin view">
-        <div class="form-hint">This locks the upload/publish screen from regular users.</div>
-      </div>
-      <div id="setup-error" class="banner banner-rose" style="display:none;margin-bottom:12px;">
-        <span class="banner-icon">⚠</span><span id="setup-error-msg"></span>
-      </div>
-      <button class="btn btn-primary" style="width:100%;" onclick="saveSetup()">Save &amp; Continue →</button>
-    </div>
+  <div style="border-top:1px solid var(--rule);padding-top:18px;margin-top:6px;">
+    <div class="form-group"><div class="form-label">GitHub Username</div><input class="form-input" id="s-owner" placeholder="e.g. yiwen-zhang" autocomplete="off"></div>
+    <div class="form-group"><div class="form-label">Repository Name</div><input class="form-input" id="s-repo" placeholder="supplyiq" autocomplete="off"></div>
+    <div class="form-group"><div class="form-label">Personal Access Token</div><input class="form-input" id="s-token" type="password" placeholder="github_pat_..." autocomplete="off"><div class="form-hint">Stored only in your browser. Never transmitted to anyone except GitHub's own API.</div></div>
+    <div class="form-group"><div class="form-label">Admin Password</div><input class="form-input" id="s-pass" type="password" placeholder="Choose a password for the upload view"><div class="form-hint">Keeps the upload screen private from regular viewers.</div></div>
+    <div class="form-group"><div class="form-label">Company Name (optional)</div><input class="form-input" id="s-company" placeholder="e.g. Twinlab Brands"></div>
+    <div id="setup-err" class="banner banner-rose" style="display:none;margin-bottom:12px;"><span>⚠</span><span id="setup-err-msg"></span></div>
+    <button class="btn btn-primary" style="width:100%;" onclick="saveSetup()">Save &amp; Continue →</button>
   </div>
 </div>
+</div>
 
-<!-- ═══════════════════════════════════════════════════
-     VIEW: ADMIN LOGIN
-════════════════════════════════════════════════════ -->
+<!-- ═══ LOGIN ═══ -->
 <div class="view" id="view-login">
-  <div class="login-card fade-in">
-    <div style="font-family:var(--ff-d);font-size:18px;font-weight:500;margin-bottom:4px;">Admin Access</div>
-    <div style="font-size:12px;color:var(--ink3);margin-bottom:20px;">Enter your admin password to upload and publish reports.</div>
-    <div class="form-group">
-      <div class="form-label">Password</div>
-      <input class="form-input" id="login-pass" type="password" placeholder="Admin password" onkeydown="if(event.key==='Enter')doLogin()">
-    </div>
-    <div id="login-error" class="banner banner-rose" style="display:none;margin-bottom:12px;">
-      <span class="banner-icon">⚠</span> Incorrect password.
-    </div>
-    <button class="btn btn-primary" style="width:100%;" onclick="doLogin()">Log in</button>
-    <div style="text-align:center;margin-top:12px;">
-      <button class="btn btn-sm" onclick="showView('view-user')">← Back to report</button>
-    </div>
-  </div>
+<div class="centered-card fade-in" style="max-width:340px;">
+  <div style="font-family:var(--ff-d);font-size:18px;font-weight:500;margin-bottom:4px;">Admin Login</div>
+  <div style="font-size:12px;color:var(--ink3);margin-bottom:18px;">Upload and publish reports</div>
+  <div class="form-group"><div class="form-label">Password</div><input class="form-input" id="login-pass" type="password" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()"></div>
+  <div id="login-err" class="banner banner-rose" style="display:none;margin-bottom:12px;"><span>⚠</span> Incorrect password.</div>
+  <button class="btn btn-primary" style="width:100%;" onclick="doLogin()">Log in</button>
+  <div style="text-align:center;margin-top:10px;"><button class="btn btn-sm" onclick="showView(&#39;view-user&#39;)">← View Report</button></div>
+</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════
-     VIEW: ADMIN — Upload & Publish
-════════════════════════════════════════════════════ -->
+<!-- ═══ ADMIN ═══ -->
 <div class="view" id="view-admin">
 <div class="shell">
+
   <div class="ph fade-in">
-    <div class="ph-left">
+    <div>
       <div class="ph-eye">Admin · SupplyIQ</div>
       <div class="ph-title">Upload &amp; <em>Publish</em></div>
-      <div class="ph-meta">
-        <span id="admin-pub-status-label">—</span>
-      </div>
+      <div class="ph-meta"><span id="adm-pub-label" style="color:var(--ink3);">No report published yet</span></div>
     </div>
     <div class="ph-actions">
-      <div id="admin-pub-dot" class="pub-status">
-        <div class="pub-dot dot-gray" id="gh-status-dot"></div>
-        <span id="gh-status-label">Not published yet</span>
-      </div>
-      <button class="btn" onclick="showView('view-user')">← View Report</button>
+      <div class="pub-row" id="pub-row"><div class="ds-dot ds-gray" id="pub-dot"></div><span id="pub-label">Not published</span></div>
+      <button class="btn" onclick="showView(&#39;view-user&#39;)">← View Report</button>
       <button class="btn btn-sm" onclick="openSetup()">⚙ Settings</button>
     </div>
   </div>
 
-  <!-- Step 1: Upload CSV -->
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-title">Step 1 — Upload NetSuite CSV</div>
-    <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;">
-      Export <code>TCC Sales History By Customer w/ QTY and Amount – All Years</code> from NetSuite as CSV.
-    </div>
-    <div class="upload-zone" id="admin-drop"
-      ondragover="event.preventDefault();this.classList.add('drag')"
-      ondragleave="this.classList.remove('drag')"
-      ondrop="handleAdminDrop(event)"
-      onclick="document.getElementById('admin-file').click()">
-      <div class="uz-icon">📄</div>
-      <div class="uz-title">Drop CSV file here or click to browse</div>
-      <div class="uz-sub" id="admin-file-label">sales_history_all_years.csv</div>
-      <input type="file" id="admin-file" accept=".csv" onchange="handleAdminFile(event)">
-    </div>
-    <div id="admin-csv-loaded" class="banner banner-sage" style="display:none;margin-top:12px;">
-      <span class="banner-icon">✓</span>
-      <span id="admin-csv-label">File loaded</span>
+  <!-- STEP 1: Upload CSVs -->
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-title">Step 1 — Upload NetSuite CSV exports</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+      <!-- TCC Sales History -->
+      <div>
+        <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;">Sales History <span style="font-size:11px;font-weight:400;color:var(--rose);">Required monthly</span></div>
+        <div style="font-size:11px;color:var(--ink3);margin-bottom:8px;">NS saved search: <code>TCCSalesHistoryByCustomerwQTYan</code></div>
+        <div class="upload-zone" id="zone-tcc" ondragover="event.preventDefault();this.classList.add(&#39;drag&#39;)" ondragleave="this.classList.remove(&#39;drag&#39;)" ondrop="dropFile(event,&#39;tcc&#39;)" onclick="document.getElementById(&#39;file-tcc&#39;).click()">
+          <div class="uz-icon">📊</div>
+          <div class="uz-title">Drop TCC sales CSV here</div>
+          <div class="uz-sub" id="lbl-tcc">sales_history_all_years.csv</div>
+          <input type="file" id="file-tcc" accept=".csv" onchange="loadFile(event,&#39;tcc&#39;)">
+        </div>
+        <div id="status-tcc" class="banner banner-sage" style="display:none;margin-top:8px;font-size:11px;"></div>
+      </div>
+
+      <!-- Items for Display Name -->
+      <div>
+        <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;">Items Lookup <span style="font-size:11px;font-weight:400;color:var(--amber);">Rarely changes</span></div>
+        <div style="font-size:11px;color:var(--ink3);margin-bottom:8px;">NS saved search: <code>Items for Display Name</code> · maps old SKUs to new + clean names</div>
+        <div class="upload-zone" id="zone-items" ondragover="event.preventDefault();this.classList.add(&#39;drag&#39;)" ondragleave="this.classList.remove(&#39;drag&#39;)" ondrop="dropFile(event,&#39;items&#39;)" onclick="document.getElementById(&#39;file-items&#39;).click()">
+          <div class="uz-icon">📋</div>
+          <div class="uz-title">Drop Items CSV here</div>
+          <div class="uz-sub" id="lbl-items">items_for_display_name.csv</div>
+          <input type="file" id="file-items" accept=".csv" onchange="loadFile(event,&#39;items&#39;)">
+        </div>
+        <div id="status-items" class="banner banner-sage" style="display:none;margin-top:8px;font-size:11px;"></div>
+        <div style="margin-top:8px;">
+          <button class="btn btn-sm" id="btn-use-cached-items" onclick="useCachedItems()" style="display:none;">↺ Use previously uploaded items</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Step 2: Configure -->
-  <div class="card" style="margin-bottom:16px;">
+  <!-- STEP 2: Configure -->
+  <div class="card" style="margin-bottom:14px;">
     <div class="card-title">Step 2 — Configure Report</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-      <div class="form-group" style="margin-bottom:0;">
-        <div class="form-label">Report Month</div>
-        <input class="form-input" type="month" id="cfg-month">
-      </div>
-      <div class="form-group" style="margin-bottom:0;">
-        <div class="form-label">Compare vs</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;">
+      <div class="form-group" style="margin:0;"><div class="form-label">Report Month</div><input class="form-input" type="month" id="cfg-month"></div>
+      <div class="form-group" style="margin:0;"><div class="form-label">Compare vs</div>
         <select class="form-input" id="cfg-compare">
-          <option value="l12m">Last 12 months average</option>
+          <option value="l12m">L12M Average</option>
           <option value="yoy">Same month last year</option>
           <option value="lm">Last month</option>
         </select>
       </div>
-      <div class="form-group" style="margin-bottom:0;">
-        <div class="form-label">Company / Brand Name</div>
-        <input class="form-input" id="cfg-company" placeholder="e.g. Twinlab Brands">
+      <div class="form-group" style="margin:0;"><div class="form-label">Channel filter</div>
+        <select class="form-input" id="cfg-channel">
+          <option value="all">All Channels</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin:0;"><div class="form-label">Brand filter</div>
+        <select class="form-input" id="cfg-brand">
+          <option value="all">All Brands</option>
+        </select>
       </div>
     </div>
   </div>
 
-  <!-- Step 3: Analyze -->
-  <div class="card" style="margin-bottom:16px;">
+  <!-- STEP 3: Analyze -->
+  <div class="card" style="margin-bottom:14px;">
     <div class="card-title">Step 3 — Analyze with Claude AI</div>
-    <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;">Claude will analyze your sales data and generate channel insights, product analysis, and recommended actions for your team.</div>
-
+    <div style="font-size:12px;color:var(--ink3);margin-bottom:12px;">Claude reads your joined sales + item data and generates channel insights, product analysis, and recommended actions.</div>
     <div class="form-group">
       <div class="form-label">Anthropic API Key</div>
       <input class="form-input" id="cfg-apikey" type="password" placeholder="sk-ant-api03-..." autocomplete="off">
-      <div class="form-hint">Used only to call Claude API from your browser. Stored in localStorage. Get yours at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a></div>
+      <div class="form-hint">Used only to call Claude from your browser. Stored in localStorage. Get yours at <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></div>
     </div>
-
-    <div id="analyze-progress" style="display:none;">
-      <div class="progress-steps" id="progress-steps"></div>
+    <div id="prog-section" style="display:none;margin-bottom:12px;">
+      <div id="prog-steps"></div>
     </div>
-
-    <div id="analyze-error" class="banner banner-rose" style="display:none;margin-bottom:12px;">
-      <span class="banner-icon">⚠</span><span id="analyze-error-msg"></span>
-    </div>
-
-    <button class="btn btn-sage btn-icon" id="btn-analyze" onclick="runAnalysis()">
-      <span>✦</span> Analyze with Claude
-    </button>
+    <div id="analyze-err" class="banner banner-rose" style="display:none;margin-bottom:12px;"><span>⚠</span><span id="analyze-err-msg"></span></div>
+    <button class="btn btn-sage btn-icon" id="btn-analyze" onclick="runAnalysis()">✦ Analyze with Claude</button>
   </div>
 
-  <!-- Step 4: Preview & Publish -->
-  <div id="publish-section" style="display:none;">
+  <!-- STEP 4: Publish -->
+  <div id="pub-section" style="display:none;">
     <div class="card">
       <div class="card-title">Step 4 — Preview &amp; Publish</div>
       <div id="analysis-preview" style="margin-bottom:16px;"></div>
       <div class="banner banner-cobalt" style="margin-bottom:14px;">
-        <span class="banner-icon">ℹ</span>
-        <div>Publishing will save <code>report.json</code> to your GitHub repo. Your team's page will update automatically within 1–2 minutes.</div>
+        <span>ℹ</span>
+        <div>Publishing saves <code>report.json</code> to your GitHub repo. Your team's page auto-updates within 1–2 minutes. The <strong>Items CSV data</strong> is also cached in the report so your team sees clean product names without needing to re-upload items.</div>
       </div>
-      <div style="display:flex;gap:10px;align-items:center;">
-        <button class="btn btn-primary btn-icon" id="btn-publish" onclick="publishReport()">
-          <span>⬆</span> Publish to GitHub
-        </button>
-        <button class="btn" onclick="downloadJSON()">⬇ Download JSON only</button>
-        <span id="publish-result" style="font-size:12px;color:var(--sage);display:none;">✓ Published successfully!</span>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-icon" id="btn-publish" onclick="publishReport()">⬆ Publish to GitHub</button>
+        <button class="btn" onclick="downloadJSON()">⬇ Download JSON</button>
+        <span id="pub-result" style="font-size:12px;color:var(--sage);display:none;">✓ Published! Team page updates in ~2 min.</span>
       </div>
     </div>
   </div>
@@ -457,843 +386,901 @@ code{font-family:var(--ff-m);font-size:11px;background:var(--paper3);padding:1px
 </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════
-     VIEW: USER — Report Dashboard
-════════════════════════════════════════════════════ -->
-<div class="view active" id="view-user">
+<!-- ═══ USER REPORT ═══ -->
+<div class="view" id="view-user">
 <div class="shell">
 
-  <!-- Loading state -->
-  <div id="user-loading" class="loading fade-in">
-    <div class="spinner"></div>
-    <span>Loading latest report…</span>
-  </div>
+  <div id="u-loading" class="loading fade-in"><div class="spinner"></div><span>Loading latest report…</span></div>
 
-  <!-- No report yet -->
-  <div id="user-empty" style="display:none;">
-    <div class="empty fade-in">
+  <div id="u-empty" style="display:none;" class="fade-in">
+    <div class="empty">
       <div class="empty-icon">📊</div>
-      <div class="empty-title">Report not published yet</div>
-      <div class="empty-sub">The admin hasn't published a sales gap report yet. Check back soon, or contact your supply chain team.</div>
+      <div class="empty-title">No report published yet</div>
+      <div class="empty-sub">The admin hasn't published a sales gap report. Check back after the monthly report is run.</div>
+      <button class="btn btn-sm" onclick="gotoAdmin()">Admin upload →</button>
     </div>
   </div>
 
-  <!-- Report content -->
-  <div id="user-report" style="display:none;" class="fade-in">
+  <div id="u-report" style="display:none;">
 
-    <div class="ph">
-      <div class="ph-left">
-        <div class="ph-eye" id="rpt-company">SupplyIQ</div>
+    <div class="ph fade-in">
+      <div>
+        <div class="ph-eye" id="r-company">SupplyIQ</div>
         <div class="ph-title">Sales Gap <em>Report</em></div>
         <div class="ph-meta">
-          <span id="rpt-period">—</span>
-          <span class="ph-dot"></span>
-          <span id="rpt-compare-label">vs L12M avg</span>
-          <span class="ph-dot"></span>
-          <span id="rpt-generated">—</span>
+          <span id="r-period">—</span><span class="ph-dot"></span>
+          <span id="r-compare">—</span><span class="ph-dot"></span>
+          <span id="r-generated">—</span>
         </div>
       </div>
       <div class="ph-actions">
-        <button class="btn btn-sm" onclick="exportCSVReport()">⬇ Export CSV</button>
+        <button class="btn btn-sm" onclick="exportCSV()">⬇ Export CSV</button>
       </div>
     </div>
 
-    <!-- Summary -->
-    <div class="summary-box" id="rpt-summary"></div>
+    <div class="summary-box" id="r-summary"></div>
+    <div class="kpi-strip stagger" id="r-kpis"></div>
 
-    <!-- KPIs -->
-    <div class="kpi-strip stagger" id="rpt-kpis"></div>
-
-    <!-- Tabs -->
     <div class="tabs">
-      <div class="tab active" onclick="showTab('channel')">Channel View</div>
-      <div class="tab" onclick="showTab('product')">Top Products</div>
-      <div class="tab" onclick="showTab('trend')">Trend</div>
-      <div class="tab" onclick="showTab('heatmap')">Heatmap</div>
+      <div class="tab active" onclick="showTab(&#39;channel&#39;)">By Channel</div>
+      <div class="tab" onclick="showTab(&#39;family&#39;)">By Product Family</div>
+      <div class="tab" onclick="showTab(&#39;sku&#39;)">By SKU</div>
+      <div class="tab" onclick="showTab(&#39;customer&#39;)">By Customer</div>
+      <div class="tab" onclick="showTab(&#39;trend&#39;)">12-Month Trend</div>
+      <div class="tab" onclick="showTab(&#39;heatmap&#39;)">Heatmap</div>
     </div>
 
-    <!-- Tab: Channel -->
+    <!-- CHANNEL TAB -->
     <div class="tabpanel active" id="tp-channel">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <div class="card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-              <div class="card-title" style="margin-bottom:0;">Sales by channel</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+              <div class="card-title" style="margin:0;">Sales by channel</div>
+              <span id="ch-yoy-toggle" style="font-size:11px;color:var(--ink3);"></span>
             </div>
-            <canvas id="chart-channel" height="200"></canvas>
-            <div style="height:14px;"></div>
+            <canvas id="chart-channel" height="190"></canvas>
+            <div style="height:12px;"></div>
             <div class="ch-table">
-              <div class="ch-head">
-                <div>Channel</div><div>vs baseline</div>
-                <div class="num">Current</div><div class="num">Avg</div><div class="num">Gap</div>
-              </div>
+              <div class="ch-head"><div>Channel</div><div>vs baseline</div><div class="num">Current</div><div class="num">Avg</div><div class="num">Gap %</div></div>
               <div id="ch-rows"></div>
             </div>
           </div>
         </div>
-        <div class="insight-panel" id="rpt-insights">
-          <div class="ip-header">Key insights &amp; actions</div>
+        <div class="insight-panel" id="r-insights">
+          <div class="ip-header">Claude's insights</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.35);padding:8px 0;">No report loaded.</div>
         </div>
       </div>
     </div>
 
-    <!-- Tab: Products -->
-    <div class="tabpanel" id="tp-product">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;" id="prod-cols"></div>
+    <!-- PRODUCT FAMILY TAB -->
+    <div class="tabpanel" id="tp-family">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" id="fam-cols"></div>
+        <div class="tbl-wrap">
+          <table><thead><tr id="fam-thead"></tr></thead><tbody id="fam-tbody"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKU TAB -->
+    <div class="tabpanel" id="tp-sku">
+      <div style="margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);">Channel:</span>
+        <div class="ch-filters" id="sku-ch-filters" style="margin:0;"></div>
+        <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);margin-left:8px;">Brand:</span>
+        <select class="form-input" id="sku-brand-filter" onchange="renderSKUTab()" style="height:28px;font-size:11px;padding:3px 8px;"><option value="">All Brands</option></select>
+        <select class="form-input" id="sku-sort" onchange="renderSKUTab()" style="height:28px;font-size:11px;padding:3px 8px;">
+          <option value="gap_asc">Gap % worst first</option>
+          <option value="gap_desc">Gap % best first</option>
+          <option value="cur_desc">Current $ highest</option>
+          <option value="abs_desc">Abs gap $ largest</option>
+        </select>
+      </div>
       <div class="tbl-wrap">
-        <table>
-          <thead><tr id="prod-thead"></tr></thead>
-          <tbody id="prod-tbody"></tbody>
-        </table>
+        <table><thead><tr id="sku-thead"></tr></thead><tbody id="sku-tbody"></tbody></table>
       </div>
     </div>
 
-    <!-- Tab: Trend -->
+    <!-- CUSTOMER TAB -->
+    <div class="tabpanel" id="tp-customer">
+      <div style="margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);">Channel:</span>
+        <div class="ch-filters" id="cust-ch-filters" style="margin:0;"></div>
+      </div>
+      <div class="tbl-wrap">
+        <table><thead><tr id="cust-thead"></tr></thead><tbody id="cust-tbody"></tbody></table>
+      </div>
+    </div>
+
+    <!-- TREND TAB -->
     <div class="tabpanel" id="tp-trend">
-      <div class="card">
-        <div class="card-title">12-month rolling trend</div>
-        <canvas id="chart-trend" height="260"></canvas>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="card">
+          <div class="card-title">12-month rolling sales trend — all channels</div>
+          <canvas id="chart-trend" height="250"></canvas>
+        </div>
+        <div id="trend-minis" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"></div>
       </div>
     </div>
 
-    <!-- Tab: Heatmap -->
+    <!-- HEATMAP TAB -->
     <div class="tabpanel" id="tp-heatmap">
       <div class="card">
         <div class="card-title">Channel × month heatmap</div>
-        <div class="card-sub" style="margin-bottom:14px;">Color = deviation from each channel's average · green = above · red = below</div>
-        <div id="heatmap-container"></div>
+        <div class="card-sub" style="margin-bottom:14px;">Color = deviation from each channel's own average · darker green = above avg · darker red = below avg</div>
+        <div id="heatmap-container" style="overflow-x:auto;"></div>
       </div>
     </div>
 
-  </div>
+  </div><!-- /u-report -->
 </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════════ -->
+<!-- ═══════════════════ SCRIPT ═══════════════════ -->
 <script>
-// ══════════════════════════════════════════════════════
-//  CONFIG & STATE
-// ══════════════════════════════════════════════════════
-const CFG_KEY = 'supplyiq_cfg';
-let CFG = JSON.parse(localStorage.getItem(CFG_KEY) || '{}');
+// ── CONFIG ──────────────────────────────────────────────
+const CFG_KEY = 'supplyiq_v2';
+let CFG = {};
+try { CFG = JSON.parse(localStorage.getItem(CFG_KEY)||'{}'); } catch(e){}
 let REPORT = null;
-let RAW_CSV = [];
+let RAW_TCC = [];
+let RAW_ITEMS = [];
 let ANALYSIS = null;
 let adminLoggedIn = false;
+let CACHED_ITEMS_KEY = 'supplyiq_items_cache';
 
-// ══════════════════════════════════════════════════════
-//  VIEW ROUTING
-// ══════════════════════════════════════════════════════
-function showView(id) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+// ── VIEW ROUTING ─────────────────────────────────────────
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const modMap = {'view-user':'Sales Gap','view-admin':'Admin · Upload & Publish','view-setup':'Setup','view-login':'Admin Login'};
-  document.getElementById('tbar-mod').textContent = modMap[id] || 'SupplyIQ';
-  if (id === 'view-admin') {
-    document.getElementById('btn-switch-admin').style.display = 'none';
-    document.getElementById('tbar-right').insertAdjacentHTML('afterbegin','<button class="tbtn danger" onclick="adminLogout()">Log out</button>');
-  }
+  const mods={view_user:'Sales Gap',view_admin:'Admin · Upload',view_setup:'Setup',view_login:'Login'};
+  document.getElementById('tbar-mod').textContent = mods[id.replace('-','_')]||'SupplyIQ';
 }
-
-function gotoAdmin() {
-  if (!CFG.owner) { showView('view-setup'); return; }
-  if (adminLoggedIn) { showView('view-admin'); return; }
+function gotoAdmin(){
+  if(!CFG.owner){showView('view-setup');return;}
+  if(adminLoggedIn){showView('view-admin');return;}
   showView('view-login');
 }
+function openSetup(){showView('view-setup');if(CFG.owner)document.getElementById('s-owner').value=CFG.owner||'';if(CFG.repo)document.getElementById('s-repo').value=CFG.repo||'';}
+function adminLogout(){adminLoggedIn=false;document.querySelector('.tbtn.danger')?.remove();document.getElementById('btn-goto-admin').style.display='';showView('view-user');}
 
-function adminLogout() {
-  adminLoggedIn = false;
-  document.querySelector('.tbtn.danger')?.remove();
-  document.getElementById('btn-switch-admin').style.display = '';
-  showView('view-user');
-}
-
-function openSetup() { showView('view-setup'); populateSetupForm(); }
-
-function populateSetupForm() {
-  if (CFG.owner) document.getElementById('setup-owner').value = CFG.owner || '';
-  if (CFG.repo)  document.getElementById('setup-repo').value  = CFG.repo  || '';
-}
-
-// ══════════════════════════════════════════════════════
-//  SETUP
-// ══════════════════════════════════════════════════════
-function saveSetup() {
-  const owner = document.getElementById('setup-owner').value.trim();
-  const repo  = document.getElementById('setup-repo').value.trim();
-  const token = document.getElementById('setup-token').value.trim();
-  const pass  = document.getElementById('setup-pass').value.trim();
-  const err   = document.getElementById('setup-error');
-  const msg   = document.getElementById('setup-error-msg');
-
-  if (!owner || !repo) { err.style.display='flex'; msg.textContent='GitHub username and repo name are required.'; return; }
-  if (!pass && !CFG.passHash) { err.style.display='flex'; msg.textContent='Please set an admin password.'; return; }
-
-  CFG.owner = owner;
-  CFG.repo  = repo;
-  if (token) CFG.token = token;
-  if (pass)  CFG.passHash = simpleHash(pass);
-  if (document.getElementById('cfg-company').value) CFG.company = document.getElementById('cfg-company').value;
-
-  localStorage.setItem(CFG_KEY, JSON.stringify(CFG));
-  err.style.display = 'none';
+// ── SETUP ───────────────────────────────────────────────
+function saveSetup(){
+  const owner=document.getElementById('s-owner').value.trim();
+  const repo=document.getElementById('s-repo').value.trim();
+  const token=document.getElementById('s-token').value.trim();
+  const pass=document.getElementById('s-pass').value.trim();
+  const company=document.getElementById('s-company').value.trim();
+  const err=document.getElementById('setup-err');
+  if(!owner||!repo){err.style.display='flex';document.getElementById('setup-err-msg').textContent='GitHub username and repo name are required.';return;}
+  if(!pass&&!CFG.passHash){err.style.display='flex';document.getElementById('setup-err-msg').textContent='Please set an admin password.';return;}
+  CFG.owner=owner;CFG.repo=repo;
+  if(token)CFG.token=token;
+  if(pass)CFG.passHash=fhash(pass);
+  if(company)CFG.company=company;
+  localStorage.setItem(CFG_KEY,JSON.stringify(CFG));
+  err.style.display='none';
   showView('view-login');
 }
+function fhash(s){let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*0x01000193)>>>0;}return h.toString(16);}
 
-function simpleHash(str) {
-  let h = 0x811c9dc5;
-  for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = (h * 0x01000193) >>> 0; }
-  return h.toString(16);
-}
-
-// ══════════════════════════════════════════════════════
-//  LOGIN
-// ══════════════════════════════════════════════════════
-function doLogin() {
-  const pass = document.getElementById('login-pass').value;
-  if (simpleHash(pass) === CFG.passHash) {
-    adminLoggedIn = true;
-    document.getElementById('login-error').style.display = 'none';
-    document.getElementById('login-pass').value = '';
-    // restore API key if saved
-    if (CFG.apiKey) document.getElementById('cfg-apikey').value = CFG.apiKey;
-    if (CFG.company) document.getElementById('cfg-company').value = CFG.company;
-    // set default month to current
-    const now = new Date();
-    document.getElementById('cfg-month').value = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0');
-    showView('view-admin');
+// ── LOGIN ────────────────────────────────────────────────
+function doLogin(){
+  const p=document.getElementById('login-pass').value;
+  if(fhash(p)===CFG.passHash){
+    adminLoggedIn=true;
+    document.getElementById('login-err').style.display='none';
+    document.getElementById('login-pass').value='';
+    if(CFG.apiKey)document.getElementById('cfg-apikey').value=CFG.apiKey;
+    if(CFG.company)document.getElementById('s-company').value=CFG.company;
+    const now=new Date();
+    document.getElementById('cfg-month').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+    // Check for cached items
+    const cached=localStorage.getItem(CACHED_ITEMS_KEY);
+    if(cached){
+      document.getElementById('btn-use-cached-items').style.display='inline-block';
+    }
     updateAdminPubStatus();
+    showView('view-admin');
   } else {
-    document.getElementById('login-error').style.display = 'flex';
+    document.getElementById('login-err').style.display='flex';
   }
 }
 
-// ══════════════════════════════════════════════════════
-//  CSV PARSING (inline, no PapaParse dependency)
-// ══════════════════════════════════════════════════════
-function parseCSV(text) {
-  const lines = text.split(/\r?\n/);
-  if (!lines.length) return [];
-  const headers = splitCSVLine(lines[0]);
-  const rows = [];
-  for (let i = 1; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
-    const vals = splitCSVLine(lines[i]);
-    const row = {};
-    headers.forEach((h, j) => { row[h.trim()] = (vals[j] || '').trim(); });
+// ── CSV PARSER ───────────────────────────────────────────
+function parseCSV(text){
+  const lines=text.split(/\r?\n/);
+  if(!lines.length)return[];
+  const headers=splitLine(lines[0]);
+  const rows=[];
+  for(let i=1;i<lines.length;i++){
+    if(!lines[i].trim())continue;
+    const vals=splitLine(lines[i]);
+    const row={};
+    headers.forEach((h,j)=>{row[h.trim()]=vals[j]?vals[j].trim():'';});
     rows.push(row);
   }
   return rows;
 }
-
-function splitCSVLine(line) {
-  const result = []; let cur = ''; let inQ = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (c === '"') {
-      if (inQ && line[i+1] === '"') { cur += '"'; i++; } else { inQ = !inQ; }
-    } else if (c === ',' && !inQ) {
-      result.push(cur); cur = '';
-    } else { cur += c; }
+function splitLine(line){
+  const r=[];let cur='';let inQ=false;
+  for(let i=0;i<line.length;i++){
+    const c=line[i];
+    if(c==='"'){if(inQ&&line[i+1]==='"'){cur+='"';i++;}else{inQ=!inQ;}}
+    else if(c===','&&!inQ){r.push(cur);cur='';}
+    else{cur+=c;}
   }
-  result.push(cur);
-  return result;
+  r.push(cur);
+  return r;
 }
 
-// ══════════════════════════════════════════════════════
-//  COLUMN DETECTION
-// ══════════════════════════════════════════════════════
-let COLS = {};
-function detectCols(headers) {
-  const find = (...cands) => {
-    for (const c of cands) {
-      const h = headers.find(h => h.toLowerCase().replace(/[\s_\-\/()]/g,'').includes(c.toLowerCase().replace(/[\s_\-\/()]/g,'')));
-      if (h) return h;
+// ── FILE LOADING ─────────────────────────────────────────
+function dropFile(e,type){e.preventDefault();document.getElementById('zone-'+type).classList.remove('drag');loadFile({target:{files:e.dataTransfer.files}},type);}
+function loadFile(evt,type){
+  const file=evt.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const rows=parseCSV(e.target.result);
+    if(type==='tcc'){
+      RAW_TCC=rows;
+      document.getElementById('lbl-tcc').textContent=file.name+' · '+rows.length.toLocaleString()+' rows';
+      showStatus('tcc','✓ '+file.name+' — '+rows.length.toLocaleString()+' rows loaded');
+      populateConfigFilters();
+    } else {
+      RAW_ITEMS=rows;
+      // Cache items in localStorage for future sessions
+      try{localStorage.setItem(CACHED_ITEMS_KEY,JSON.stringify(rows.slice(0,2000)));}catch(e){}
+      document.getElementById('lbl-items').textContent=file.name+' · '+rows.length.toLocaleString()+' items';
+      showStatus('items','✓ '+file.name+' — '+rows.length.toLocaleString()+' items loaded');
+      document.getElementById('btn-use-cached-items').style.display='none';
     }
-    return null;
-  };
-  COLS = {
-    customer: find('customer','channel','account','soldto','entity') || headers[0],
-    date:     find('date','month','period','trandate','postingperiod','closingdate'),
-    amount:   find('netamount','amount','netsales','sales','revenue','total'),
-    qty:      find('quantity','qty','units','unitssold'),
-    sku:      find('sku','itemnumber','item','internalid'),
-    desc:     find('description','itemname','productname','name','product'),
-    brand:    find('brand','brandname'),
-    cat:      find('category','productcategory','itemcategory'),
-  };
-}
-
-function g(row, col) { return col ? (row[col] || '') : ''; }
-function toAmt(row) { return parseFloat(String(g(row,COLS.amount)).replace(/[$, ]/g,'')) || 0; }
-function toQty(row) { return parseFloat(String(g(row,COLS.qty)).replace(/[, ]/g,'')) || 0; }
-
-function parseMonth(row) {
-  const raw = g(row, COLS.date);
-  if (!raw) return null;
-  let m = raw.match(/^(\d{4})[\/\-](\d{1,2})/);
-  if (m) return m[1]+'-'+m[2].padStart(2,'0');
-  m = raw.match(/^(\d{1,2})[\/\-](\d{2,4})$/);
-  if (m) { const mo=m[1].padStart(2,'0'); const yr=m[2].length===2?'20'+m[2]:m[2]; return yr+'-'+mo; }
-  const mos={january:'01',february:'02',march:'03',april:'04',may:'05',june:'06',july:'07',august:'08',september:'09',october:'10',november:'11',december:'12',jan:'01',feb:'02',mar:'03',apr:'04',jun:'06',jul:'07',aug:'08',sep:'09',oct:'10',nov:'11',dec:'12'};
-  m = raw.toLowerCase().match(/([a-z]+)[\s\-\/,]*(\d{4})/);
-  if (m && mos[m[1]]) return m[2]+'-'+mos[m[1]];
-  m = raw.toLowerCase().match(/(\d{4})[\s\-\/,]*([a-z]+)/);
-  if (m && mos[m[2]]) return m[1]+'-'+mos[m[2]];
-  return null;
-}
-
-// ══════════════════════════════════════════════════════
-//  DATA AGGREGATION
-// ══════════════════════════════════════════════════════
-function buildMonthlyData(rows) {
-  const data = {};
-  for (const row of rows) {
-    const mo = parseMonth(row); if (!mo) continue;
-    const ch = g(row, COLS.customer) || 'Unknown';
-    const a  = toAmt(row); const q = toQty(row);
-    const sku  = g(row, COLS.sku) || g(row, COLS.desc) || 'Unknown';
-    const desc = g(row, COLS.desc) || sku;
-    const brand = g(row, COLS.brand) || '';
-    const cat   = g(row, COLS.cat) || '';
-    if (!data[mo]) data[mo] = {};
-    if (!data[mo][ch]) data[mo][ch] = { amt:0, qty:0, skus:{} };
-    data[mo][ch].amt += a; data[mo][ch].qty += q;
-    if (!data[mo][ch].skus[sku]) data[mo][ch].skus[sku] = {amt:0,qty:0,desc,brand,cat};
-    data[mo][ch].skus[sku].amt += a; data[mo][ch].skus[sku].qty += q;
-  }
-  return data;
-}
-
-// ══════════════════════════════════════════════════════
-//  FORMATTING
-// ══════════════════════════════════════════════════════
-function fmt(v,d=0){return Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
-function fmtK(v){const a=Math.abs(v);if(a>=1e6)return(v/1e6).toFixed(1)+'M';if(a>=1e3)return(v/1e3).toFixed(0)+'K';return fmt(v);}
-function fmtDelta(pct,inline=false){
-  if(!isFinite(pct)) return '';
-  const cls=pct>3?'d-up':pct<-3?'d-down':'d-flat';
-  const sign=pct>0?'+':'';
-  if(inline) return `<span class="delta ${cls}">${sign}${fmt(pct,1)}%</span>`;
-  return `<span class="delta ${cls}">${sign}${fmt(pct,1)}%</span>`;
-}
-function moLabel(ym){if(!ym)return'';const[yr,mo]=ym.split('-');const n=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return(n[parseInt(mo)-1]||mo)+' '+yr;}
-
-// ══════════════════════════════════════════════════════
-//  ADMIN FILE HANDLING
-// ══════════════════════════════════════════════════════
-function handleAdminFile(evt) { loadAdminCSV(evt.target.files[0]); }
-function handleAdminDrop(evt) {
-  evt.preventDefault();
-  document.getElementById('admin-drop').classList.remove('drag');
-  loadAdminCSV(evt.dataTransfer.files[0]);
-}
-function loadAdminCSV(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    RAW_CSV = parseCSV(e.target.result);
-    detectCols(Object.keys(RAW_CSV[0] || {}));
-    document.getElementById('admin-file-label').textContent = file.name + ' · ' + RAW_CSV.length.toLocaleString() + ' rows';
-    document.getElementById('admin-csv-loaded').style.display = 'flex';
-    document.getElementById('admin-csv-label').textContent = '✓ ' + file.name + ' loaded — ' + RAW_CSV.length.toLocaleString() + ' rows';
   };
   reader.readAsText(file);
 }
-
-// ══════════════════════════════════════════════════════
-//  CLAUDE ANALYSIS
-// ══════════════════════════════════════════════════════
-async function runAnalysis() {
-  const apiKey = document.getElementById('cfg-apikey').value.trim();
-  const month  = document.getElementById('cfg-month').value;
-  const compare= document.getElementById('cfg-compare').value;
-  const company= document.getElementById('cfg-company').value.trim() || 'the company';
-
-  const errEl  = document.getElementById('analyze-error');
-  const errMsg = document.getElementById('analyze-error-msg');
-
-  if (!RAW_CSV.length) { errEl.style.display='flex'; errMsg.textContent='Please upload a CSV file first.'; return; }
-  if (!apiKey) { errEl.style.display='flex'; errMsg.textContent='Please enter your Anthropic API key.'; return; }
-  if (!month) { errEl.style.display='flex'; errMsg.textContent='Please select a report month.'; return; }
-
-  errEl.style.display = 'none';
-  CFG.apiKey = apiKey;
-  if (company) CFG.company = company;
-  localStorage.setItem(CFG_KEY, JSON.stringify(CFG));
-
-  // Build data summary to send to Claude
-  const data = buildMonthlyData(RAW_CSV);
-  const allMonths = Object.keys(data).sort();
-  const curIdx = allMonths.indexOf(month);
-  const channels = [...new Set(Object.values(data).flatMap(mo => Object.keys(mo)))].sort();
-
-  const l12Mos = allMonths.slice(Math.max(0,curIdx-12), curIdx);
-  const yoyMo  = month ? (parseInt(month.split('-')[0])-1)+'-'+month.split('-')[1] : null;
-  const lastMo = curIdx > 0 ? allMonths[curIdx-1] : null;
-  const baseMos = compare==='l12m'?l12Mos:compare==='yoy'?(yoyMo?[yoyMo]:l12Mos):(lastMo?[lastMo]:l12Mos);
-  const baseLabel = compare==='l12m'?`last ${l12Mos.length} months average`:compare==='yoy'?`same month last year (${moLabel(yoyMo)})`:(`last month (${moLabel(lastMo)})`);
-
-  // Build compact summary for Claude
-  const chSummary = channels.map(ch => {
-    const cur = data[month]?.[ch]?.amt || 0;
-    const bVals = baseMos.map(m => data[m]?.[ch]?.amt || 0);
-    const base = bVals.length ? bVals.reduce((a,b)=>a+b,0)/bVals.length : 0;
-    const gap = base > 0 ? (cur-base)/base*100 : 0;
-    return { channel:ch, current:Math.round(cur), baseline:Math.round(base), gap_pct:parseFloat(gap.toFixed(1)) };
-  }).filter(c => c.current > 0 || c.baseline > 0);
-
-  // Top/bottom SKUs
-  const skuMap = {};
-  for (const ch of channels) {
-    const curSkus = data[month]?.[ch]?.skus || {};
-    for (const [sku, info] of Object.entries(curSkus)) {
-      if (!skuMap[sku]) skuMap[sku] = {sku, desc:info.desc, brand:info.brand, cat:info.cat, cur:0, curQty:0, baseAmts:[]};
-      skuMap[sku].cur += info.amt; skuMap[sku].curQty += info.qty;
+function showStatus(type,msg){const el=document.getElementById('status-'+type);el.style.display='flex';el.innerHTML='<span>✓</span><span>'+msg+'</span>';}
+function useCachedItems(){
+  try{
+    const cached=localStorage.getItem(CACHED_ITEMS_KEY);
+    if(cached){
+      RAW_ITEMS=JSON.parse(cached);
+      showStatus('items','↺ Using cached items — '+RAW_ITEMS.length.toLocaleString()+' items');
     }
-    for (const mo of baseMos) {
-      const bSkus = data[mo]?.[ch]?.skus || {};
-      for (const [sku, info] of Object.entries(bSkus)) {
-        if (!skuMap[sku]) skuMap[sku] = {sku, desc:info.desc, brand:info.brand, cat:info.cat, cur:0, curQty:0, baseAmts:[]};
-        skuMap[sku].baseAmts.push(info.amt);
+  }catch(e){}
+}
+
+// ── ITEM LOOKUP TABLE ─────────────────────────────────────
+// Returns: { baseItemName -> { display, brand, cat, family, plm, core, replacedBy } }
+// Also builds a canonical map: old base -> new base (via Replaced By chain)
+function buildItemLookup(items){
+  const lookup={};
+  const rbMap={};// old base -> new base
+  for(const row of items){
+    const base=String(row['Base Item Name']||row['base_item_name']||'').trim();
+    const disp=String(row['Display Name']||row['display_name']||row['Description']||'').trim();
+    const brand=String(row['Brand']||'').trim();
+    const cat=String(row['Product Category']||row['product_category']||'').trim();
+    const family=String(row['Product Family']||row['product_family']||'').trim();
+    const plm=String(row['PLM Stage']||row['plm_stage']||'').trim();
+    const core=String(row['Core SKU']||row['core_sku']||'').trim();
+    const rb=String(row['Replaced By']||row['replaced_by']||'').trim();
+    if(!base)continue;
+    lookup[base]={display:disp||base,brand,cat,family,plm,core,replacedBy:rb&&rb!=='0'?rb:''};
+    if(rb&&rb!=='0'&&rb!==base){rbMap[base]=rb;}
+  }
+  // Resolve chains: A->B->C means A->C
+  function resolve(b){
+    let seen=new Set();
+    while(rbMap[b]&&!seen.has(b)){seen.add(b);b=rbMap[b];}
+    return b;
+  }
+  // Build final canonical map
+  const canonical={};
+  for(const base of Object.keys(lookup)){
+    canonical[base]=resolve(base);
+  }
+  return{lookup,canonical,rbMap};
+}
+
+// ── MONTH PARSING ────────────────────────────────────────
+const MONTH_MAP={
+  january:1,february:2,march:3,april:4,may:5,june:6,
+  july:7,august:8,september:9,october:10,november:11,december:12,
+  jan:1,feb:2,mar:3,apr:4,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12
+};
+const MONTH_NAMES=['','January','February','March','April','May','June','July','August','September','October','November','December'];
+function parseMonthYear(row){
+  // TCC has YEAR and MONTH as separate columns
+  const yr=parseInt(String(row['YEAR']||row['Year']||'').trim());
+  const moRaw=String(row['MONTH']||row['Month']||'').trim().toLowerCase();
+  const mo=MONTH_MAP[moRaw];
+  if(yr&&mo)return{yr,mo,key:yr*100+mo,label:MONTH_NAMES[mo]+' '+yr};
+  return null;
+}
+
+// ── BUILD MONTHLY AGGREGATION ────────────────────────────
+// Returns nested: { channelKey: { monthKey: { amt, qty, skus:{base->{amt,qty}}, customers:{name->{amt,qty}} } } }
+function buildData(tccRows,itemLookup){
+  const{lookup,canonical}=itemLookup;
+  const data={};// channel -> monthKey -> aggregates
+  const allMonths=new Set();
+  const allChannels=new Set();
+
+  for(const row of tccRows){
+    const ch=String(row['Channel']||'').trim();
+    if(!ch||ch==='-None-')continue;
+    const mv=parseMonthYear(row);
+    if(!mv)continue;
+    const base=String(row['Base Item Name']||'').trim();
+    const canon=canonical[base]||base;// resolve to new SKU if replaced
+    const amt=parseFloat(String(row['Invoiced Amount']||row['Amount']||'0').replace(/[$,]/g,''))||0;
+    const qty=parseFloat(String(row['Invoiced Qty']||row['Qty']||'0').replace(/[,]/g,''))||0;
+    const cust=String(row['Customer Name']||'').trim();
+
+    if(!data[ch])data[ch]={};
+    if(!data[ch][mv.key])data[ch][mv.key]={amt:0,qty:0,label:mv.label,yr:mv.yr,mo:mv.mo,skus:{},customers:{}};
+    data[ch][mv.key].amt+=amt;
+    data[ch][mv.key].qty+=qty;
+
+    // SKU aggregation (use canonical base)
+    const info=lookup[canon]||lookup[base]||{display:base,brand:'',cat:'',family:'',plm:'',core:''};
+    if(!data[ch][mv.key].skus[canon])data[ch][mv.key].skus[canon]={amt:0,qty:0,display:info.display,brand:info.brand,cat:info.cat,family:info.family,plm:info.plm,core:info.core};
+    data[ch][mv.key].skus[canon].amt+=amt;
+    data[ch][mv.key].skus[canon].qty+=qty;
+
+    // Customer aggregation
+    if(!data[ch][mv.key].customers[cust])data[ch][mv.key].customers[cust]={amt:0,qty:0};
+    data[ch][mv.key].customers[cust].amt+=amt;
+    data[ch][mv.key].customers[cust].qty+=qty;
+
+    allMonths.add(mv.key);
+    allChannels.add(ch);
+  }
+  return{data,allMonths:[...allMonths].sort(),allChannels:[...allChannels].sort()};
+}
+
+// ── POPULATE CONFIG FILTERS ──────────────────────────────
+function populateConfigFilters(){
+  if(!RAW_TCC.length)return;
+  const channels=new Set();const brands=new Set();
+  RAW_TCC.forEach(r=>{if(r['Channel'])channels.add(r['Channel'].trim());if(r['Brand'])brands.add(r['Brand'].trim());});
+  const csel=document.getElementById('cfg-channel');
+  csel.innerHTML='<option value="all">All Channels</option>'+[...channels].sort().map(c=>`<option>${c}</option>`).join('');
+  const bsel=document.getElementById('cfg-brand');
+  bsel.innerHTML='<option value="all">All Brands</option>'+[...brands].sort().map(b=>`<option>${b}</option>`).join('');
+}
+
+// ── FORMATTING ───────────────────────────────────────────
+function fmt(v,d=0){return Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function fmtK(v){const a=Math.abs(v);if(a>=1e6)return(v/1e6).toFixed(1)+'M';if(a>=1e3)return(v/1e3).toFixed(0)+'K';return fmt(v);}
+function delta(p,inl=false){
+  if(!isFinite(p))return'';
+  const cls=p>3?'d-up':p<-3?'d-down':'d-flat';
+  return`<span class="delta ${cls}">${p>0?'+':''}${fmt(p,1)}%</span>`;
+}
+
+// ── RUN ANALYSIS ─────────────────────────────────────────
+async function runAnalysis(){
+  const apiKey=document.getElementById('cfg-apikey').value.trim();
+  const monthVal=document.getElementById('cfg-month').value;
+  const compare=document.getElementById('cfg-compare').value;
+  const chFilter=document.getElementById('cfg-channel').value;
+  const bFilter=document.getElementById('cfg-brand').value;
+  const company=(CFG.company||'the company');
+  const errEl=document.getElementById('analyze-err');
+
+  if(!RAW_TCC.length){showErr('Please upload the TCC sales CSV first.');return;}
+  if(!apiKey){showErr('Please enter your Anthropic API key.');return;}
+  if(!monthVal){showErr('Please select a report month.');return;}
+
+  errEl.style.display='none';
+  CFG.apiKey=apiKey;
+  localStorage.setItem(CFG_KEY,JSON.stringify(CFG));
+
+  // Filter TCC by brand if selected
+  let tccRows=RAW_TCC;
+  if(bFilter&&bFilter!=='all')tccRows=tccRows.filter(r=>(r['Brand']||'').trim()===bFilter);
+
+  // Build item lookup
+  const itemLookup=buildItemLookup(RAW_ITEMS.length?RAW_ITEMS:[]);
+
+  // Build aggregated data
+  const{data,allMonths,allChannels}=buildData(tccRows,itemLookup);
+
+  // Parse selected month key
+  const[selYr,selMo]=monthVal.split('-').map(Number);
+  const selKey=selYr*100+selMo;
+  const selLabel=MONTH_NAMES[selMo]+' '+selYr;
+
+  // Filter channels
+  const channels=chFilter&&chFilter!=='all'?[chFilter]:allChannels.filter(c=>c&&c!=='-None-');
+  const curIdx=allMonths.indexOf(selKey);
+
+  if(curIdx<0){showErr(`No data found for ${selLabel}. Check that your CSV contains this month.`);return;}
+
+  // Baseline months
+  const l12Mos=allMonths.slice(Math.max(0,curIdx-12),curIdx);
+  const yoyKey=(selYr-1)*100+selMo;
+  const lastMoKey=curIdx>0?allMonths[curIdx-1]:null;
+  const baseMos=compare==='l12m'?l12Mos:compare==='yoy'?(allMonths.includes(yoyKey)?[yoyKey]:l12Mos):(lastMoKey?[lastMoKey]:l12Mos);
+  const baseLabel=compare==='l12m'?`last ${l12Mos.length} months average`:compare==='yoy'?`same month last year (${MONTH_NAMES[selMo]} ${selYr-1})`:`last month (${lastMoKey?allMonths.find(m=>m===lastMoKey):'N/A'})`;
+
+  // Channel summary
+  const chSummary=channels.map(ch=>{
+    const cur=(data[ch]?.[selKey]?.amt)||0;
+    const bVals=baseMos.map(m=>(data[ch]?.[m]?.amt)||0);
+    const base=bVals.length?bVals.reduce((a,b)=>a+b,0)/bVals.length:0;
+    const gapPct=base>0?(cur-base)/base*100:0;
+    return{channel:ch,current:Math.round(cur),baseline:Math.round(base),gap_pct:parseFloat(gapPct.toFixed(1))};
+  }).filter(c=>c.current>0||c.baseline>0);
+
+  // SKU summary (top winners/laggards across all channels)
+  const skuMap={};
+  for(const ch of channels){
+    const curSkus=(data[ch]?.[selKey]?.skus)||{};
+    for(const[base,info]of Object.entries(curSkus)){
+      if(!skuMap[base])skuMap[base]={...info,cur:0,curQty:0,baseVals:[]};
+      skuMap[base].cur+=info.amt;skuMap[base].curQty+=info.qty;
+    }
+    for(const mo of baseMos){
+      const bSkus=(data[ch]?.[mo]?.skus)||{};
+      for(const[base,info]of Object.entries(bSkus)){
+        if(!skuMap[base])skuMap[base]={...info,cur:0,curQty:0,baseVals:[]};
+        skuMap[base].baseVals.push(info.amt);
       }
     }
   }
-  const skuRows = Object.values(skuMap).map(r => {
-    const base = r.baseAmts.length ? r.baseAmts.reduce((a,b)=>a+b,0)/r.baseAmts.length : 0;
-    return {...r, base:Math.round(base), gap:Math.round(r.cur-base), gap_pct:base>0?parseFloat(((r.cur-base)/base*100).toFixed(1)):0};
-  }).filter(r => r.cur>0||r.base>0).sort((a,b)=>b.gap-a.gap);
+  const skuRows=Object.entries(skuMap).map(([base,r])=>{
+    const base_avg=r.baseVals.length?r.baseVals.reduce((a,b)=>a+b,0)/r.baseVals.length:0;
+    return{base,display:r.display,brand:r.brand,cat:r.cat,family:r.family,plm:r.plm,
+      current:Math.round(r.cur),base_avg:Math.round(base_avg),
+      gap:Math.round(r.cur-base_avg),gap_pct:base_avg>0?parseFloat(((r.cur-base_avg)/base_avg*100).toFixed(1)):0};
+  }).filter(r=>r.current>0||r.base_avg>0).sort((a,b)=>b.gap-a.gap);
 
-  const topWinners = skuRows.slice(0,8).map(r=>({sku:r.sku,desc:r.desc,brand:r.brand,cat:r.cat,current:r.cur,base:r.base,gap_pct:r.gap_pct}));
-  const topLaggards= skuRows.slice(-8).reverse().map(r=>({sku:r.sku,desc:r.desc,brand:r.brand,cat:r.cat,current:r.cur,base:r.base,gap_pct:r.gap_pct}));
+  const winners=skuRows.slice(0,8);
+  const laggards=skuRows.slice(-8).reverse();
 
-  const totalCur  = chSummary.reduce((s,c)=>s+c.current,0);
-  const totalBase = chSummary.reduce((s,c)=>s+c.baseline,0);
-  const totalGap  = totalBase>0?(totalCur-totalBase)/totalBase*100:0;
-  const yoyCur    = yoyMo ? channels.reduce((s,ch)=>s+(data[yoyMo]?.[ch]?.amt||0),0) : 0;
-  const yoyGap    = yoyCur>0?(totalCur-yoyCur)/yoyCur*100:null;
-
-  // Show progress
-  const progEl = document.getElementById('analyze-progress');
-  const stepsEl = document.getElementById('progress-steps');
-  progEl.style.display = 'block';
-  document.getElementById('btn-analyze').disabled = true;
-  document.getElementById('btn-analyze').textContent = 'Analyzing…';
-
-  const steps = ['Preparing sales data summary','Calling Claude API','Generating channel insights','Analyzing product performance','Writing recommendations'];
-  function setStep(i) {
-    stepsEl.innerHTML = steps.map((s,j) => `<div class="ps-item ${j<i?'done':j===i?'active':''}">
-      <div class="ps-icon ${j<i?'done':j===i?'active':'idle'}">${j<i?'✓':j===i?'…':'○'}</div>${s}</div>`).join('');
+  // Product family summary
+  const famMap={};
+  for(const ch of channels){
+    for(const[base,info]of Object.entries((data[ch]?.[selKey]?.skus)||{})){
+      const fam=info.family||info.cat||'Other';
+      if(!famMap[fam])famMap[fam]={fam,cur:0,baseVals:[]};
+      famMap[fam].cur+=info.amt;
+    }
+    for(const mo of baseMos){
+      for(const[base,info]of Object.entries((data[ch]?.[mo]?.skus)||{})){
+        const fam=info.family||info.cat||'Other';
+        if(!famMap[fam])famMap[fam]={fam,cur:0,baseVals:[]};
+        famMap[fam].baseVals.push(info.amt);
+      }
+    }
   }
 
-  try {
-    setStep(0); await delay(300);
-    setStep(1);
+  const totalCur=chSummary.reduce((s,c)=>s+c.current,0);
+  const totalBase=chSummary.reduce((s,c)=>s+c.baseline,0);
+  const totalGap=totalBase>0?(totalCur-totalBase)/totalBase*100:0;
+  const yoyTotal=channels.reduce((s,ch)=>s+((data[ch]?.[yoyKey]?.amt)||0),0);
+  const yoyGap=yoyTotal>0?(totalCur-yoyTotal)/yoyTotal*100:null;
 
-    const prompt = `You are a supply chain analyst. Analyze this monthly sales gap report for ${company} and provide insights.
+  // Monthly totals for trend
+  const last14=allMonths.slice(-14);
+  const monthlyTotals=last14.map(mk=>{
+    const total=channels.reduce((s,ch)=>s+((data[ch]?.[mk]?.amt)||0),0);
+    const[yr,mo]=[Math.floor(mk/100),mk%100];
+    return{key:mk,label:MONTH_NAMES[mo]+' '+yr,total:Math.round(total),isCurrent:mk===selKey};
+  });
 
-REPORT PERIOD: ${moLabel(month)}
+  // Heatmap data
+  const hm12=allMonths.slice(-12);
+  const hmData={
+    months:hm12.map(mk=>{const[yr,mo]=[Math.floor(mk/100),mk%100];return MONTH_NAMES[mo].substring(0,3)+' '+String(yr).slice(-2);}),
+    channels,
+    values:channels.map(ch=>hm12.map(mk=>Math.round((data[ch]?.[mk]?.amt)||0)))
+  };
+
+  // Customer detail
+  const custMap={};
+  for(const ch of channels){
+    for(const[cust,cv]of Object.entries((data[ch]?.[selKey]?.customers)||{})){
+      if(!custMap[cust])custMap[cust]={cust,ch,cur:0,baseVals:[]};
+      custMap[cust].cur+=cv.amt;custMap[cust].ch=ch;
+    }
+    for(const mo of baseMos){
+      for(const[cust,cv]of Object.entries((data[ch]?.[mo]?.customers)||{})){
+        if(!custMap[cust])custMap[cust]={cust,ch,cur:0,baseVals:[]};
+        custMap[cust].baseVals.push(cv.amt);
+      }
+    }
+  }
+  const custRows=Object.values(custMap).map(r=>{
+    const base_avg=r.baseVals.length?r.baseVals.reduce((a,b)=>a+b,0)/r.baseVals.length:0;
+    return{...r,base_avg:Math.round(base_avg),gap_pct:base_avg>0?(r.cur-base_avg)/base_avg*100:0};
+  }).filter(r=>r.cur>0||r.base_avg>0).sort((a,b)=>b.cur-a.cur);
+
+  // ── CALL CLAUDE ──
+  setProgress(0);
+  document.getElementById('btn-analyze').disabled=true;
+  document.getElementById('btn-analyze').textContent='Analyzing…';
+  document.getElementById('prog-section').style.display='block';
+
+  const steps=['Joining sales + items data','Calling Claude API','Analyzing channels','Analyzing products','Writing recommendations'];
+  setStep(1,steps);await sleep(300);setStep(2,steps);
+
+  const prompt=`You are a supply chain analyst for ${company}. Analyze this ${selLabel} Sales Gap Report and provide actionable insights.
+
 COMPARISON: vs ${baseLabel}
+TOTAL: Current $${fmtK(totalCur)} | Baseline $${fmtK(totalBase)} | Gap ${totalGap>=0?'+':''}${fmt(totalGap,1)}%${yoyGap!==null?' | YoY '+(yoyGap>=0?'+':'')+fmt(yoyGap,1)+'%':''}
 
 CHANNEL PERFORMANCE:
-${JSON.stringify(chSummary, null, 2)}
+${JSON.stringify(chSummary,null,1)}
 
-TOTAL: Current $${fmtK(totalCur)} | Baseline avg $${fmtK(totalBase)} | Gap ${totalGap>=0?'+':''}${totalGap.toFixed(1)}%${yoyGap!==null?' | YoY '+(yoyGap>=0?'+':'')+yoyGap.toFixed(1)+'%':''}
+TOP PERFORMING SKUs:
+${JSON.stringify(winners.map(w=>({display:w.display,brand:w.brand,family:w.family,current:w.current,vs_avg:w.base_avg,gap_pct:w.gap_pct})),null,1)}
 
-TOP PERFORMING PRODUCTS (vs baseline):
-${JSON.stringify(topWinners, null, 2)}
+UNDERPERFORMING SKUs:
+${JSON.stringify(laggards.map(l=>({display:l.display,brand:l.brand,family:l.family,current:l.current,vs_avg:l.base_avg,gap_pct:l.gap_pct})),null,1)}
 
-UNDERPERFORMING PRODUCTS (vs baseline):
-${JSON.stringify(topLaggards, null, 2)}
-
-Respond ONLY with a valid JSON object (no markdown, no backticks, no explanation outside JSON) with this exact structure:
+Respond ONLY with valid JSON (no markdown, no backticks):
 {
-  "summary": "2-3 sentence executive summary of this month's sales performance for the team",
+  "summary": "2-3 sentence executive summary using actual dollar figures and percentages",
   "insights": [
     {
-      "type": "channel|product|trend|risk",
+      "type": "channel|product|trend|risk|opportunity",
       "priority": "high|medium|low",
-      "title": "short title (max 8 words)",
-      "body": "2-3 sentence insight explaining what happened and why it matters",
-      "action": "specific recommended action the team should take"
+      "title": "max 8 words",
+      "body": "2-3 sentences with specific numbers",
+      "action": "concrete recommended action"
     }
   ],
-  "channel_notes": {
-    "CHANNEL_NAME": "one sentence note about this channel's performance"
-  },
   "product_notes": {
-    "winners_summary": "1-2 sentences about what's working in products",
-    "laggards_summary": "1-2 sentences about products needing attention"
+    "winners_summary": "1-2 sentences about what is working",
+    "laggards_summary": "1-2 sentences about what needs attention"
   }
 }
-Generate 4-6 insights covering the most important observations. Be specific, use actual numbers from the data, and make actions concrete and actionable.`;
+Generate 5-6 insights. Be specific, reference actual channel names and product names, make actions concrete.`;
 
-    setStep(2);
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1500,
-        messages: [{ role: 'user', content: prompt }]
-      })
+  try{
+    setStep(2,steps);
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1800,messages:[{role:'user',content:prompt}]})
     });
+    if(!resp.ok){const e=await resp.json();throw new Error(e.error?.message||'API error '+resp.status);}
+    setStep(3,steps);await sleep(200);
+    const result=await resp.json();
+    const parsed=JSON.parse(result.content[0].text.replace(/```json|```/g,'').trim());
+    setStep(4,steps);await sleep(200);
 
-    if (!resp.ok) {
-      const err = await resp.json();
-      throw new Error(err.error?.message || 'Claude API error: ' + resp.status);
-    }
-
-    setStep(3); await delay(200);
-    const result = await resp.json();
-    const rawText = result.content[0]?.text || '';
-    const clean = rawText.replace(/```json|```/g,'').trim();
-    const parsed = JSON.parse(clean);
-
-    setStep(4); await delay(200);
-
-    // Build final report object
-    ANALYSIS = {
-      period: moLabel(month),
-      month: month,
-      compare_mode: compare,
-      compare_label: baseLabel,
-      generated: new Date().toISOString(),
-      company: company,
-      summary: parsed.summary,
-      insights: parsed.insights,
-      channel_notes: parsed.channel_notes || {},
-      product_notes: parsed.product_notes || {},
-      kpis: {
-        total_current: totalCur,
-        total_baseline: totalBase,
-        total_gap_pct: parseFloat(totalGap.toFixed(1)),
-        yoy_pct: yoyGap !== null ? parseFloat(yoyGap.toFixed(1)) : null,
-        yoy_month: yoyMo ? moLabel(yoyMo) : null
-      },
-      channels: chSummary.map(c => ({
-        ...c,
-        note: parsed.channel_notes?.[c.channel] || ''
-      })),
-      products: {
-        winners: topWinners,
-        laggards: topLaggards
-      },
-      monthly_totals: allMonths.slice(-14).map(m => ({
-        month: m,
-        label: moLabel(m),
-        total: channels.reduce((s,ch) => s+(data[m]?.[ch]?.amt||0), 0)
-      })),
-      heatmap: {
-        months: allMonths.slice(-12).map(m => moLabel(m)),
-        channels: channels,
-        values: channels.map(ch => allMonths.slice(-12).map(m => Math.round(data[m]?.[ch]?.amt||0)))
-      }
+    ANALYSIS={
+      period:selLabel,month:monthVal,compare_mode:compare,compare_label:baseLabel,
+      generated:new Date().toISOString(),company,
+      summary:parsed.summary,insights:parsed.insights,product_notes:parsed.product_notes||{},
+      kpis:{total_current:totalCur,total_baseline:totalBase,total_gap_pct:parseFloat(totalGap.toFixed(1)),
+            yoy_pct:yoyGap!==null?parseFloat(yoyGap.toFixed(1)):null,
+            yoy_month:MONTH_NAMES[selMo]+' '+(selYr-1)},
+      channels:chSummary,
+      skus:skuRows.slice(0,80),// top 80 SKUs
+      families:Object.values(famMap).map(f=>{
+        const ba=f.baseVals.length?f.baseVals.reduce((a,b)=>a+b,0)/f.baseVals.length:0;
+        return{family:f.fam,current:Math.round(f.cur),base_avg:Math.round(ba),gap_pct:ba>0?parseFloat(((f.cur-ba)/ba*100).toFixed(1)):0};
+      }).sort((a,b)=>b.current-a.current),
+      customers:custRows.slice(0,60),
+      monthly_totals:monthlyTotals,
+      heatmap:hmData,
     };
-
-    setStep(5);
+    setStep(5,steps);
     showAnalysisPreview();
-    document.getElementById('publish-section').style.display = 'block';
-    document.getElementById('publish-section').scrollIntoView({behavior:'smooth',block:'start'});
-
-  } catch(e) {
-    errEl.style.display = 'flex';
-    errMsg.textContent = 'Error: ' + e.message;
-    progEl.style.display = 'none';
-  } finally {
-    document.getElementById('btn-analyze').disabled = false;
-    document.getElementById('btn-analyze').textContent = '✦ Re-analyze with Claude';
+    document.getElementById('pub-section').style.display='block';
+    document.getElementById('pub-section').scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(e){
+    showErr('Claude API error: '+e.message);
+    document.getElementById('prog-section').style.display='none';
+  }finally{
+    document.getElementById('btn-analyze').disabled=false;
+    document.getElementById('btn-analyze').textContent='✦ Re-analyze';
   }
 }
 
-function delay(ms) { return new Promise(r => setTimeout(r,ms)); }
-
-function showAnalysisPreview() {
-  if (!ANALYSIS) return;
-  const el = document.getElementById('analysis-preview');
-  const topInsight = ANALYSIS.insights?.[0];
-  el.innerHTML = `
-    <div class="summary-box">${ANALYSIS.summary}</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-      <div style="background:var(--paper2);border-radius:var(--r);padding:12px 14px;">
-        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:4px;">Total Sales</div>
-        <div style="font-family:var(--ff-d);font-size:20px;font-weight:500;">$${fmtK(ANALYSIS.kpis.total_current)}</div>
-        <div style="font-size:11px;color:var(--ink3);margin-top:2px;">${fmtDelta(ANALYSIS.kpis.total_gap_pct)} vs baseline</div>
-      </div>
-      <div style="background:var(--paper2);border-radius:var(--r);padding:12px 14px;">
-        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:4px;">Channels analyzed</div>
-        <div style="font-family:var(--ff-d);font-size:20px;font-weight:500;">${ANALYSIS.channels.length}</div>
-      </div>
-      <div style="background:var(--paper2);border-radius:var(--r);padding:12px 14px;">
-        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:4px;">Claude insights</div>
-        <div style="font-family:var(--ff-d);font-size:20px;font-weight:500;">${ANALYSIS.insights?.length || 0}</div>
-      </div>
-    </div>
-    ${topInsight ? `<div class="banner banner-cobalt" style="margin-top:12px;"><span class="banner-icon">✦</span><div><strong>${topInsight.title}</strong> — ${topInsight.body}</div></div>` : ''}
-  `;
+function showErr(msg){const e=document.getElementById('analyze-err');e.style.display='flex';document.getElementById('analyze-err-msg').textContent=msg;}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+const STEP_NAMES=['Joining sales + items data','Calling Claude API','Analyzing channels','Analyzing products','Writing recommendations'];
+function setProgress(n){document.getElementById('prog-section').style.display='block';}
+function setStep(n,steps){
+  document.getElementById('prog-steps').innerHTML=steps.map((s,i)=>
+    `<div class="ps-item ${i<n?'done':i===n?'active':''}">
+      <div class="ps-dot ${i<n?'done':i===n?'active':'idle'}">${i<n?'✓':i===n?'…':'○'}</div>${s}</div>`).join('');
 }
 
-// ══════════════════════════════════════════════════════
-//  GITHUB PUBLISH
-// ══════════════════════════════════════════════════════
-async function publishReport() {
-  if (!ANALYSIS) return;
-  const btn = document.getElementById('btn-publish');
-  const res = document.getElementById('publish-result');
-  btn.disabled = true; btn.textContent = 'Publishing…';
-  res.style.display = 'none';
+function showAnalysisPreview(){
+  if(!ANALYSIS)return;
+  const A=ANALYSIS;
+  document.getElementById('analysis-preview').innerHTML=`
+    <div class="summary-box">${A.summary}</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      ${[
+        {l:'Period',v:A.period},
+        {l:'Total Sales',v:'$'+fmtK(A.kpis.total_current)},
+        {l:'Gap vs Baseline',v:(A.kpis.total_gap_pct>=0?'+':'')+fmt(A.kpis.total_gap_pct,1)+'%'},
+        {l:'Channels',v:A.channels.length},
+      ].map(k=>`<div style="background:var(--paper2);border-radius:var(--r);padding:10px 12px;">
+        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:3px;">${k.l}</div>
+        <div style="font-family:var(--ff-d);font-size:18px;font-weight:500;">${k.v}</div>
+      </div>`).join('')}
+    </div>`;
+}
 
-  try {
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify(ANALYSIS, null, 2))));
-    const url = `https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/report.json`;
-
-    // Get existing SHA if file exists
-    let sha = null;
-    try {
-      const chk = await fetch(url, { headers: { 'Authorization':'Bearer '+CFG.token,'Accept':'application/vnd.github+json' } });
-      if (chk.ok) { const j = await chk.json(); sha = j.sha; }
-    } catch(e) {}
-
-    const body = { message:`Update sales gap report — ${ANALYSIS.period}`, content };
-    if (sha) body.sha = sha;
-
-    const resp = await fetch(url, {
-      method: 'PUT',
-      headers: { 'Authorization':'Bearer '+CFG.token, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json' },
-      body: JSON.stringify(body)
-    });
-
-    if (!resp.ok) {
-      const e = await resp.json();
-      throw new Error(e.message || 'GitHub API error ' + resp.status);
-    }
-
-    // Update local status
-    CFG.lastPublished = new Date().toISOString();
-    CFG.lastPeriod = ANALYSIS.period;
-    localStorage.setItem(CFG_KEY, JSON.stringify(CFG));
+// ── GITHUB PUBLISH ───────────────────────────────────────
+async function publishReport(){
+  if(!ANALYSIS)return;
+  const btn=document.getElementById('btn-publish');
+  const res=document.getElementById('pub-result');
+  btn.disabled=true;btn.textContent='Publishing…';res.style.display='none';
+  try{
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify(ANALYSIS,null,2))));
+    const url=`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/report.json`;
+    let sha=null;
+    try{const c=await fetch(url,{headers:{'Authorization':'Bearer '+CFG.token,'Accept':'application/vnd.github+json'}});if(c.ok){const j=await c.json();sha=j.sha;}}catch(e){}
+    const body={message:`Sales Gap Report — ${ANALYSIS.period}`,content};
+    if(sha)body.sha=sha;
+    const r=await fetch(url,{method:'PUT',headers:{'Authorization':'Bearer '+CFG.token,'Accept':'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!r.ok){const e=await r.json();throw new Error(e.message||'GitHub error '+r.status);}
+    CFG.lastPublished=new Date().toISOString();CFG.lastPeriod=ANALYSIS.period;
+    localStorage.setItem(CFG_KEY,JSON.stringify(CFG));
     updateAdminPubStatus();
-
-    res.style.display = 'inline';
-    document.getElementById('gh-status-dot').className = 'pub-dot dot-green';
-    document.getElementById('gh-status-label').textContent = 'Published · ' + ANALYSIS.period;
-    btn.textContent = '✓ Published';
-
-  } catch(e) {
-    const errEl = document.getElementById('analyze-error');
-    const errMsg = document.getElementById('analyze-error-msg');
-    errEl.style.display = 'flex';
-    errMsg.textContent = 'Publish failed: ' + e.message;
-    btn.disabled = false;
-    btn.textContent = '⬆ Retry Publish';
+    res.style.display='inline';
+    document.getElementById('pub-dot').className='ds-dot ds-green';
+    document.getElementById('pub-label').textContent='Published · '+ANALYSIS.period;
+    btn.textContent='✓ Published';
+  }catch(e){
+    showErr('Publish failed: '+e.message);
+    btn.disabled=false;btn.textContent='⬆ Retry Publish';
   }
 }
-
-function updateAdminPubStatus() {
-  if (CFG.lastPublished) {
-    const d = new Date(CFG.lastPublished);
-    document.getElementById('admin-pub-status-label').textContent = 'Last published: ' + d.toLocaleDateString() + ' · ' + (CFG.lastPeriod||'');
-    document.getElementById('gh-status-dot').className = 'pub-dot dot-green';
-    document.getElementById('gh-status-label').textContent = 'Published · ' + (CFG.lastPeriod||'');
+function updateAdminPubStatus(){
+  if(CFG.lastPublished){
+    const d=new Date(CFG.lastPublished);
+    document.getElementById('adm-pub-label').textContent='Last published: '+d.toLocaleDateString()+' · '+(CFG.lastPeriod||'');
+    document.getElementById('pub-dot').className='ds-dot ds-green';
+    document.getElementById('pub-label').textContent='Published · '+(CFG.lastPeriod||'');
   }
 }
-
-function downloadJSON() {
-  if (!ANALYSIS) return;
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(ANALYSIS,null,2)],{type:'application/json'}));
-  a.download = 'report.json';
-  a.click();
+function downloadJSON(){
+  if(!ANALYSIS)return;
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(ANALYSIS,null,2)],{type:'application/json'}));
+  a.download='report_'+ANALYSIS.month+'.json';a.click();
 }
 
-// ══════════════════════════════════════════════════════
-//  USER VIEW — LOAD REPORT
-// ══════════════════════════════════════════════════════
-async function loadReport() {
-  if (!CFG.owner || !CFG.repo) {
-    document.getElementById('user-loading').style.display = 'none';
-    document.getElementById('user-empty').style.display = 'block';
+// ── LOAD REPORT (user view) ──────────────────────────────
+async function loadReport(){
+  if(!CFG.owner||!CFG.repo){
+    document.getElementById('u-loading').style.display='none';
+    document.getElementById('u-empty').style.display='block';
     return;
   }
-
-  try {
-    const url = `https://raw.githubusercontent.com/${CFG.owner}/${CFG.repo}/main/report.json`;
-    const resp = await fetch(url + '?t=' + Date.now());
-    if (!resp.ok) throw new Error('not found');
-    REPORT = await resp.json();
-    document.getElementById('user-loading').style.display = 'none';
-    document.getElementById('user-report').style.display = 'block';
+  try{
+    const url=`https://raw.githubusercontent.com/${CFG.owner}/${CFG.repo}/main/report.json?t=`+Date.now();
+    const resp=await fetch(url);
+    if(!resp.ok)throw new Error('not found');
+    REPORT=await resp.json();
+    document.getElementById('u-loading').style.display='none';
+    document.getElementById('u-report').style.display='block';
     renderReport();
-  } catch(e) {
-    document.getElementById('user-loading').style.display = 'none';
-    document.getElementById('user-empty').style.display = 'block';
+  }catch(e){
+    document.getElementById('u-loading').style.display='none';
+    document.getElementById('u-empty').style.display='block';
   }
 }
 
-// ══════════════════════════════════════════════════════
-//  RENDER REPORT
-// ══════════════════════════════════════════════════════
-function renderReport() {
-  if (!REPORT) return;
-  const R = REPORT;
-
-  // Header
-  document.getElementById('rpt-company').textContent = R.company || 'SupplyIQ';
-  document.getElementById('rpt-period').textContent = R.period;
-  document.getElementById('rpt-compare-label').textContent = 'vs ' + (R.compare_label || 'baseline');
-  document.getElementById('rpt-generated').textContent = 'Published ' + new Date(R.generated).toLocaleDateString();
-  document.getElementById('tbar-pub-time').textContent = R.period;
-
-  // Summary
-  document.getElementById('rpt-summary').textContent = R.summary;
+// ── RENDER REPORT ────────────────────────────────────────
+function renderReport(){
+  if(!REPORT)return;
+  const R=REPORT;
+  document.getElementById('r-company').textContent=R.company||'SupplyIQ';
+  document.getElementById('r-period').textContent=R.period;
+  document.getElementById('r-compare').textContent='vs '+(R.compare_label||'baseline');
+  document.getElementById('r-generated').textContent='Published '+new Date(R.generated).toLocaleDateString();
+  document.getElementById('tbar-period').textContent=R.period;
+  document.getElementById('r-summary').textContent=R.summary;
 
   // KPIs
-  const kpi = R.kpis;
-  const topCh = [...R.channels].sort((a,b)=>b.gap_pct-a.gap_pct)[0];
-  const botCh = [...R.channels].sort((a,b)=>a.gap_pct-b.gap_pct)[0];
-  document.getElementById('rpt-kpis').innerHTML = [
-    {cls:'k-total', eye:'Current Month Sales', val:'$'+fmtK(kpi.total_current), sub:fmtDelta(kpi.total_gap_pct)+' vs baseline'},
-    {cls:kpi.total_gap_pct>=0?'k-up':'k-down', eye:'Gap vs Baseline', val:(kpi.total_gap_pct>=0?'+':'')+fmt(kpi.total_gap_pct,1)+'%', sub:`<span style="color:var(--ink3)">$${fmtK(Math.abs(kpi.total_current-kpi.total_baseline))} ${kpi.total_gap_pct>=0?'above':'below'} avg</span>`},
-    {cls:kpi.yoy_pct!==null?(kpi.yoy_pct>=0?'k-yoy':'k-down'):'k-flat', eye:'Year-over-Year', val:kpi.yoy_pct!==null?(kpi.yoy_pct>=0?'+':'')+fmt(kpi.yoy_pct,1)+'%':'—', sub:`<span style="color:var(--ink3)">${kpi.yoy_month?'vs '+kpi.yoy_month:'Prior year not available'}</span>`},
-    {cls:'k-up', eye:'Top Channel', val:topCh?.channel?.substring(0,18)||'—', sub:fmtDelta(topCh?.gap_pct||0)},
-    {cls:'k-down', eye:'Needs Attention', val:botCh?.channel?.substring(0,18)||'—', sub:fmtDelta(botCh?.gap_pct||0)},
+  const K=R.kpis;
+  const topCh=[...R.channels].sort((a,b)=>b.gap_pct-a.gap_pct)[0];
+  const botCh=[...R.channels].sort((a,b)=>a.gap_pct-b.gap_pct)[0];
+  document.getElementById('r-kpis').innerHTML=[
+    {cls:'k-total',eye:'Current Month Sales',val:'$'+fmtK(K.total_current),sub:delta(K.total_gap_pct)+' vs baseline'},
+    {cls:K.total_gap_pct>=0?'k-up':'k-down',eye:'Gap vs Baseline',val:(K.total_gap_pct>=0?'+':'')+fmt(K.total_gap_pct,1)+'%',sub:`<span style="color:var(--ink3)">$${fmtK(Math.abs(K.total_current-K.total_baseline))} ${K.total_gap_pct>=0?'above':'below'} avg</span>`},
+    {cls:K.yoy_pct!==null?(K.yoy_pct>=0?'k-yoy':'k-down'):'k-flat',eye:'Year over Year',val:K.yoy_pct!==null?(K.yoy_pct>=0?'+':'')+fmt(K.yoy_pct,1)+'%':'N/A',sub:`<span style="color:var(--ink3)">${K.yoy_month?'vs '+K.yoy_month:'No prior year data'}</span>`},
+    {cls:'k-up',eye:'Top Channel',val:(topCh?.channel||'—').substring(0,18),sub:delta(topCh?.gap_pct||0)},
+    {cls:'k-down',eye:'Needs Attention',val:(botCh?.channel||'—').substring(0,18),sub:delta(botCh?.gap_pct||0)},
   ].map(k=>`<div class="kpi ${k.cls}"><div class="kpi-eye">${k.eye}</div><div class="kpi-val">${k.val}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
 
-  // Insights panel
-  const ins = R.insights || [];
-  document.getElementById('rpt-insights').innerHTML = `<div class="ip-header">Key insights &amp; actions</div>` +
-    ins.map(i => {
-      const icons = {channel:'📊',product:'📦',trend:'📈',risk:'⚠️'};
-      const priCls = {high:'pri-high',medium:'pri-med',low:'pri-low'};
-      return `<div class="ip-item">
-        <div class="ip-icon">${icons[i.type]||'✦'}</div>
-        <div class="ip-body">
-          <strong>${i.title}</strong> <span class="ip-pri ${priCls[i.priority]||''}">${i.priority}</span><br>
-          ${i.body}
-          <div class="ip-action">→ ${i.action}</div>
-        </div>
-      </div>`;
-    }).join('');
+  // Insights
+  const ins=R.insights||[];
+  const icons={channel:'📊',product:'📦',trend:'📈',risk:'⚠️',opportunity:'💡'};
+  const priCls={high:'pri-high',medium:'pri-med',low:'pri-low'};
+  document.getElementById('r-insights').innerHTML=`<div class="ip-header">Claude's insights &amp; actions</div>`+
+    ins.map(i=>`<div class="ip-item">
+      <div style="font-size:14px;flex-shrink:0;margin-top:1px;">${icons[i.type]||'✦'}</div>
+      <div class="ip-body"><strong>${i.title}</strong><span class="ip-pri ${priCls[i.priority]||''}">${i.priority}</span><br>${i.body}<span class="ip-action">→ ${i.action}</span></div>
+    </div>`).join('');
 
-  // Channel rows + chart
-  renderChannelSection();
-  renderProductTab();
-  renderTrendChart();
+  renderChannelTab();
+  renderFamilyTab();
+  renderSKUTab();
+  renderCustomerTab();
+  renderTrendTab();
   renderHeatmap();
 }
 
-function renderChannelSection() {
-  const chs = REPORT.channels || [];
-  const maxAmt = Math.max(...chs.map(c=>Math.max(c.current,c.baseline)), 1);
-
-  document.getElementById('ch-rows').innerHTML = chs.map(c => {
-    const pct = c.current/maxAmt*100;
-    const tpct = c.baseline/maxAmt*100;
-    const barCol = c.gap_pct>3?'var(--sage)':c.gap_pct<-3?'var(--rose)':'var(--ink3)';
-    return `<div class="ch-row">
-      <div class="ch-name" title="${c.channel}">${c.channel.length>22?c.channel.substring(0,22)+'…':c.channel}</div>
-      <div><div class="bar-wrap"><div class="bar-fill" style="width:${pct}%;background:${barCol};"></div><div class="bar-target" style="left:${tpct}%;"></div></div></div>
+// ── CHANNEL TAB ──────────────────────────────────────────
+function renderChannelTab(){
+  const chs=REPORT.channels||[];
+  const maxA=Math.max(...chs.map(c=>Math.max(c.current,c.baseline)),1);
+  document.getElementById('ch-rows').innerHTML=chs.map(c=>{
+    const pct=c.current/maxA*100;const tpct=c.baseline/maxA*100;
+    const bc=c.gap_pct>3?'var(--sage)':c.gap_pct<-3?'var(--rose)':'var(--ink3)';
+    return`<div class="ch-row">
+      <div class="ch-name" title="${c.channel}">${c.channel.length>20?c.channel.substring(0,20)+'…':c.channel}</div>
+      <div><div class="bar-wrap"><div class="bar-fill" style="width:${pct}%;background:${bc};"></div><div class="bar-target" style="left:${tpct}%;"></div></div></div>
       <div class="ch-amt">$${fmtK(c.current)}</div>
       <div class="ch-avg">$${fmtK(c.baseline)}</div>
-      <div class="ch-gap">${fmtDelta(c.gap_pct,true)}</div>
+      <div class="ch-gap-cell">${delta(c.gap_pct,true)}</div>
     </div>`;
   }).join('');
 
-  // Channel bar chart
-  const canvas = document.getElementById('chart-channel');
-  const ctx = canvas.getContext('2d');
-  const labels = chs.map(c => c.channel.length>18?c.channel.substring(0,18)+'…':c.channel);
-  const curData = chs.map(c => c.current);
-  const baseData = chs.map(c => c.baseline);
-  drawBarChart(ctx, canvas, labels, [
-    {data:curData, label:'Current', colors:curData.map((v,i)=>v>=baseData[i]?'rgba(45,107,80,0.75)':'rgba(176,58,58,0.65)')},
-    {data:baseData, label:'Baseline', colors:curData.map(()=>'rgba(140,134,128,0.25)')}
-  ]);
+  // Bar chart
+  const canvas=document.getElementById('chart-channel');
+  const labels=chs.map(c=>c.channel.length>16?c.channel.substring(0,16)+'…':c.channel);
+  drawBars(canvas,labels,
+    [{data:chs.map(c=>c.current),label:'Current',colors:chs.map((c,i)=>c.current>=c.baseline?'rgba(45,107,80,.75)':'rgba(176,58,58,.65)')},
+     {data:chs.map(c=>c.baseline),label:'Baseline',colors:chs.map(()=>'rgba(140,134,128,.25)')}]);
 }
 
-function renderProductTab() {
-  const R = REPORT;
-  const winners  = R.products?.winners || [];
-  const laggards = R.products?.laggards || [];
+// ── FAMILY TAB ───────────────────────────────────────────
+function renderFamilyTab(){
+  const R=REPORT;
+  const fams=(R.families||[]).filter(f=>f.current>0||f.base_avg>0);
+  const winners=fams.filter(f=>f.gap_pct>0).slice(0,6);
+  const laggards=fams.filter(f=>f.gap_pct<=0).slice(0,6);
 
-  document.getElementById('prod-cols').innerHTML = `
-    <div class="card">
-      <div class="card-title" style="color:var(--sage);">↑ Top performers</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:10px;">${R.product_notes?.winners_summary||''}</div>
-      ${winners.slice(0,5).map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--rule);font-size:12px;">
-        <div style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:8px;" title="${p.desc}">${p.desc}</div>
-        ${fmtDelta(p.gap_pct,true)}
-      </div>`).join('')}
+  document.getElementById('fam-cols').innerHTML=`
+    <div class="card"><div class="card-title" style="color:var(--sage);">↑ Growing families</div>
+      <div style="font-size:11px;color:var(--ink3);margin-bottom:10px;">${R.product_notes?.winners_summary||''}</div>
+      ${winners.map(f=>`<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--rule);font-size:12px;">
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;margin-right:8px;">${f.family}</span>${delta(f.gap_pct,true)}</div>`).join('')||'<div style="font-size:12px;color:var(--ink3);">None above baseline</div>'}
     </div>
-    <div class="card">
-      <div class="card-title" style="color:var(--rose);">↓ Needs attention</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:10px;">${R.product_notes?.laggards_summary||''}</div>
-      ${laggards.slice(0,5).map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--rule);font-size:12px;">
-        <div style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:8px;" title="${p.desc}">${p.desc}</div>
-        ${fmtDelta(p.gap_pct,true)}
-      </div>`).join('')}
+    <div class="card"><div class="card-title" style="color:var(--rose);">↓ Needs attention</div>
+      <div style="font-size:11px;color:var(--ink3);margin-bottom:10px;">${R.product_notes?.laggards_summary||''}</div>
+      ${laggards.map(f=>`<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--rule);font-size:12px;">
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;margin-right:8px;">${f.family}</span>${delta(f.gap_pct,true)}</div>`).join('')||'<div style="font-size:12px;color:var(--ink3);">All families above baseline</div>'}
     </div>`;
 
-  const hasSku = winners.some(p=>p.sku) || laggards.some(p=>p.sku);
-  const all = [...winners, ...laggards].sort((a,b)=>b.gap_pct-a.gap_pct);
-  document.getElementById('prod-thead').innerHTML = `
-    ${hasSku?'<th class="mono">SKU</th>':''}
-    <th>Product</th><th>Brand</th>
-    <th class="num">Current</th><th class="num">Baseline</th>
-    <th class="num">Gap %</th>`;
-  document.getElementById('prod-tbody').innerHTML = all.map(p=>`<tr>
-    ${hasSku?`<td class="mono">${p.sku||'—'}</td>`:''}
-    <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${p.desc}</td>
-    <td style="color:var(--ink3);">${p.brand||'—'}</td>
-    <td class="num">$${fmtK(p.current)}</td>
-    <td class="num" style="color:var(--ink3);">$${fmtK(p.base)}</td>
-    <td class="num">${fmtDelta(p.gap_pct,true)}</td>
+  document.getElementById('fam-thead').innerHTML=`<th>Product Family</th><th class="num">Current</th><th class="num">Baseline Avg</th><th class="num">Gap $</th><th class="num">Gap %</th>`;
+  document.getElementById('fam-tbody').innerHTML=fams.map(f=>`<tr>
+    <td>${f.family}</td>
+    <td class="num">$${fmtK(f.current)}</td>
+    <td class="num" style="color:var(--ink3);">$${fmtK(f.base_avg)}</td>
+    <td class="num" style="color:${f.current-f.base_avg>=0?'var(--sage)':'var(--rose)'};">${f.current-f.base_avg>=0?'+':'-'}$${fmtK(Math.abs(f.current-f.base_avg))}</td>
+    <td class="num">${delta(f.gap_pct,true)}</td>
   </tr>`).join('');
 }
 
-function renderTrendChart() {
-  const mt = REPORT.monthly_totals || [];
-  const canvas = document.getElementById('chart-trend');
-  const ctx = canvas.getContext('2d');
-  drawLineChart(ctx, canvas, mt.map(m=>m.label), mt.map(m=>m.total));
+// ── SKU TAB ──────────────────────────────────────────────
+let skuChFilter='all';
+function renderSKUTab(){
+  const R=REPORT;
+  const sort=document.getElementById('sku-sort')?.value||'gap_asc';
+  const bFilter=document.getElementById('sku-brand-filter')?.value||'';
+  let skus=(R.skus||[]).filter(s=>s.current>0||s.base_avg>0);
+
+  // Channel filter pills
+  const chs=[...new Set((R.channels||[]).map(c=>c.channel))];
+  document.getElementById('sku-ch-filters').innerHTML=
+    `<div class="ch-pill ${skuChFilter==='all'?'active':''}" onclick="skuChFilter='all';renderSKUTab()">All</div>`+
+    chs.map(c=>`<div class="ch-pill ${skuChFilter===c?'active':''}" onclick="skuChFilter='${c}';renderSKUTab()">${c}</div>`).join('');
+
+  // Brand filter options
+  const brands=[...new Set(skus.map(s=>s.brand).filter(Boolean))].sort();
+  const bSel=document.getElementById('sku-brand-filter');
+  if(bSel){
+    const cur=bSel.value;
+    bSel.innerHTML='<option value="">All Brands</option>'+brands.map(b=>`<option value="${b}">${b}</option>`).join('');
+    bSel.value=cur;
+  }
+
+  if(bFilter)skus=skus.filter(s=>s.brand===bFilter);
+
+  if(sort==='gap_asc')skus.sort((a,b)=>a.gap_pct-b.gap_pct);
+  else if(sort==='gap_desc')skus.sort((a,b)=>b.gap_pct-a.gap_pct);
+  else if(sort==='cur_desc')skus.sort((a,b)=>b.current-a.current);
+  else skus.sort((a,b)=>Math.abs(b.gap)-Math.abs(a.gap));
+
+  document.getElementById('sku-thead').innerHTML=`<th>SKU</th><th>Product</th><th>Brand</th><th>Family</th><th>PLM</th><th class="num">Current</th><th class="num">Baseline</th><th class="num">Gap $</th><th class="num">Gap %</th>`;
+  document.getElementById('sku-tbody').innerHTML=skus.slice(0,60).map(s=>`<tr>
+    <td class="mono">${s.base||'—'}</td>
+    <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${s.display}">${s.display||s.base}</td>
+    <td style="color:var(--ink3);">${s.brand||'—'}</td>
+    <td style="color:var(--ink3);">${s.family||s.cat||'—'}</td>
+    <td><span style="font-size:10px;padding:1px 5px;border-radius:99px;background:var(--paper3);color:var(--ink3);">${(s.plm||'').replace(/\d - /,'')}</span></td>
+    <td class="num">$${fmtK(s.current)}</td>
+    <td class="num" style="color:var(--ink3);">$${fmtK(s.base_avg)}</td>
+    <td class="num" style="color:${s.gap>=0?'var(--sage)':'var(--rose)'};">${s.gap>=0?'+':'-'}$${fmtK(Math.abs(s.gap))}</td>
+    <td class="num">${delta(s.gap_pct,true)}</td>
+  </tr>`).join('');
 }
 
-function renderHeatmap() {
-  const hm = REPORT.heatmap;
-  if (!hm) return;
-  const {months, channels, values} = hm;
-  const cols = months.length + 2;
-  let html = `<div class="hm-grid" style="grid-template-columns:140px repeat(${months.length},minmax(42px,1fr)) 64px;">`;
+// ── CUSTOMER TAB ─────────────────────────────────────────
+let custChFilter='all';
+function renderCustomerTab(){
+  const R=REPORT;
+  const custs=(R.customers||[]).filter(c=>c.cur>0||c.base_avg>0);
+  const chs=[...new Set((R.channels||[]).map(c=>c.channel))];
+  document.getElementById('cust-ch-filters').innerHTML=
+    `<div class="ch-pill ${custChFilter==='all'?'active':''}" onclick="custChFilter='all';renderCustomerTab()">All</div>`+
+    chs.map(c=>`<div class="ch-pill ${custChFilter===c?'active':''}" onclick="custChFilter='${c}';renderCustomerTab()">${c}</div>`).join('');
 
-  html += `<div class="hm-header"></div>`;
-  months.forEach(m => html += `<div class="hm-header" style="text-align:center;font-size:10px;">${m}</div>`);
-  html += `<div class="hm-header" style="text-align:right;">Avg</div>`;
+  const filtered=custChFilter==='all'?custs:custs.filter(c=>c.ch===custChFilter);
+  document.getElementById('cust-thead').innerHTML=`<th>Customer</th><th>Channel</th><th class="num">Current</th><th class="num">Baseline Avg</th><th class="num">Gap $</th><th class="num">Gap %</th>`;
+  document.getElementById('cust-tbody').innerHTML=filtered.slice(0,50).map(c=>`<tr>
+    <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${c.cust}">${c.cust||'—'}</td>
+    <td style="color:var(--ink3);">${c.ch||'—'}</td>
+    <td class="num">$${fmtK(c.cur)}</td>
+    <td class="num" style="color:var(--ink3);">$${fmtK(c.base_avg)}</td>
+    <td class="num" style="color:${c.cur-c.base_avg>=0?'var(--sage)':'var(--rose)'};">${c.cur-c.base_avg>=0?'+':'-'}$${fmtK(Math.abs(c.cur-c.base_avg))}</td>
+    <td class="num">${delta(c.gap_pct,true)}</td>
+  </tr>`).join('');
+}
 
-  channels.forEach((ch, ci) => {
-    const row = values[ci] || [];
-    const nonZero = row.filter(v=>v>0);
-    const avg = nonZero.length ? nonZero.reduce((a,b)=>a+b,0)/nonZero.length : 1;
-    html += `<div class="hm-label" title="${ch}">${ch.length>18?ch.substring(0,18)+'…':ch}</div>`;
-    row.forEach(v => {
-      const r = avg>0?v/avg:0;
-      const [bg,tc] = heatColor(r,v);
-      html += `<div class="hm-cell" style="background:${bg};color:${tc};" title="${ch} · $${fmt(v)}">${v>0?'$'+fmtK(v):'—'}</div>`;
-    });
-    html += `<div class="hm-cell" style="background:var(--paper2);font-weight:500;">$${fmtK(avg)}</div>`;
+// ── TREND TAB ────────────────────────────────────────────
+function renderTrendTab(){
+  const mt=REPORT.monthly_totals||[];
+  const canvas=document.getElementById('chart-trend');
+  drawLine(canvas,mt.map(m=>m.label),mt.map(m=>m.total),mt.map(m=>m.isCurrent));
+
+  // Mini sparklines per channel
+  const hm=REPORT.heatmap||{};
+  const minis=document.getElementById('trend-minis');
+  minis.innerHTML=(hm.channels||[]).slice(0,6).map((ch,i)=>`
+    <div class="card" style="padding:14px 16px;">
+      <div style="font-size:12px;font-weight:500;margin-bottom:8px;">${ch}</div>
+      <canvas id="mini-${i}" height="50"></canvas>
+    </div>`).join('');
+
+  (hm.channels||[]).slice(0,6).forEach((ch,i)=>{
+    const vals=(hm.values||[])[i]||[];
+    const el=document.getElementById('mini-'+i);
+    if(el)drawSparkline(el,vals);
   });
-  html += '</div>';
-  document.getElementById('heatmap-container').innerHTML = html;
 }
 
-function heatColor(r,v) {
-  if(v===0)return['var(--paper2)','var(--ink3)'];
+// ── HEATMAP ───────────────────────────────────────────────
+function renderHeatmap(){
+  const hm=REPORT.heatmap;if(!hm)return;
+  const{months,channels,values}=hm;
+  let html=`<div class="hm-grid" style="grid-template-columns:130px repeat(${months.length},minmax(38px,1fr)) 58px;">`;
+  html+=`<div class="hm-hdr"></div>`;
+  months.forEach(m=>html+=`<div class="hm-hdr">${m}</div>`);
+  html+=`<div class="hm-hdr" style="text-align:right;">Avg</div>`;
+  channels.forEach((ch,ci)=>{
+    const row=values[ci]||[];
+    const nonZ=row.filter(v=>v>0);
+    const avg=nonZ.length?nonZ.reduce((a,b)=>a+b,0)/nonZ.length:1;
+    html+=`<div class="hm-lbl" title="${ch}">${ch.length>16?ch.substring(0,16)+'…':ch}</div>`;
+    row.forEach(v=>{
+      const[bg,tc]=hmColor(avg>0?v/avg:0,v);
+      html+=`<div class="hm-cell" style="background:${bg};color:${tc};" title="${ch}·$${fmt(v)}">${v>0?'$'+fmtK(v):'—'}</div>`;
+    });
+    html+=`<div class="hm-cell" style="background:var(--paper2);font-weight:500;">$${fmtK(avg)}</div>`;
+  });
+  html+='</div>';
+  document.getElementById('heatmap-container').innerHTML=html;
+}
+function hmColor(r,v){
+  if(!v)return['var(--paper2)','var(--ink3)'];
   if(r>1.3)return['rgba(45,107,80,.75)','white'];
   if(r>1.1)return['rgba(45,107,80,.42)','var(--ink)'];
   if(r>0.9)return['rgba(45,107,80,.18)','var(--ink)'];
@@ -1302,193 +1289,119 @@ function heatColor(r,v) {
   return['rgba(176,58,58,.65)','white'];
 }
 
-// ══════════════════════════════════════════════════════
-//  CANVAS CHARTS (no dependencies)
-// ══════════════════════════════════════════════════════
-function isDark() { return window.matchMedia('(prefers-color-scheme:dark)').matches; }
-function chartColors() {
-  return { text: isDark()?'rgba(255,255,255,.5)':'rgba(24,23,20,.45)', grid: isDark()?'rgba(255,255,255,.06)':'rgba(24,23,20,.06)', axis: isDark()?'rgba(255,255,255,.12)':'rgba(24,23,20,.12)' };
+// ── CANVAS CHARTS ────────────────────────────────────────
+function dpr(){return window.devicePixelRatio||1;}
+function setupCanvas(canvas,H){
+  const W=canvas.offsetWidth||600;const d=dpr();
+  canvas.width=W*d;canvas.height=H*d;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(d,d);
+  return{ctx,W,H};
 }
+function isDark(){return window.matchMedia('(prefers-color-scheme:dark)').matches;}
+function cc(){return{text:isDark()?'rgba(255,255,255,.45)':'rgba(24,23,20,.4)',grid:isDark()?'rgba(255,255,255,.05)':'rgba(24,23,20,.05)'}}
+function nice(v){const p=Math.pow(10,Math.floor(Math.log10(v)));const f=v/p;return f<1.5?p:f<3?2*p:f<7?5*p:10*p;}
+function rrect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 
-function drawBarChart(ctx, canvas, labels, datasets) {
-  const dpr = window.devicePixelRatio || 1;
-  const W = canvas.offsetWidth || 600;
-  const H = 200;
-  canvas.width = W * dpr; canvas.height = H * dpr;
-  canvas.style.width = W+'px'; canvas.style.height = H+'px';
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, W, H);
-
-  const pad = {top:10,right:10,bottom:36,left:52};
-  const cW = W - pad.left - pad.right;
-  const cH = H - pad.top - pad.bottom;
-  const cc = chartColors();
-  const n = labels.length;
-  const maxVal = Math.max(...datasets.flatMap(d=>d.data), 1);
-  const niceMax = niceNumber(maxVal * 1.1);
-  const tickCount = 4;
-
-  ctx.font = `10px 'DM Mono',monospace`;
-  ctx.fillStyle = cc.text;
-
-  // Grid
-  for (let i = 0; i <= tickCount; i++) {
-    const v = niceMax * i / tickCount;
-    const y = pad.top + cH - (v/niceMax)*cH;
-    ctx.strokeStyle = cc.grid; ctx.lineWidth = 0.5;
-    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left+cW, y); ctx.stroke();
-    ctx.textAlign = 'right';
-    ctx.fillText('$'+fmtK(v), pad.left-4, y+3.5);
+function drawBars(canvas,labels,datasets){
+  const{ctx,W,H}=setupCanvas(canvas,190);
+  const pad={top:8,right:8,bottom:34,left:48};
+  const cW=W-pad.left-pad.right;const cH=H-pad.top-pad.bottom;
+  const C=cc();const n=labels.length;
+  const maxV=Math.max(...datasets.flatMap(d=>d.data),1);
+  const nMax=nice(maxV*1.12);const ticks=4;
+  ctx.font=`10px 'DM Mono',monospace`;
+  for(let i=0;i<=ticks;i++){
+    const v=nMax*i/ticks;const y=pad.top+cH-(v/nMax)*cH;
+    ctx.strokeStyle=C.grid;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cW,y);ctx.stroke();
+    ctx.fillStyle=C.text;ctx.textAlign='right';ctx.fillText('$'+fmtK(v),pad.left-4,y+3.5);
   }
-
-  const groupW = cW / n;
-  const barW = Math.max(4, groupW * 0.35);
-  const gap = barW * 0.3;
-
-  datasets.forEach((ds, di) => {
-    ds.data.forEach((v, i) => {
-      const x = pad.left + i * groupW + groupW/2 + (di - (datasets.length-1)/2) * (barW + gap);
-      const bH = Math.max(1, (v/niceMax)*cH);
-      const y = pad.top + cH - bH;
-      ctx.fillStyle = Array.isArray(ds.colors) ? ds.colors[i] : ds.colors;
-      roundRect(ctx, x - barW/2, y, barW, bH, 3);
-      ctx.fill();
+  const gW=cW/n;const bW=Math.max(4,gW*0.34);const gap=bW*0.25;
+  datasets.forEach((ds,di)=>{
+    ds.data.forEach((v,i)=>{
+      const x=pad.left+i*gW+gW/2+(di-(datasets.length-1)/2)*(bW+gap);
+      const bH=Math.max(1,(v/nMax)*cH);const y=pad.top+cH-bH;
+      ctx.fillStyle=Array.isArray(ds.colors)?ds.colors[i]:ds.colors;
+      rrect(ctx,x-bW/2,y,bW,bH,3);ctx.fill();
     });
   });
-
-  // Labels
-  ctx.fillStyle = cc.text; ctx.textAlign = 'center';
-  labels.forEach((l, i) => {
-    const x = pad.left + i * groupW + groupW/2;
-    ctx.fillText(l.length>12?l.substring(0,12)+'…':l, x, H - pad.bottom + 14);
-  });
+  ctx.fillStyle=C.text;ctx.textAlign='center';
+  labels.forEach((l,i)=>{ctx.fillText(l.length>12?l.substring(0,12)+'…':l,pad.left+i*gW+gW/2,H-pad.bottom+13);});
 }
 
-function drawLineChart(ctx, canvas, labels, data) {
-  const dpr = window.devicePixelRatio || 1;
-  const W = canvas.offsetWidth || 600;
-  const H = 260;
-  canvas.width = W * dpr; canvas.height = H * dpr;
-  canvas.style.width = W+'px'; canvas.style.height = H+'px';
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, W, H);
-
-  const pad = {top:16,right:16,bottom:36,left:56};
-  const cW = W - pad.left - pad.right;
-  const cH = H - pad.top - pad.bottom;
-  const cc = chartColors();
-  const n = labels.length;
-  if (!n) return;
-
-  const maxVal = Math.max(...data, 1);
-  const minVal = Math.min(...data.filter(v=>v>0), 0);
-  const niceMax = niceNumber(maxVal * 1.1);
-  const tickCount = 5;
-
-  ctx.font = `10px 'DM Mono',monospace`;
-  ctx.fillStyle = cc.text;
-
-  for (let i = 0; i <= tickCount; i++) {
-    const v = niceMax * i / tickCount;
-    const y = pad.top + cH - (v/niceMax)*cH;
-    ctx.strokeStyle = cc.grid; ctx.lineWidth = 0.5;
-    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left+cW, y); ctx.stroke();
-    ctx.textAlign = 'right'; ctx.fillText('$'+fmtK(v), pad.left-4, y+3.5);
+function drawLine(canvas,labels,data,highlights){
+  const{ctx,W,H}=setupCanvas(canvas,250);
+  const pad={top:14,right:14,bottom:32,left:52};
+  const cW=W-pad.left-pad.right;const cH=H-pad.top-pad.bottom;
+  const C=cc();const n=labels.length;if(!n)return;
+  const maxV=Math.max(...data,1);const nMax=nice(maxV*1.1);const ticks=5;
+  ctx.font=`10px 'DM Mono',monospace`;
+  for(let i=0;i<=ticks;i++){
+    const v=nMax*i/ticks;const y=pad.top+cH-(v/nMax)*cH;
+    ctx.strokeStyle=C.grid;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cW,y);ctx.stroke();
+    ctx.fillStyle=C.text;ctx.textAlign='right';ctx.fillText('$'+fmtK(v),pad.left-4,y+3.5);
   }
-
-  const pts = data.map((v,i) => [pad.left + i*(cW/(n-1||1)), pad.top + cH - (v/niceMax)*cH]);
-
+  const pts=data.map((v,i)=>[pad.left+i*(cW/(n-1||1)),pad.top+cH-(v/nMax)*cH]);
   // Fill
-  ctx.beginPath();
-  ctx.moveTo(pts[0][0], pts[0][1]);
-  for (let i=1;i<pts.length;i++) {
-    const [x0,y0]=pts[i-1],[x1,y1]=pts[i];
-    const cpx=(x0+x1)/2;
-    ctx.bezierCurveTo(cpx,y0,cpx,y1,x1,y1);
-  }
-  ctx.lineTo(pts[pts.length-1][0], pad.top+cH);
-  ctx.lineTo(pts[0][0], pad.top+cH);
-  ctx.closePath();
-  const grad = ctx.createLinearGradient(0,pad.top,0,pad.top+cH);
-  grad.addColorStop(0,'rgba(45,107,80,.18)');
-  grad.addColorStop(1,'rgba(45,107,80,0)');
-  ctx.fillStyle = grad; ctx.fill();
-
+  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i];const cx=(x0+x1)/2;ctx.bezierCurveTo(cx,y0,cx,y1,x1,y1);}
+  ctx.lineTo(pts[pts.length-1][0],pad.top+cH);ctx.lineTo(pts[0][0],pad.top+cH);ctx.closePath();
+  const g=ctx.createLinearGradient(0,pad.top,0,pad.top+cH);g.addColorStop(0,'rgba(45,107,80,.15)');g.addColorStop(1,'rgba(45,107,80,0)');
+  ctx.fillStyle=g;ctx.fill();
   // Line
-  ctx.beginPath();
-  ctx.moveTo(pts[0][0], pts[0][1]);
-  for (let i=1;i<pts.length;i++) {
-    const [x0,y0]=pts[i-1],[x1,y1]=pts[i];
-    const cpx=(x0+x1)/2;
-    ctx.bezierCurveTo(cpx,y0,cpx,y1,x1,y1);
-  }
-  ctx.strokeStyle = 'rgba(45,107,80,.85)'; ctx.lineWidth = 2; ctx.stroke();
-
+  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i];const cx=(x0+x1)/2;ctx.bezierCurveTo(cx,y0,cx,y1,x1,y1);}
+  ctx.strokeStyle='rgba(45,107,80,.8)';ctx.lineWidth=2;ctx.stroke();
   // Dots
-  pts.forEach(([x,y]) => {
-    ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2);
-    ctx.fillStyle='rgba(45,107,80,.85)'; ctx.fill();
+  pts.forEach(([x,y],i)=>{
+    const hi=highlights?.[i];
+    ctx.beginPath();ctx.arc(x,y,hi?5:2.5,0,Math.PI*2);
+    ctx.fillStyle=hi?'rgba(45,107,80,.9)':'rgba(45,107,80,.7)';ctx.fill();
+    if(hi){ctx.strokeStyle='white';ctx.lineWidth=1.5;ctx.stroke();}
   });
-
-  // X labels
-  ctx.fillStyle = cc.text; ctx.textAlign = 'center';
-  labels.forEach((l,i) => {
-    const x = pad.left + i*(cW/(n-1||1));
-    if (i%2===0||n<=8) ctx.fillText(l.length>7?l.substring(0,7):l, x, H-pad.bottom+14);
-  });
+  ctx.fillStyle=C.text;ctx.textAlign='center';
+  labels.forEach((l,i)=>{if(i%2===0||n<=8)ctx.fillText(l.length>7?l.substring(0,7):l,pts[i][0],H-pad.bottom+13);});
 }
 
-function roundRect(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x+r, y);
-  ctx.lineTo(x+w-r, y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-  ctx.lineTo(x+w, y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-  ctx.lineTo(x+r, y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-  ctx.lineTo(x, y+r); ctx.quadraticCurveTo(x,y,x+r,y);
-  ctx.closePath();
+function drawSparkline(canvas,data){
+  const{ctx,W,H}=setupCanvas(canvas,50);
+  const pad={top:4,right:4,bottom:4,left:4};
+  const cW=W-pad.left-pad.right;const cH=H-pad.top-pad.bottom;
+  const n=data.length;if(!n)return;
+  const maxV=Math.max(...data,1);
+  const pts=data.map((v,i)=>[pad.left+i*(cW/(n-1||1)),pad.top+cH-(v/maxV)*cH]);
+  const up=data[data.length-1]>=(data[data.length-2]||0);
+  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i];ctx.bezierCurveTo((x0+x1)/2,y0,(x0+x1)/2,y1,x1,y1);}
+  ctx.strokeStyle=up?'rgba(45,107,80,.8)':'rgba(176,58,58,.7)';ctx.lineWidth=1.5;ctx.stroke();
 }
 
-function niceNumber(v) {
-  const p = Math.pow(10, Math.floor(Math.log10(v)));
-  const f = v/p;
-  if(f<1.5)return 1*p;if(f<3)return 2*p;if(f<7)return 5*p;return 10*p;
+// ── TABS ─────────────────────────────────────────────────
+function showTab(id){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['channel','family','sku','customer','trend','heatmap'][i]===id));
+  document.querySelectorAll('.tabpanel').forEach((p,i)=>p.classList.toggle('active',['tp-channel','tp-family','tp-sku','tp-customer','tp-trend','tp-heatmap'][i]==='tp-'+id));
 }
 
-// ══════════════════════════════════════════════════════
-//  TABS
-// ══════════════════════════════════════════════════════
-function showTab(id) {
-  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['channel','product','trend','heatmap'][i]===id));
-  document.querySelectorAll('.tabpanel').forEach((p,i) => p.classList.toggle('active', ['tp-channel','tp-product','tp-trend','tp-heatmap'][i]==='tp-'+id));
+// ── EXPORT CSV ───────────────────────────────────────────
+function exportCSV(){
+  if(!REPORT)return;
+  const rows=[['Channel','Current','Baseline Avg','Gap $','Gap %']];
+  REPORT.channels.forEach(c=>rows.push([c.channel,c.current,c.baseline,Math.round(c.current-c.baseline),c.gap_pct+'%']));
+  rows.push([]);
+  rows.push(['SKU','Product','Brand','Family','Current','Baseline Avg','Gap $','Gap %']);
+  (REPORT.skus||[]).forEach(s=>rows.push([s.base,s.display,s.brand,s.family,s.current,s.base_avg,s.gap,s.gap_pct+'%']));
+  const csv=rows.map(r=>r.map(v=>`"${String(v||'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download='SalesGap_'+REPORT.month+'.csv';a.click();
 }
 
-// ══════════════════════════════════════════════════════
-//  EXPORT
-// ══════════════════════════════════════════════════════
-function exportCSVReport() {
-  if (!REPORT) return;
-  const rows = [['Channel','Current','Baseline Avg','Gap $','Gap %','Note']];
-  REPORT.channels.forEach(c => {
-    rows.push([c.channel, c.current, c.baseline, Math.round(c.current-c.baseline), c.gap_pct+'%', c.note||'']);
-  });
-  const csv = rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download = 'SalesGap_'+REPORT.month+'.csv';
-  a.click();
-}
-
-// ══════════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════════
-window.addEventListener('load', () => {
-  if (!CFG.owner || !CFG.repo) {
-    showView('view-setup');
-    return;
-  }
-  // Default view is user
+// ── INIT ─────────────────────────────────────────────────
+window.addEventListener('load',()=>{
+  if(!CFG.owner||!CFG.repo){showView('view-setup');return;}
   loadReport();
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
