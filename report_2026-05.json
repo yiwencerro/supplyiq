@@ -1,0 +1,2174 @@
+{
+  "period": "May 2026",
+  "month": "2026-05",
+  "compare_mode": "l12m",
+  "compare_label": "last 12 months average",
+  "generated": "2026-05-27T22:10:33.124Z",
+  "company": "the company",
+  "summary": "May 2026 sales totaled $744K, representing a 21.0% decline from the $941K baseline despite YoY growth of 0.6%. Critical underperformance in E-Tail (-77.5%), International (-65.9%), and Amazon (-23.5%) channels is partially offset by exceptional growth in Closeout (+5015.5%) and solid Distributor performance (+6.8%).",
+  "insights": [
+    {
+      "type": "channel",
+      "priority": "high",
+      "title": "E-Tail channel collapsed 77.5% YoY",
+      "body": "E-Tail sales plummeted from $103.8K baseline to $23.3K current, a loss of $80.5K in revenue. This represents the most severe channel-level decline in the portfolio and requires immediate investigation into wholesale partner relationships, pricing, or product availability issues.",
+      "action": "Conduct urgent audit of E-Tail partner accounts (Amazon, Walmart, Target). Verify inventory levels, pricing alignment, and promotion calendar compliance. Schedule partner review calls to identify root causes and recovery plan."
+    },
+    {
+      "type": "channel",
+      "priority": "high",
+      "title": "International markets contracted 65.9%",
+      "body": "International channel revenue fell from $92.7K to $31.6K, a $61.1K shortfall. This significant contraction suggests supply chain, regulatory, or distributor relationship issues that warrant investigation across key international partners.",
+      "action": "Review international distributor performance and supply chain delays. Assess currency/tariff impacts and competitor activity in key markets. Prioritize recovery of top 3 international regions contributing to baseline."
+    },
+    {
+      "type": "product",
+      "priority": "high",
+      "title": "Five SKUs dropped to zero with 638K baseline",
+      "body": "EU Magnesium Caps, Dual Tabs, NAC Caps, and two ResVitale Collagen products collectively generated $638K baseline but $0 current month sales. These discontinued or stockout items represent critical lost revenue and potential supply chain breakdowns.",
+      "action": "Determine status of FDM, Practitioner, and missing Twinlab products immediately—discontinuation vs. stockout. For discontinued items, identify replacement SKUs and redirect customer demand. For stockouts, expedite production and update distributor allocation."
+    },
+    {
+      "type": "opportunity",
+      "priority": "high",
+      "title": "Resveratrol category exploding 218-269%",
+      "body": "ResVitale and Reserveage Resveratrol Capsules are massively outperforming, with top SKUs at 269% above baseline. Combined sales of $269.7K for top three Resveratrol SKUs suggest strong market demand and pricing power in the anti-aging supplement segment.",
+      "action": "Increase Resveratrol inventory allocation and negotiate additional warehouse space. Expand promotional support and retail positioning for ResVitale VA3030 ($142K current) and Reserveage 4910 ($62K current). Explore higher-margin SKU variants in this family."
+    },
+    {
+      "type": "product",
+      "priority": "medium",
+      "title": "Twinlab Daily One and L-Lysine new high performers",
+      "body": "Twinlab Daily One Caps (with and without Iron) and L-Lysine combined for $108.8K in current sales, appearing as top performers with no prior baseline comparison, suggesting successful new product launches or channel expansion.",
+      "action": "Validate if these are truly new SKUs or reporting anomalies. If new, investigate which channels are driving adoption. Ensure adequate inventory levels to support momentum and prepare for scaled manufacturing if trend continues."
+    },
+    {
+      "type": "risk",
+      "priority": "medium",
+      "title": "Amazon and Specialty channels declined 23-24%",
+      "body": "Amazon dropped from $204K to $156K (-$48K), while Specialty fell from $381K to $288K (-$93K). These two largest channels account for $444K combined current sales but are experiencing persistent headwinds that threaten overall portfolio stability.",
+      "action": "Audit Amazon listing quality, pricing, and review scores. Verify Specialty distributor inventory health and competitive positioning. Schedule account reviews to understand Q2 forecast and identify recovery initiatives for both channels."
+    }
+  ],
+  "product_notes": {
+    "winners_summary": "Resveratrol Capsules (ResVitale and Reserveage brands) are exceptional performers, with top SKUs commanding 219-439% above baseline sales. Twinlab Daily One multivitamins and L-Lysine have emerged as strong new performers with $108.8K combined May sales, indicating successful category expansion.",
+    "laggards_summary": "Five premium SKUs completely disappeared from sales (Magnesium, Dual Tabs, NAC, two Collagen products) representing $638K in lost baseline revenue, likely due to stockouts or discontinuation. CollagenBooster variants and Resveratrol Plus NAD have declined 61-81%, requiring product review and potential reformulation or repositioning."
+  },
+  "kpis": {
+    "total_current": 744120,
+    "total_baseline": 941425,
+    "total_gap_pct": -21,
+    "yoy_pct": 0.6,
+    "yoy_month": "May 2025"
+  },
+  "channels": [
+    {
+      "channel": "Amazon",
+      "current": 156252,
+      "baseline": 204144,
+      "gap_pct": -23.5
+    },
+    {
+      "channel": "Closeout",
+      "current": 81306,
+      "baseline": 1589,
+      "gap_pct": 5015.5
+    },
+    {
+      "channel": "Distributor",
+      "current": 159632,
+      "baseline": 149535,
+      "gap_pct": 6.8
+    },
+    {
+      "channel": "E-Tail",
+      "current": 23298,
+      "baseline": 103772,
+      "gap_pct": -77.5
+    },
+    {
+      "channel": "FDM",
+      "current": 0,
+      "baseline": 400,
+      "gap_pct": -100
+    },
+    {
+      "channel": "HNF",
+      "current": 4441,
+      "baseline": 7513,
+      "gap_pct": -40.9
+    },
+    {
+      "channel": "International",
+      "current": 31610,
+      "baseline": 92705,
+      "gap_pct": -65.9
+    },
+    {
+      "channel": "Practioner",
+      "current": 0,
+      "baseline": 270,
+      "gap_pct": -100
+    },
+    {
+      "channel": "Specialty",
+      "current": 287581,
+      "baseline": 381497,
+      "gap_pct": -24.6
+    }
+  ],
+  "skus": [
+    {
+      "base": "4943",
+      "display": "RVT RESVERATROL 500MG CAPS 60 (VA3030)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "4 - Drop",
+      "current": 142089,
+      "base_avg": 44550,
+      "gap": 97539,
+      "gap_pct": 218.9
+    },
+    {
+      "base": "4942",
+      "display": "RVT RESVERATROL 500MG CAPS 30 (VA3020)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "4 - Drop",
+      "current": 65163,
+      "base_avg": 17658,
+      "gap": 47506,
+      "gap_pct": 269
+    },
+    {
+      "base": "5388",
+      "display": "(N) RSV RESVERATROL 500MG CAPS 60 CT (4910)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 62429,
+      "base_avg": 18589,
+      "gap": 43840,
+      "gap_pct": 235.8
+    },
+    {
+      "base": "2841",
+      "display": "TWL DAILY ONE W/O IRONW/FLORAGL 60(6-11)",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Daily One Caps W/O Iron",
+      "plm": "4 - Drop",
+      "current": 41228,
+      "base_avg": 0,
+      "gap": 41228,
+      "gap_pct": 0
+    },
+    {
+      "base": "498",
+      "display": "TWL Daily One Caps W/Iron W/FloraGlo 60",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Daily One Caps With Iron",
+      "plm": "4 - Drop",
+      "current": 40078,
+      "base_avg": 0,
+      "gap": 40078,
+      "gap_pct": 0
+    },
+    {
+      "base": "34",
+      "display": "TWL L-LYSINE CAPS 500 MG 100",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "L-Lysine",
+      "plm": "4 - Drop",
+      "current": 27500,
+      "base_avg": 0,
+      "gap": 27500,
+      "gap_pct": 0
+    },
+    {
+      "base": "5390",
+      "display": "RSV BERGAMOT CHOLEST SUPP CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Bergamot",
+      "plm": "2 - Keep",
+      "current": 22192,
+      "base_avg": 4117,
+      "gap": 18075,
+      "gap_pct": 439.1
+    },
+    {
+      "base": "5408",
+      "display": "RSV Resveratrol with Pterostilbene 500mg",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol W/Ptero",
+      "plm": "3 - Watch",
+      "current": 19471,
+      "base_avg": 5015,
+      "gap": 14456,
+      "gap_pct": 288.3
+    },
+    {
+      "base": "5404",
+      "display": "(N) RSV RESVERATROL 250MG CAPS 60 (4905)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 21871,
+      "base_avg": 9083,
+      "gap": 12788,
+      "gap_pct": 140.8
+    },
+    {
+      "base": "5387",
+      "display": "RSV RESVERATROL 500MG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 15990,
+      "base_avg": 3365,
+      "gap": 12625,
+      "gap_pct": 375.2
+    },
+    {
+      "base": "5389",
+      "display": "RSV BEAUTIFUL LEGS W/DIOSMIN CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Beautiful Legs",
+      "plm": "2 - Keep",
+      "current": 13098,
+      "base_avg": 3108,
+      "gap": 9990,
+      "gap_pct": 321.5
+    },
+    {
+      "base": "4957",
+      "display": "RVT COLLAGEN ENHANCE CAPS 120 (VA1320)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Collagen Booster/Enhance",
+      "plm": "4 - Drop",
+      "current": 33212,
+      "base_avg": 24142,
+      "gap": 9070,
+      "gap_pct": 37.6
+    },
+    {
+      "base": "524",
+      "display": "TWL Daily One W/O IronW/FloraGlo 180 Cap",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Daily One Caps W/O Iron",
+      "plm": "2 - Keep",
+      "current": 13466,
+      "base_avg": 4624,
+      "gap": 8842,
+      "gap_pct": 191.2
+    },
+    {
+      "base": "5425",
+      "display": "(N) RSV RESVERATROL 1000MG CAPS 60 (5330)",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 16007,
+      "base_avg": 7315,
+      "gap": 8693,
+      "gap_pct": 118.8
+    },
+    {
+      "base": "5385",
+      "display": "(N) RSV COLLAGEN BOOSTER CAPS 60 CT (4954)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Booster/Enhance",
+      "plm": "2 - Keep",
+      "current": 13430,
+      "base_avg": 6055,
+      "gap": 7375,
+      "gap_pct": 121.8
+    },
+    {
+      "base": "4941",
+      "display": "RVT RESVERATROL 250MG CAPS 120 (VA3010)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "4 - Drop",
+      "current": 10888,
+      "base_avg": 3659,
+      "gap": 7229,
+      "gap_pct": 197.6
+    },
+    {
+      "base": "5480",
+      "display": "(N) RSV RESVERATROL PLUS 1000MG CAPS 30CT",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Plus",
+      "plm": "2 - Keep",
+      "current": 9299,
+      "base_avg": 2590,
+      "gap": 6710,
+      "gap_pct": 259.1
+    },
+    {
+      "base": "5403",
+      "display": "RSV RESVERATROL 250MG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 9013,
+      "base_avg": 2309,
+      "gap": 6705,
+      "gap_pct": 290.4
+    },
+    {
+      "base": "4827",
+      "display": "TWL OCUGUARD PLUS CAPS 120 (2-17)",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Ocuguard Plus",
+      "plm": "2 - Keep",
+      "current": 9043,
+      "base_avg": 3198,
+      "gap": 5845,
+      "gap_pct": 182.8
+    },
+    {
+      "base": "5395",
+      "display": "RSV TRES BEAUTY 3 CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Tres Beauty 3/Beauty 3",
+      "plm": "2 - Keep",
+      "current": 10256,
+      "base_avg": 5103,
+      "gap": 5152,
+      "gap_pct": 101
+    },
+    {
+      "base": "4826",
+      "display": "TWL OCUGUARD PLUS CAPS 60 (2-17)",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Ocuguard Plus",
+      "plm": "2 - Keep",
+      "current": 7414,
+      "base_avg": 2360,
+      "gap": 5054,
+      "gap_pct": 214.2
+    },
+    {
+      "base": "5399",
+      "display": "RSV KERATIN BOOSTER CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Keratin Booster/Enhance",
+      "plm": "2 - Keep",
+      "current": 7177,
+      "base_avg": 2312,
+      "gap": 4865,
+      "gap_pct": 210.5
+    },
+    {
+      "base": "5405",
+      "display": "(N) RSV RESVERATROL 250MG CAPS 120 (4906)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 9908,
+      "base_avg": 5125,
+      "gap": 4783,
+      "gap_pct": 93.3
+    },
+    {
+      "base": "2315",
+      "display": "TWL CHOLINE COCKTAIL 13.33OZ",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Choline Cocktail",
+      "plm": "4 - Drop",
+      "current": 6410,
+      "base_avg": 2308,
+      "gap": 4101,
+      "gap_pct": 177.7
+    },
+    {
+      "base": "470",
+      "display": "TWL MAGNESIUM CAPS 200",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Magnesium",
+      "plm": "2 - Keep",
+      "current": 7140,
+      "base_avg": 3091,
+      "gap": 4049,
+      "gap_pct": 131
+    },
+    {
+      "base": "5386",
+      "display": "(N) RSV COLLAGEN BOOSTER CAPS 120 CT (4955)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Booster/Enhance",
+      "plm": "3 - Watch",
+      "current": 9081,
+      "base_avg": 5288,
+      "gap": 3793,
+      "gap_pct": 71.7
+    },
+    {
+      "base": "175",
+      "display": "TWL B-12 DOTS 250",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "B-12",
+      "plm": "3 - Watch",
+      "current": 5799,
+      "base_avg": 2431,
+      "gap": 3369,
+      "gap_pct": 138.6
+    },
+    {
+      "base": "4363",
+      "display": "MTB ULTRA TAB 45CT NO EAS (7-13)",
+      "brand": "Metabolife",
+      "cat": "",
+      "family": "Metabolife Ultra",
+      "plm": "2 - Keep",
+      "current": 13037,
+      "base_avg": 10270,
+      "gap": 2767,
+      "gap_pct": 26.9
+    },
+    {
+      "base": "5481",
+      "display": "(N) RSV NAD+Resveratrol Plus 1000MG 30 CT",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Plus",
+      "plm": "2 - Keep",
+      "current": 9011,
+      "base_avg": 6745,
+      "gap": 2266,
+      "gap_pct": 33.6
+    },
+    {
+      "base": "5396",
+      "display": "RSV COLLAGEN REPLENISH CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Replenish Capsules",
+      "plm": "3 - Watch",
+      "current": 3694,
+      "base_avg": 1561,
+      "gap": 2133,
+      "gap_pct": 136.6
+    },
+    {
+      "base": "459",
+      "display": "TWL POTASSIUM CAPS 180",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Potassium",
+      "plm": "3 - Watch",
+      "current": 3152,
+      "base_avg": 1068,
+      "gap": 2084,
+      "gap_pct": 195.2
+    },
+    {
+      "base": "207",
+      "display": "TWL Stress B-Complex Caps 100",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Stress B-Complex",
+      "plm": "2 - Keep",
+      "current": 4527,
+      "base_avg": 2485,
+      "gap": 2042,
+      "gap_pct": 82.2
+    },
+    {
+      "base": "4815",
+      "display": "TWL AMINO FUEL LIQUID ORANGE 32OZ (8-16)",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Amino Fuel",
+      "plm": "3 - Watch",
+      "current": 5315,
+      "base_avg": 3458,
+      "gap": 1857,
+      "gap_pct": 53.7
+    },
+    {
+      "base": "450",
+      "display": "TWL Magnesium Caps 100",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Magnesium",
+      "plm": "2 - Keep",
+      "current": 3353,
+      "base_avg": 1603,
+      "gap": 1750,
+      "gap_pct": 109.2
+    },
+    {
+      "base": "5402",
+      "display": "RSV RESVERATROL 100 CAPS",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 3110,
+      "base_avg": 1747,
+      "gap": 1363,
+      "gap_pct": 78
+    },
+    {
+      "base": "2391",
+      "display": "TWL RIPPED FUEL EXTREME EPHEDRA FREE 60",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Ripped Fuel",
+      "plm": "3 - Watch",
+      "current": 3250,
+      "base_avg": 2130,
+      "gap": 1121,
+      "gap_pct": 52.6
+    },
+    {
+      "base": "4814",
+      "display": "TWL AMINO FUEL LIQUID ORANGE 16OZ (8-16)",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Amino Fuel",
+      "plm": "3 - Watch",
+      "current": 2804,
+      "base_avg": 1686,
+      "gap": 1118,
+      "gap_pct": 66.3
+    },
+    {
+      "base": "5409",
+      "display": "RSV Collagen Candy - Sour Apple",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Candy",
+      "plm": "3 - Watch",
+      "current": 1728,
+      "base_avg": 678,
+      "gap": 1051,
+      "gap_pct": 155
+    },
+    {
+      "base": "5479",
+      "display": "(N) RSV RESVERATROL PLUS 500MG CAPS 30 CT",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Plus",
+      "plm": "2 - Keep",
+      "current": 2992,
+      "base_avg": 2348,
+      "gap": 644,
+      "gap_pct": 27.4
+    },
+    {
+      "base": "5444",
+      "display": "RSV BEAUTY NaPCA w/Aloe",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Na-Pca",
+      "plm": "2 - Keep",
+      "current": 951,
+      "base_avg": 372,
+      "gap": 579,
+      "gap_pct": 155.6
+    },
+    {
+      "base": "5443",
+      "display": "RSV BEAUTY NaPCA",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Na-Pca",
+      "plm": "2 - Keep",
+      "current": 1093,
+      "base_avg": 527,
+      "gap": 566,
+      "gap_pct": 107.4
+    },
+    {
+      "base": "5401",
+      "display": "(N) RSV ULT COLLAGEN BOOSTER CAPS 90 (4960)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Ultra Collagen Booster/Enhance",
+      "plm": "2 - Keep",
+      "current": 3911,
+      "base_avg": 3422,
+      "gap": 489,
+      "gap_pct": 14.3
+    },
+    {
+      "base": "5310",
+      "display": "RSV Firming Neck & Décolleté Cream 50mL/1.7oz",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Firming Neck Cream",
+      "plm": "3 - Watch",
+      "current": 1326,
+      "base_avg": 1168,
+      "gap": 158,
+      "gap_pct": 13.6
+    },
+    {
+      "base": "5309",
+      "display": "RSV Firming Face Cream 50mL/1.7oz",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Firming Face Cream",
+      "plm": "3 - Watch",
+      "current": 1118,
+      "base_avg": 969,
+      "gap": 150,
+      "gap_pct": 15.4
+    },
+    {
+      "base": "5382",
+      "display": "RSV FDM Resveratrol 100mg, 30ct-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 363,
+      "base_avg": 403,
+      "gap": -40,
+      "gap_pct": -9.9
+    },
+    {
+      "base": "209",
+      "display": "TWL Stress B-Complex Caps 250",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Stress B-Complex",
+      "plm": "2 - Keep",
+      "current": 2013,
+      "base_avg": 2082,
+      "gap": -70,
+      "gap_pct": -3.3
+    },
+    {
+      "base": "5483",
+      "display": "RSV Beauty Collagen Chews 40CT Mixed-Berry",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Chews",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 318,
+      "gap": -318,
+      "gap_pct": -100
+    },
+    {
+      "base": "5311",
+      "display": "RSV illuminating Eye Cream 15mL/ .5oz",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Illuminating Eye Cream",
+      "plm": "3 - Watch",
+      "current": 326,
+      "base_avg": 680,
+      "gap": -353,
+      "gap_pct": -52
+    },
+    {
+      "base": "5383",
+      "display": "RES Keratin Hair Booster for Men",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Keratin Booster For Men",
+      "plm": "3 - Watch",
+      "current": 240,
+      "base_avg": 638,
+      "gap": -398,
+      "gap_pct": -62.4
+    },
+    {
+      "base": "5400",
+      "display": "(N) RSV KERATIN BOOSTER CAPS 120 (4914)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Keratin Booster/Enhance",
+      "plm": "3 - Watch",
+      "current": 3045,
+      "base_avg": 3514,
+      "gap": -468,
+      "gap_pct": -13.3
+    },
+    {
+      "base": "5308",
+      "display": "RSV Hydrating Hand & Foot Cream 75mL/2.5oz",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Hydrating Hand & Foot Cream",
+      "plm": "3 - Watch",
+      "current": 0,
+      "base_avg": 571,
+      "gap": -571,
+      "gap_pct": -100
+    },
+    {
+      "base": "- None -",
+      "display": "- None -",
+      "brand": "",
+      "cat": "",
+      "family": "",
+      "plm": "",
+      "current": 0,
+      "base_avg": 654,
+      "gap": -654,
+      "gap_pct": -100
+    },
+    {
+      "base": "6001",
+      "display": "INTL RSV Collagen Replenish Powder 2.75oz",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Replenish Powder",
+      "plm": "4 - Drop",
+      "current": 0,
+      "base_avg": 719,
+      "gap": -719,
+      "gap_pct": -100
+    },
+    {
+      "base": "5368",
+      "display": "RSV Resveratrol Gummies â€“ 60 ct-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Gummies",
+      "plm": "2 - Keep",
+      "current": 1521,
+      "base_avg": 2268,
+      "gap": -747,
+      "gap_pct": -32.9
+    },
+    {
+      "base": "5406",
+      "display": "(N) RSV FDM KERATIN HAIR & NAILS 60 CT (5236)-SFG",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Keratin Hair & Nails (FDM)",
+      "plm": "3 - Watch",
+      "current": 0,
+      "base_avg": 809,
+      "gap": -809,
+      "gap_pct": -100
+    },
+    {
+      "base": "2533",
+      "display": "TWL RIPPED FUEL 5X TAB 40",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Ripped Fuel",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 858,
+      "gap": -858,
+      "gap_pct": -100
+    },
+    {
+      "base": "384",
+      "display": "TWL Super Enzyme Caps 50",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Super Enzyme",
+      "plm": "3 - Watch",
+      "current": 464,
+      "base_avg": 1479,
+      "gap": -1014,
+      "gap_pct": -68.6
+    },
+    {
+      "base": "5426",
+      "display": "RSV RESVERATROL 250MG (FDM)",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Resveratrol Capsules",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 1368,
+      "gap": -1368,
+      "gap_pct": -100
+    },
+    {
+      "base": "5428",
+      "display": "RSV COLLAGEN REPLENISH POWDER 8OZ",
+      "brand": "Reserveage",
+      "cat": "",
+      "family": "Collagen Replenish Powder",
+      "plm": "4 - Drop",
+      "current": 0,
+      "base_avg": 2207,
+      "gap": -2207,
+      "gap_pct": -100
+    },
+    {
+      "base": "464",
+      "display": "TWL Zinc Caps 30 mg 100",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Zinc",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 2286,
+      "gap": -2286,
+      "gap_pct": -100
+    },
+    {
+      "base": "4944",
+      "display": "RVT KERATIN HAIR ENHANCE 500MG CAPS 60(VA3040)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Keratin Booster/Enhance",
+      "plm": "4 - Drop",
+      "current": 2851,
+      "base_avg": 8756,
+      "gap": -5905,
+      "gap_pct": -67.4
+    },
+    {
+      "base": "5088",
+      "display": "RVT BEAUTY 3 CAPS 90 (VA3050)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Tres Beauty 3/Beauty 3",
+      "plm": "4 - Drop",
+      "current": 2085,
+      "base_avg": 9793,
+      "gap": -7708,
+      "gap_pct": -78.7
+    },
+    {
+      "base": "4956",
+      "display": "RVT COLLAGEN ENHANCE CAPS 60 (VA1220)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Collagen Booster/Enhance",
+      "plm": "4 - Drop",
+      "current": 1933,
+      "base_avg": 10197,
+      "gap": -8264,
+      "gap_pct": -81
+    },
+    {
+      "base": "4961",
+      "display": "RVT ULT COLLAGEN ENHANCE CAPS 90 (VA1340)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Ultra Collagen Booster/Enhance",
+      "plm": "4 - Drop",
+      "current": 0,
+      "base_avg": 18087,
+      "gap": -18087,
+      "gap_pct": -100
+    },
+    {
+      "base": "5482",
+      "display": "(N) RVT Resveratrol Plus with NAD & Miricell™ 30CT",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Resveratrol Plus NAD with Miricell",
+      "plm": "2 - Keep",
+      "current": 16253,
+      "base_avg": 41656,
+      "gap": -25403,
+      "gap_pct": -61
+    },
+    {
+      "base": "4970",
+      "display": "RVT MX KERATIN ENHANCE W/BIOTIN 60(VA1250)",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Keratin Booster/Enhance",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 40824,
+      "gap": -40824,
+      "gap_pct": -100
+    },
+    {
+      "base": "57",
+      "display": "TWL NAC (N-Acetyl-Cysteine) Caps 60",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Nac (N-Acetyl-Cysteine)",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 77191,
+      "gap": -77191,
+      "gap_pct": -100
+    },
+    {
+      "base": "3848",
+      "display": "EU DUAL TABS MEGA VIT/MIN 60CT",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "Dual Tabs",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 98303,
+      "gap": -98303,
+      "gap_pct": -100
+    },
+    {
+      "base": "5283",
+      "display": "RVT MX COLLAGEN ENHANCE PLUS 180 CT",
+      "brand": "ResVitale",
+      "cat": "",
+      "family": "Collagen Enhance (MX)",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 120854,
+      "gap": -120854,
+      "gap_pct": -100
+    },
+    {
+      "base": "3752",
+      "display": "EU MAGNESIUM CAPS 375MG 100CT",
+      "brand": "Twinlab",
+      "cat": "",
+      "family": "",
+      "plm": "2 - Keep",
+      "current": 0,
+      "base_avg": 319638,
+      "gap": -319638,
+      "gap_pct": -100
+    }
+  ],
+  "families": [
+    {
+      "family": "Resveratrol Capsules",
+      "current": 356833,
+      "base_avg": 9309,
+      "gap_pct": 3733.2
+    },
+    {
+      "family": "Collagen Booster/Enhance",
+      "current": 57656,
+      "base_avg": 10671,
+      "gap_pct": 440.3
+    },
+    {
+      "family": "Daily One Caps W/O Iron",
+      "current": 54695,
+      "base_avg": 4624,
+      "gap_pct": 1082.7
+    },
+    {
+      "family": "Daily One Caps With Iron",
+      "current": 40078,
+      "base_avg": 0,
+      "gap_pct": 0
+    },
+    {
+      "family": "L-Lysine",
+      "current": 27500,
+      "base_avg": 0,
+      "gap_pct": 0
+    },
+    {
+      "family": "Bergamot",
+      "current": 22192,
+      "base_avg": 4117,
+      "gap_pct": 439.1
+    },
+    {
+      "family": "Resveratrol Plus",
+      "current": 21303,
+      "base_avg": 3440,
+      "gap_pct": 519.4
+    },
+    {
+      "family": "Resveratrol W/Ptero",
+      "current": 19471,
+      "base_avg": 5015,
+      "gap_pct": 288.3
+    },
+    {
+      "family": "Ocuguard Plus",
+      "current": 16457,
+      "base_avg": 2817,
+      "gap_pct": 484.2
+    },
+    {
+      "family": "Resveratrol Plus NAD with Miricell",
+      "current": 16253,
+      "base_avg": 41656,
+      "gap_pct": -61
+    },
+    {
+      "family": "Beautiful Legs",
+      "current": 13098,
+      "base_avg": 3108,
+      "gap_pct": 321.5
+    },
+    {
+      "family": "Keratin Booster/Enhance",
+      "current": 13073,
+      "base_avg": 4974,
+      "gap_pct": 162.8
+    },
+    {
+      "family": "Metabolife Ultra",
+      "current": 13037,
+      "base_avg": 10270,
+      "gap_pct": 26.9
+    },
+    {
+      "family": "Tres Beauty 3/Beauty 3",
+      "current": 12341,
+      "base_avg": 6741,
+      "gap_pct": 83.1
+    },
+    {
+      "family": "Magnesium",
+      "current": 10493,
+      "base_avg": 2381,
+      "gap_pct": 340.8
+    },
+    {
+      "family": "Amino Fuel",
+      "current": 8119,
+      "base_avg": 2471,
+      "gap_pct": 228.6
+    },
+    {
+      "family": "Stress B-Complex",
+      "current": 6540,
+      "base_avg": 2302,
+      "gap_pct": 184.1
+    },
+    {
+      "family": "Choline Cocktail",
+      "current": 6410,
+      "base_avg": 2308,
+      "gap_pct": 177.7
+    },
+    {
+      "family": "B-12",
+      "current": 5799,
+      "base_avg": 2431,
+      "gap_pct": 138.6
+    },
+    {
+      "family": "Ultra Collagen Booster/Enhance",
+      "current": 3911,
+      "base_avg": 8488,
+      "gap_pct": -53.9
+    },
+    {
+      "family": "Collagen Replenish Capsules",
+      "current": 3694,
+      "base_avg": 1561,
+      "gap_pct": 136.6
+    },
+    {
+      "family": "Ripped Fuel",
+      "current": 3250,
+      "base_avg": 2006,
+      "gap_pct": 62.1
+    },
+    {
+      "family": "Potassium",
+      "current": 3152,
+      "base_avg": 1068,
+      "gap_pct": 195.2
+    },
+    {
+      "family": "Na-Pca",
+      "current": 2044,
+      "base_avg": 445,
+      "gap_pct": 359.2
+    },
+    {
+      "family": "Collagen Candy",
+      "current": 1728,
+      "base_avg": 678,
+      "gap_pct": 155
+    },
+    {
+      "family": "Resveratrol Gummies",
+      "current": 1521,
+      "base_avg": 2268,
+      "gap_pct": -32.9
+    },
+    {
+      "family": "Firming Neck Cream",
+      "current": 1326,
+      "base_avg": 1168,
+      "gap_pct": 13.6
+    },
+    {
+      "family": "Firming Face Cream",
+      "current": 1118,
+      "base_avg": 969,
+      "gap_pct": 15.4
+    },
+    {
+      "family": "Super Enzyme",
+      "current": 464,
+      "base_avg": 1479,
+      "gap_pct": -68.6
+    },
+    {
+      "family": "Illuminating Eye Cream",
+      "current": 326,
+      "base_avg": 680,
+      "gap_pct": -52
+    },
+    {
+      "family": "Keratin Booster For Men",
+      "current": 240,
+      "base_avg": 638,
+      "gap_pct": -62.4
+    },
+    {
+      "family": "Zinc",
+      "current": 0,
+      "base_avg": 2286,
+      "gap_pct": -100
+    },
+    {
+      "family": "Collagen Replenish Powder",
+      "current": 0,
+      "base_avg": 2059,
+      "gap_pct": -100
+    },
+    {
+      "family": "Collagen Chews",
+      "current": 0,
+      "base_avg": 318,
+      "gap_pct": -100
+    },
+    {
+      "family": "Hydrating Hand & Foot Cream",
+      "current": 0,
+      "base_avg": 571,
+      "gap_pct": -100
+    },
+    {
+      "family": "Keratin Hair & Nails (FDM)",
+      "current": 0,
+      "base_avg": 809,
+      "gap_pct": -100
+    },
+    {
+      "family": "Other",
+      "current": 0,
+      "base_avg": 106982,
+      "gap_pct": -100
+    },
+    {
+      "family": "Dual Tabs",
+      "current": 0,
+      "base_avg": 98303,
+      "gap_pct": -100
+    },
+    {
+      "family": "Nac (N-Acetyl-Cysteine)",
+      "current": 0,
+      "base_avg": 77191,
+      "gap_pct": -100
+    },
+    {
+      "family": "Collagen Enhance (MX)",
+      "current": 0,
+      "base_avg": 120854,
+      "gap_pct": -100
+    }
+  ],
+  "customers": [
+    {
+      "cust": "TCC30846 GNC-General Nutrition Distribution Ctr",
+      "ch": "Specialty",
+      "cur": 252528,
+      "baseVals": [
+        245054.99999999997,
+        257449.2,
+        176549.4,
+        397576.92000000004,
+        163610.04,
+        196913.87999999998,
+        100298.28,
+        561385.8,
+        185697.71999999997,
+        549195.72,
+        243562.68,
+        340840.80000000005
+      ],
+      "base_avg": 284845,
+      "gap_pct": -11.345350317657411
+    },
+    {
+      "cust": "40049 Pattern Inc (USA)",
+      "ch": "Amazon",
+      "cur": 156251.88000000003,
+      "baseVals": [
+        152808.18,
+        197887.43999999997,
+        236134.31999999998,
+        197465.04,
+        198011.39999999994,
+        327282.36000000004,
+        95646.34999999999,
+        207927.42,
+        247446.83999999997,
+        259490.44,
+        146717.88,
+        182908.08
+      ],
+      "base_avg": 204144,
+      "gap_pct": -23.45989913360708
+    },
+    {
+      "cust": "TCC30551 THRESHOLD ENTERPRISES",
+      "ch": "Distributor",
+      "cur": 97686.26000000002,
+      "baseVals": [
+        104596.12,
+        30070.010000000002,
+        64455.619999999995,
+        90029.15,
+        62961.27,
+        88453.57999999999,
+        166081.92,
+        11762.740000000002,
+        24744.92,
+        50749.44000000001,
+        45551.31,
+        132135.92999999996
+      ],
+      "base_avg": 72633,
+      "gap_pct": 34.49355966445818
+    },
+    {
+      "cust": "TCC00132 Purchasing Group LLC",
+      "ch": "Closeout",
+      "cur": 81306.23999999999,
+      "baseVals": [
+        3608,
+        15465
+      ],
+      "base_avg": 9537,
+      "gap_pct": 752.579457872385
+    },
+    {
+      "cust": "TCC30675 Vitamin Shoppe",
+      "ch": "Specialty",
+      "cur": 31956.24,
+      "baseVals": [
+        113535.96000000002,
+        192759.24,
+        68044.2,
+        104237.6,
+        171109.67999999996,
+        38575.8,
+        150547.08000000002,
+        67349.28000000001,
+        73814.40000000001,
+        57244.44,
+        53976.12000000001
+      ],
+      "base_avg": 99199,
+      "gap_pct": -67.78586535224082
+    },
+    {
+      "cust": "TCC30720 UNFI",
+      "ch": "Distributor",
+      "cur": 31731.11,
+      "baseVals": [
+        9997.64,
+        6054.49,
+        98146.76000000001,
+        35543.270000000004,
+        32388.250000000004,
+        85353.07,
+        57106.149999999994,
+        75046.51,
+        17145.82,
+        16664.79,
+        42377.72,
+        24720.88
+      ],
+      "base_avg": 41712,
+      "gap_pct": -23.92830739512413
+    },
+    {
+      "cust": "TCC30480 FARMEX d o o",
+      "ch": "International",
+      "cur": 27500,
+      "baseVals": [
+        151502.4,
+        140721.15000000002,
+        77191.4,
+        319637.99,
+        47067.12
+      ],
+      "base_avg": 147224,
+      "gap_pct": -81.32098179745299
+    },
+    {
+      "cust": "TCC30671 Unified/SuperValu/UNFI",
+      "ch": "Distributor",
+      "cur": 14737.679999999998,
+      "baseVals": [
+        22710.920000000002,
+        2687.2799999999997,
+        34695.479999999996,
+        27916.03,
+        33661.35,
+        23047.68,
+        17034.239999999998,
+        19131.089999999997,
+        5380.92,
+        36591.07,
+        9604.23
+      ],
+      "base_avg": 21133,
+      "gap_pct": -30.261430887830354
+    },
+    {
+      "cust": "TCC30572 Pureformulas Inc.",
+      "ch": "E-Tail",
+      "cur": 10856.28,
+      "baseVals": [
+        3382.32,
+        3112.32,
+        4801.2,
+        8214.24,
+        12165.72,
+        5016.599999999999,
+        7318.22,
+        11152.800000000001,
+        6203.16,
+        16195.32,
+        17513.230000000003,
+        4972.4400000000005
+      ],
+      "base_avg": 8337,
+      "gap_pct": 30.21341747730604
+    },
+    {
+      "cust": "TCC32444 iHERB",
+      "ch": "E-Tail",
+      "cur": 10341.72,
+      "baseVals": [
+        100623.23999999998,
+        30896.76,
+        98163.6,
+        118592.4,
+        54743.520000000004,
+        61412.28,
+        98425.68,
+        75982.37000000001,
+        45372.719999999994,
+        27315.960000000003,
+        38939.64
+      ],
+      "base_avg": 68224,
+      "gap_pct": -84.84160627358786
+    },
+    {
+      "cust": "TCC32643:1 Emerson Ecologics-Fullscript : Natural Partners,INC.dba Fullscript",
+      "ch": "Distributor",
+      "cur": 8052.359999999999,
+      "baseVals": [
+        7010.5199999999995,
+        2513.52,
+        8179.44,
+        10257.36,
+        3977.76,
+        8524.44,
+        4877.28,
+        6073.32,
+        9599.64,
+        6523.32,
+        4202.039999999999,
+        9771.24
+      ],
+      "base_avg": 6792,
+      "gap_pct": 18.547984612417505
+    },
+    {
+      "cust": "TCC32643 Emerson Ecologics-Fullscript",
+      "ch": "Distributor",
+      "cur": 6325.200000000001,
+      "baseVals": [
+        6012.48,
+        3693.6,
+        4527.96,
+        9353.160000000002,
+        10207.199999999999,
+        7778.639999999999,
+        7949.760000000001,
+        5377.919999999999,
+        17186.999999999996,
+        8186.52,
+        7892.160000000001,
+        5179.08
+      ],
+      "base_avg": 7779,
+      "gap_pct": -18.686582360495656
+    },
+    {
+      "cust": "TCC00129 Organica- Manico SA",
+      "ch": "International",
+      "cur": 3591.54,
+      "baseVals": [
+        5348.79,
+        3220.29
+      ],
+      "base_avg": 4285,
+      "gap_pct": -16.17443179431164
+    },
+    {
+      "cust": "TCC30670 GNC Franchise (P)",
+      "ch": "Specialty",
+      "cur": 3097.1400000000003,
+      "baseVals": [
+        3326.0299999999997,
+        2093.15,
+        2542.9700000000003,
+        5847.14,
+        11118.46,
+        7612.57,
+        4147.06,
+        8468.880000000001,
+        7077.24,
+        8598,
+        5387.639999999999,
+        2410.2000000000003
+      ],
+      "base_avg": 5719,
+      "gap_pct": -45.84578549057879
+    },
+    {
+      "cust": "TCC00001 Earth Wise Nutrition Center",
+      "ch": "HNF",
+      "cur": 2825.38,
+      "baseVals": [
+        3022.32,
+        1388.04,
+        1551.31,
+        12659.619999999999,
+        5173.74,
+        2367.59,
+        10829.810000000001,
+        1613.73,
+        4501.34,
+        9927.44,
+        3114.98
+      ],
+      "base_avg": 5105,
+      "gap_pct": -44.6496450929939
+    },
+    {
+      "cust": "TCC30781 Swanson",
+      "ch": "E-Tail",
+      "cur": 2100.48,
+      "baseVals": [
+        6014.04,
+        6301.560000000001,
+        9888.72,
+        5324.76,
+        7344.6,
+        6891.600000000001,
+        3794.2800000000007,
+        6520.6,
+        1874.1599999999999,
+        1340.16,
+        8568.24,
+        4714.92
+      ],
+      "base_avg": 5715,
+      "gap_pct": -63.24492939681213
+    },
+    {
+      "cust": "TCC30026 Natural Healthy Concepts",
+      "ch": "HNF",
+      "cur": 1615.8899999999999,
+      "baseVals": [
+        1978.4499999999998,
+        2565.0000000000005,
+        1281.53,
+        2351.47,
+        3091.4999999999995,
+        3579.86,
+        2864.7999999999997,
+        1629.71,
+        2224.25,
+        1422.58
+      ],
+      "base_avg": 2299,
+      "gap_pct": -29.71075485609516
+    },
+    {
+      "cust": "TCC30530 AZURE STANDARD",
+      "ch": "Distributor",
+      "cur": 1099.01,
+      "baseVals": [
+        776.04,
+        1982.8799999999999,
+        952.3199999999999,
+        1539.3600000000001,
+        1783.08,
+        3925.37,
+        1076.76,
+        519.36,
+        1013.04
+      ],
+      "base_avg": 1508,
+      "gap_pct": -27.10099563612296
+    },
+    {
+      "cust": "TCC00126 Renove",
+      "ch": "International",
+      "cur": 518.4,
+      "baseVals": [
+        518.4
+      ],
+      "base_avg": 518,
+      "gap_pct": 0
+    },
+    {
+      "cust": "TCC30452 MORRIS & DICKSON CO., LTD.",
+      "ch": "Distributor",
+      "cur": 0,
+      "baseVals": [
+        197.88,
+        1197.6
+      ],
+      "base_avg": 698,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30704 Vitacost",
+      "ch": "E-Tail",
+      "cur": 0,
+      "baseVals": [
+        36940.55999999999,
+        60725.04,
+        16329.640000000001,
+        42405.12,
+        59947.439999999995,
+        46310.76,
+        38449.920000000006,
+        19617.120000000006,
+        1508.88,
+        1622.16,
+        2310.96
+      ],
+      "base_avg": 29652,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30511 Hy-Vee, Inc",
+      "ch": "FDM",
+      "cur": 0,
+      "baseVals": [
+        647.64,
+        625.56,
+        569.4,
+        819.12,
+        819.12,
+        633.36,
+        688.2
+      ],
+      "base_avg": 686,
+      "gap_pct": -100
+    },
+    {
+      "cust": "51846 The Healthy Place",
+      "ch": "HNF",
+      "cur": 0,
+      "baseVals": [
+        1175.76,
+        1175.76,
+        1567.68,
+        783.84
+      ],
+      "base_avg": 1176,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30602 Maxx Nutrition - Silverdale",
+      "ch": "HNF",
+      "cur": 0,
+      "baseVals": [
+        514.9,
+        2546.84,
+        3251.7599999999998
+      ],
+      "base_avg": 2105,
+      "gap_pct": -100
+    },
+    {
+      "cust": "51853 Nature's Best N.V.",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        2047.4600000000003
+      ],
+      "base_avg": 2047,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC00145 Central Pharm Ltd.",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        2567.61,
+        806.06
+      ],
+      "base_avg": 1687,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC00222 Finemet International Limited",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        467.73,
+        130.32,
+        698.58,
+        733.86,
+        305.91
+      ],
+      "base_avg": 467,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30221 Nutrition Rite",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        971.73,
+        712.62,
+        1781.55,
+        1425.24,
+        1425.24
+      ],
+      "base_avg": 1263,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30509 Vitasalud",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        5392.8,
+        4900.68,
+        14481.720000000001,
+        9914.220000000001,
+        13320.72,
+        11912.58,
+        12316.86,
+        13131.900000000001,
+        10911.42,
+        5155.380000000001,
+        16703.46,
+        19511.82
+      ],
+      "base_avg": 11471,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30525 Nutrisalud S. A.",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        11989.15,
+        1952.6600000000003,
+        4081.56
+      ],
+      "base_avg": 6008,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30800 Hamberto Fasano/Vitalife,S.A. (P) : Humberto Fasano/Vitalife S.A.",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        2354.4,
+        3407.49,
+        723.78,
+        1674.36,
+        5419.799999999999
+      ],
+      "base_avg": 2716,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC31726 Get Healthy Inc (P) : Get Healthy Inc",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        1208.88,
+        1662.3,
+        1163.61
+      ],
+      "base_avg": 1345,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC00100 NUTRIPHARM FZCO",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        14911.570000000002,
+        23282.45
+      ],
+      "base_avg": 19097,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30521 Healthy Options",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        12264.93,
+        18796.679999999997,
+        11876.85,
+        16278.52,
+        18146.34
+      ],
+      "base_avg": 15473,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC31415 Descubra Health Foods (P) : Descubra Health Foods 2",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        3483,
+        3855.6000000000004,
+        7387.200000000001
+      ],
+      "base_avg": 4909,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC00127 J.L. Ferreira, Lda",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        32023.079999999998
+      ],
+      "base_avg": 32023,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30392 Cellway International",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        9529.2
+      ],
+      "base_avg": 9529,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30337 Imunotop S.R.O.",
+      "ch": "International",
+      "cur": 0,
+      "baseVals": [
+        8048.4
+      ],
+      "base_avg": 8048,
+      "gap_pct": -100
+    },
+    {
+      "cust": "51844 Wildwood Eyecare Center",
+      "ch": "Practioner",
+      "cur": 0,
+      "baseVals": [
+        741.6,
+        815.76,
+        1037.52
+      ],
+      "base_avg": 865,
+      "gap_pct": -100
+    },
+    {
+      "cust": "TCC30428 Trustee Drugs",
+      "ch": "Practioner",
+      "cur": 0,
+      "baseVals": [
+        319.68,
+        319.68
+      ],
+      "base_avg": 320,
+      "gap_pct": -100
+    }
+  ],
+  "monthly_totals": [
+    {
+      "key": 202504,
+      "label": "April 2025",
+      "total": 1322630,
+      "isCurrent": false
+    },
+    {
+      "key": 202505,
+      "label": "May 2025",
+      "total": 739649,
+      "isCurrent": false
+    },
+    {
+      "key": 202506,
+      "label": "June 2025",
+      "total": 728580,
+      "isCurrent": false
+    },
+    {
+      "key": 202507,
+      "label": "July 2025",
+      "total": 1150019,
+      "isCurrent": false
+    },
+    {
+      "key": 202508,
+      "label": "August 2025",
+      "total": 1053738,
+      "isCurrent": false
+    },
+    {
+      "key": 202509,
+      "label": "September 2025",
+      "total": 921492,
+      "isCurrent": false
+    },
+    {
+      "key": 202510,
+      "label": "October 2025",
+      "total": 1105468,
+      "isCurrent": false
+    },
+    {
+      "key": 202511,
+      "label": "November 2025",
+      "total": 590627,
+      "isCurrent": false
+    },
+    {
+      "key": 202512,
+      "label": "December 2025",
+      "total": 1289049,
+      "isCurrent": false
+    },
+    {
+      "key": 202601,
+      "label": "January 2026",
+      "total": 715615,
+      "isCurrent": false
+    },
+    {
+      "key": 202602,
+      "label": "February 2026",
+      "total": 1397797,
+      "isCurrent": false
+    },
+    {
+      "key": 202603,
+      "label": "March 2026",
+      "total": 727904,
+      "isCurrent": false
+    },
+    {
+      "key": 202604,
+      "label": "April 2026",
+      "total": 877146,
+      "isCurrent": false
+    },
+    {
+      "key": 202605,
+      "label": "May 2026",
+      "total": 744121,
+      "isCurrent": true
+    }
+  ],
+  "heatmap": {
+    "months": [
+      "Jun 25",
+      "Jul 25",
+      "Aug 25",
+      "Sep 25",
+      "Oct 25",
+      "Nov 25",
+      "Dec 25",
+      "Jan 26",
+      "Feb 26",
+      "Mar 26",
+      "Apr 26",
+      "May 26"
+    ],
+    "channels": [
+      "- None -",
+      "Amazon",
+      "Broker",
+      "Closeout",
+      "Contract Manufacturing",
+      "DTC",
+      "Distributor",
+      "E-Tail",
+      "FDM",
+      "HNF",
+      "HNF Chain",
+      "HNF Indie",
+      "International",
+      "Marketing",
+      "Practioner",
+      "Specialty"
+    ],
+    "values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        197887,
+        236134,
+        197465,
+        198011,
+        327282,
+        95646,
+        207927,
+        247447,
+        259490,
+        146718,
+        182908,
+        156252
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        15465,
+        0,
+        0,
+        0,
+        0,
+        0,
+        81306
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        45019,
+        211988,
+        174051,
+        144735,
+        213157,
+        254832,
+        117392,
+        72801,
+        88582,
+        138331,
+        182424,
+        159632
+      ],
+      [
+        101036,
+        129183,
+        174537,
+        134201,
+        119631,
+        49562,
+        135716,
+        85569,
+        64530,
+        55708,
+        48627,
+        23298
+      ],
+      [
+        626,
+        569,
+        819,
+        0,
+        0,
+        819,
+        0,
+        633,
+        0,
+        688,
+        0,
+        0
+      ],
+      [
+        3953,
+        2833,
+        16702,
+        10812,
+        2368,
+        15585,
+        2865,
+        1614,
+        7699,
+        16187,
+        4538,
+        4441
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6240,
+        196644,
+        18696,
+        154766,
+        67393,
+        15695,
+        104747,
+        46071,
+        345887,
+        64076,
+        61102,
+        31610
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        742,
+        816,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1357,
+        0,
+        0,
+        320,
+        0
+      ],
+      [
+        373078,
+        371852,
+        471468,
+        278966,
+        375636,
+        143021,
+        720402,
+        260124,
+        631608,
+        306195,
+        397227,
+        287581
+      ]
+    ]
+  }
+}
