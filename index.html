@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///C:/Users/yliu/Downloads/index_2.html -->
+<!-- saved from url=(0044)file:///C:/Users/yliu/Downloads/index_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -229,7 +229,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 <div class="topbar">
   <div class="tlogo">SupplyIQ</div>
   <div class="tsep"></div>
-  <div class="tmod" id="tbar-mod">Sales Gap</div>
+  <div class="tmod" id="tbar-mod">Setup</div>
   <div class="tright" id="tbar-right">
     <span id="tbar-period" style="font-size:11px;color:rgba(255,255,255,.35);"></span>
     <button class="tbtn" id="btn-goto-admin" onclick="gotoAdmin()">⚙ Admin</button>
@@ -237,7 +237,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 </div>
 
 <!-- ═══ SETUP ═══ -->
-<div class="view" id="view-setup">
+<div class="view active" id="view-setup">
 <div class="centered-card fade-in">
   <div style="font-family:var(--ff-d);font-size:22px;font-weight:500;margin-bottom:4px;">SupplyIQ Setup</div>
   <div style="font-size:12px;color:var(--ink3);margin-bottom:22px;">One-time configuration — takes about 5 minutes</div>
@@ -414,7 +414,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
 </div>
 
 <!-- ═══ USER REPORT ═══ -->
-<div class="view active" id="view-user">
+<div class="view" id="view-user">
 <div class="shell">
 
   <div id="u-loading" class="loading fade-in"><div class="spinner"></div><span>Loading latest report…</span></div>
@@ -990,14 +990,14 @@ function parseResponse(){
   const errMsg=document.getElementById('parse-err-msg');
   errEl.style.display='none';
 
-  if(!raw){errEl.style.display='flex';errMsg.textContent='Please paste Claude's response first.';return;}
+  if(!raw){errEl.style.display='flex';errMsg.textContent="Please paste Claude's response first.";return;}
   if(!BUILT_DATA){errEl.style.display='flex';errMsg.textContent='Please generate the prompt first (Step A), then paste the response.';return;}
 
   // Extract JSON — Claude may wrap in backticks or add text before/after
   let jsonStr=raw;
-  const jsonMatch=raw.match(/```json\s*([\s\S]*?)```/)||raw.match(/```\s*([\s\S]*?)```/)||raw.match(/(\{[\s\S]*\})/);
+  const jsonMatch=raw.match(/```json[\s\S]*?```/)||raw.match(/```[\s\S]*?```/)||raw.match(/(\{[\s\S]*\})/);
   if(jsonMatch)jsonStr=jsonMatch[1]||jsonMatch[0];
-  jsonStr=jsonStr.replace(/^```json|^```|```$/g,'').trim();
+  jsonStr=jsonStr.replace(/^```json\n?|^```\n?|```$/g,'').trim();
 
   let parsed;
   try{
